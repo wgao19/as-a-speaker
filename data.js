@@ -50,8 +50,7 @@ var talks = [
     title: "Trip to React Rally",
     when: "09/09/2018",
     where: {
-      name: "React Knowledgeable",
-      link: "https://www.facebook.com/reactknowledgeable/"
+      name: "Prehistory of React Knowledgeable"
     },
     post:
       "https://github.com/wgao19/sharing-talks/blob/master/sharings/2018_9_9-react_rally/README.md",
