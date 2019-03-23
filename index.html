@@ -39,8 +39,6 @@
       li {
         display: flex;
         align-items: baseline;
-      }
-      li:not(:last-child) {
         margin-bottom: 0.25rem;
       }
       li * {
@@ -52,7 +50,6 @@
       .post i {
         margin-left: 0.25rem;
       }
-
       .topic {
         margin-right: 1rem;
         font-size: 1.2rem;
@@ -91,16 +88,6 @@
       >
       is the best way to learn to understand almost anything. Here is my list of
       efforts in practicing it.
-    </p>
-    <p>
-      <span class="display">Disclaimer</span> I am the worst public speaker
-      anyone can ever think of. Although I have worked nearly two years part
-      time as a
-      <a href="https://en.wikipedia.org/wiki/New_Oriental"
-        >New Oriental School</a
-      >
-      instructor, a childhood dream fufilled, I still occasionally blank out
-      when I speak.
     </p>
     <h2 class="display">Upcoming</h2>
     <ul id="upcoming"></ul>
@@ -169,7 +156,6 @@
         </div>`
           : "";
         const talkElement = document.createElement("li");
-
         talkElement.innerHTML = [
           `<base target="_blank" />`,
           titleNode,
@@ -181,14 +167,24 @@
         ].join("");
         document.getElementById(elementId).appendChild(talkElement);
       };
-
       const isUpcoming = talk =>
         new Date(talk.when) > new Date() ||
         new Date(talk.when) == "Invalid Date";
       const isPast = talk => new Date(talk.when) <= new Date();
-
       talks.filter(isUpcoming).map(parseTalk.bind(null, "upcoming"));
       talks.filter(isPast).map(parseTalk.bind(null, "past"));
+    </script>
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=UA-133341999-4"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "UA-133341999-4");
     </script>
   </body>
 </html>
