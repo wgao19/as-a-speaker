@@ -1,0 +1,142 @@
+<html>
+  <head>
+    <title>Wei as a Speaker</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Lobster|Raleway"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+      integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
+      crossorigin="anonymous"
+    />
+    <style>
+      :root {
+        font-size: 16px;
+        font-family: Raleway, sans-serif;
+        letter-spacing: 0.2px;
+        color: #777;
+        background: #efefef;
+      }
+      body {
+        margin: 0;
+        padding: 1rem 2rem;
+      }
+      a {
+        text-decoration: none;
+        color: unset;
+        border-bottom: 1px dashed #ccc;
+        display: inline-block;
+      }
+      ul {
+        list-style: none;
+        padding: 0;
+      }
+      li {
+        display: flex;
+        align-items: baseline;
+      }
+      li:not(:last-child) {
+        margin-bottom: 0.25rem;
+      }
+      li * {
+        padding: 2px 0;
+        margin-right: 0.25rem;
+        white-space: nowrap;
+      }
+      .slides i,
+      .post i {
+        margin-left: 0.25rem;
+      }
+      .display {
+        font-family: Lobster;
+        color: #444;
+        font-size: 1.2rem;
+      }
+      .topic {
+        margin-right: 1rem;
+      }
+      .topic i {
+        color: white;
+      }
+      .intro {
+        margin-left: 1rem;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+      .where::before {
+        content: "@";
+        margin-right: -0.2rem;
+      }
+    </style>
+    <script src="data.js"></script>
+  </head>
+  <body>
+    <div>
+      Hello, this is ᴡᴇɪ 👩🏻‍🌾 <span class="display">as a speaker</span>. I believe
+      that the
+      <a
+        href="https://medium.com/taking-note/learning-from-the-feynman-technique-5373014ad230"
+        >Feynman Technique</a
+      >
+      is the best way to learn to understand almost anything. Here is my list of
+      efforts in practicing it.
+    </div>
+    <ul id="list"></ul>
+    <script>
+      const nodes = [];
+      talks.map(talk => {
+        const { title, when, where, video, slides, post, intro } = talk;
+        const titleNode = `
+          <div class="topic display">
+            <i class="fas fa-quote-left"></i>
+            <span>${talk.title}</span>
+            <i class="fas fa-quote-right"></i>
+          </div>
+        `;
+        const whenNode = when ? `<div class="when">${talk.when}</div>` : "";
+        const whereNode = where
+          ? `
+          <a class="where" href="${where.link || "#"}" target=${
+              where.link ? "_blank" : "_self"
+            }>
+            ${where.name}
+            <i class="fas fa-external-link-alt"></i>
+          </a>`
+          : "";
+        const videoNode = video
+          ? `<a class="video" href="${video}"><i class="fas fa-video"></i></a>`
+          : "";
+        const slidesNode = slides
+          ? `
+            <a href="${slides}" class="slides">Slides<i class="fas fa-sticky-note"></i></a>
+          `
+          : "";
+        const postNode = post
+          ? `
+            <a href="${post}" class="slides">Post<i class="far fa-newspaper"></i></a>
+          `
+          : "";
+
+        const introNode = intro
+          ? `<div class="intro">
+            ${intro}
+        </div>`
+          : "";
+        const talkElement = document.createElement("li");
+
+        talkElement.innerHTML = [
+          `<base target="_blank" />`,
+          titleNode,
+          whenNode,
+          whereNode,
+          slidesNode,
+          postNode,
+          introNode
+        ].join("");
+        document.getElementById("list").appendChild(talkElement);
+      });
+    </script>
+  </body>
+</html>
