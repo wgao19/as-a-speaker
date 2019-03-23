@@ -22,7 +22,7 @@ var talks = [
 
   {
     title: "Makes of a Good Talk",
-    when: "01/25/2019",
+    when: "03/08/2019",
     where: {
       name: "React Knowledgeable",
       link: "https://www.facebook.com/reactknowledgeable/"
@@ -31,7 +31,18 @@ var talks = [
     intro:
       "Sharing our understanding about what makes good talks at React Knowledgeable, and how to prepare for them."
   },
-
+  {
+    title: "React Redux in Four Nutshells 🌰",
+    when: "01/25/2019",
+    post:
+      "https://github.com/wgao19/sharing-talks/tree/master/sharings/2019_1-react-redux-in-four-nutshells",
+    where: {
+      name: "React Knowledgeable",
+      link: "https://www.facebook.com/reactknowledgeable/"
+    },
+    intro:
+      "Sharing stuff I learned about React-Redux last year Sept - Nov as I helped write docs for it."
+  },
   {
     title: "Journey to Our Future Sharing",
     when: "09/21/2018",
