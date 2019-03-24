@@ -1,5 +1,5 @@
 {
-  "name": "reveal.js",
+  "name": "whats-happening-30-days-css-girls",
   "version": "3.7.0",
   "description": "The HTML Presentation Framework",
   "homepage": "http://revealjs.com",
@@ -8,7 +8,7 @@
   "scripts": {
     "test": "grunt test",
     "start": "grunt serve",
-    "build": "grunt"
+    "build": "grunt -- css-themes"
   },
   "author": {
     "name": "Hakim El Hattab",
