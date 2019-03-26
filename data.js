@@ -1,5 +1,15 @@
 var talks = [
   {
+    title: "Developer's Gym -- Gatsby Workshop",
+    when: "04/13/2019",
+    where: {
+      name: "engineers.sg",
+      link: "https://engineers.sg/"
+    },
+    intro: "Gatsby workshop",
+    slides: "slides/2019-04--developers-gym-gatsby/"
+  },
+  {
     title: "This World Mixed and Blended",
     when: "04/24/2019",
     where: {
