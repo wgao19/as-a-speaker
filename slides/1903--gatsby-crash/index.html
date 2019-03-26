@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+
+    <title>reveal.js</title>
+
+    <link rel="stylesheet" href="css/reveal.css" />
+    <link rel="stylesheet" href="css/theme/gatsby.css" />
+
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="lib/css/zenburn.css" />
+
+    <!-- Printing and PDF exports -->
+    <script>
+      var link = document.createElement("link");
+      link.rel = "stylesheet";
+      link.type = "text/css";
+      link.href = window.location.search.match(/print-pdf/gi)
+        ? "css/print/pdf.css"
+        : "css/print/paper.css";
+      document.getElementsByTagName("head")[0].appendChild(link);
+    </script>
+  </head>
+  <body class="gatsby-theme">
+    <div class="reveal">
+      <div class="slides">
+        <section>
+          <h1>Gatsby</h1>
+        </section>
+        <section>
+          <section>
+            <div class="center fits-screen">
+              <img src="img/first-posts.png" />
+            </div>
+            <aside class="notes">
+              I am a React developer, and I am kind of a fan of Dan Abramov's.
+              December of last year, he created a new blog site called
+              overreacted.io 😲 He uses this lovely pinkish theme and has those
+              cute coffee indicators for how long it might take to read.
+            </aside>
+          </section>
+          <section>
+            <div class="center">
+              <blockquote class="twitter-tweet" data-lang="en">
+                <p lang="en" dir="ltr">
+                  If you feel like you’ve learned something in the past few
+                  years I deeply recommend starting a blog, if only to catalog
+                  your thoughts.
+                </p>
+                &mdash; Dan Abramov (@dan_abramov)
+                <a
+                  href="https://twitter.com/dan_abramov/status/1079214023881707520?ref_src=twsrc%5Etfw"
+                  >December 30, 2018</a
+                >
+              </blockquote>
+            </div>
+            <aside class="notes">
+              And as a senior developer, he also suggests that we keep a blog to
+              catalog our thoughts. I believe that even many of us here would
+              agree, but hasn’t really kept one. Aside from the fact that
+              keeping a blog takes persistence, have you ever thought that the
+              idea of a web blog has been more seriously verbose than geeky and
+              fun?
+            </aside>
+          </section>
+          <section>
+            <blockquote>
+              I like to have full control over the experience.
+            </blockquote>
+            <aside class="notes">
+              When talking about why he switched from Medium to Gatsby, Dan
+              mentioned:
+              <blockquote>
+                I like to have full control over the experience.
+              </blockquote>
+            </aside>
+          </section>
+          <section>
+            <h3>Add bento</h3>
+            <a
+              href="https://github.com/gaearon/overreacted.io/commit/538ac80e9ea3a49ec9e2177e37a95a93bcefad2d"
+            >
+              538ac80</a
+            >
+            <pre>
+<code>
+export function formatReadingTime(minutes) { 
+  let cups = Math.round(minutes / 5); 
+  let bowls = 0; 
+  if (cups > 5) { 
+    return `${new Array(Math.round(cups / Math.E)) 
+      .fill('🍱') 
+      .join('')} ${minutes} min read`; 
+  } else { 
+    return `${new Array(cups || 1)
+      .fill('☕️')
+      .join('')} ${minutes} min read`; 
+  } 
+}
+</code>
+            </pre>
+            <aside class="notes">
+              And if you’ve been checking in at his blog site every now and
+              then, you’d noticed that he has recently [added a bento
+              option](https://github.com/gaearon/overreacted.io/commit/538ac80e9ea3a49ec9e2177e37a95a93bcefad2d)
+              to the reading time feature!
+            </aside>
+          </section>
+          <section>
+            <div class="center spaced">
+              <img src="img/gatsby.svg" width="200" />
+              <span>+</span>
+              <img src="img/netlify.svg" width="200" />
+            </div>
+            <aside class="notes">
+              In this talk, I’m going to share about how we as React developers,
+              can make use of our professional skills to build fun blog sites,
+              using Gatsby.
+            </aside>
+          </section>
+        </section>
+      </div>
+    </div>
+
+    <script src="lib/js/head.min.js"></script>
+    <script src="js/reveal.js"></script>
+
+    <script>
+      // More info about config & dependencies:
+      // - https://github.com/hakimel/reveal.js#configuration
+      // - https://github.com/hakimel/reveal.js#dependencies
+      Reveal.initialize({
+        dependencies: [
+          { src: "plugin/markdown/marked.js" },
+          { src: "plugin/markdown/markdown.js" },
+          { src: "plugin/notes/notes.js", async: true },
+          {
+            src: "plugin/highlight/highlight.js",
+            async: true,
+            callback: function() {
+              hljs.initHighlightingOnLoad();
+            }
+          }
+        ]
+      });
+    </script>
+
+    <script
+      async
+      src="https://platform.twitter.com/widgets.js"
+      charset="utf-8"
+    ></script>
+  </body>
+</html>

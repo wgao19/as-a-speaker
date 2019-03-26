@@ -1,5 +1,16 @@
 var talks = [
   {
+    title: "Gatsby Crash",
+    when: "03/29/2019",
+    where: {
+      name: "React Knowledgeable",
+      link: "https://www.facebook.com/reactknowledgeable/"
+    },
+    slides: "slides/1903--gatsby-crash",
+    // TODO: move draft to a feature
+    intro: "<span class='display'>Draft</span> First talk crashing into Gatsby."
+  },
+  {
     title: "This World Mixed and Blended",
     when: "04/24/2019",
     where: {
