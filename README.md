@@ -12,11 +12,7 @@ A little more about me:
 
 ## List of talks
 
-(The oldest three talks were from an archived repo.)
-
-- [React Redux in Four Nutshells](https://github.com/wgao19/sharing-talks/tree/master/sharings/2019_1-react-redux-in-four-nutshells) Jan 25, 2019
-- [Journey to Our Future Sharing 1](https://github.com/wgao19/sharing-talks/blob/master/sharings/2018_9_21-journey-to-our-future-sharing-1/README.md) Sept 21, 2018
-- [React Rally Conference Trip](https://github.com/wgao19/sharing-talks/blob/master/sharings/2018_9_9-react_rally/README.md) Sept 9, 2018
+Thanks to the existence of this project, I no longer need to maintain this list. Please refer to https://speak.wgao19.cc/
 
 ----
 
