@@ -27,7 +27,7 @@ var talks = [
       name: "Talk.CSS",
       link: "https://singaporecss.github.io"
     },
-    slides: "slides/1903--whats-happening-30-days-css-girls",
+    slides: "slides/1903--whats-happening-30-days-of-css-girls",
     intro: `A retro talk regarding the <a href="http://css.codinggirls.sg">#30DaysOfCSSGirls</a> event with <a href="http://codinggirls.sg">CodingGirls</a>.`
   },
 
