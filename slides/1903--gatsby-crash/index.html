@@ -254,6 +254,105 @@ export function formatReadingTime(minutes) {
             </aside>
           </section>
         </section>
+        <section>
+          <section>
+            <h2>Styling</h2>
+          </section>
+          <section>
+            <div class="fits-screen">
+              <img src="img/tweet-argue-about-css.png" />
+            </div>
+            <aside class="notes">
+              I'm not sure if you will agree with me or not, but I feel our
+              front end developer community is… really concerned about styling.
+              That’s one of Gatsby’s creators by the way. And I’d like to
+              mention that Typography was in the very first real commit of
+              Gatsby’s very first starter.
+            </aside>
+          </section>
+          <section>
+            <h2 style="text-decoration: line-through">Styling</h2>
+            <h2>Typography</h2>
+            <aside class="notes">
+              Now, styling is an integral part of sites we create, I’d like to
+              claim that typogaphy is particularly integral to Gatsby site.
+            </aside>
+          </section>
+          <section>
+            <img
+              src="https://changemediagroup.com/wp-content/uploads/2016/08/screen-shot-2016-08-10-at-1.27.06-pm.png"
+            />
+            <aside class="notes">
+              So what is typography anyway?
+            </aside>
+          </section>
+          <section>
+            <img
+              src="http://2.bp.blogspot.com/-dZBNZuJ6oQg/UT7Z86ttoQI/AAAAAAAAACs/PXBoNGcOId4/s1600/baskerville.jpg"
+            />
+            <aside class="notes">
+              Something I learned earlier this year that’s amused me was that —
+              the computer fonts we use is in many parts an extension of book
+              printing. And a lot of the fonts are a recreate of book printing
+              fonts.
+            </aside>
+          </section>
+          <section>
+            <blockquote>
+              Although many books define the purpose of typography as enhancing
+              the readability of the written word, one of design’s most humane
+              functions is, in actuality, to help readers <i>avoid</i> reading.
+            </blockquote>
+            <aside class="notes">
+              There are similarities and differences between book printing and
+              web typography. But their motivations are rather aligned, and
+              beside the apparent styling purpose we may think of, I’d like to
+              quote this:
+            </aside>
+          </section>
+          <section>
+            <a href="http://kyleamathews.github.io/typography.js/"
+              >Typography.js</a
+            >
+            <aside class="notes">
+              It also allows you to choose from a repertoire of themes that you
+              may use directly. You may see those themes in this demo website.
+            </aside>
+          </section>
+          <section>
+            <pre><code>
+import Typography from 'typography'
+  const typography = new Typography({
+  baseFontSize: '18px',
+  baseLineHeight: 1.666,
+  headerFontFamily: ['Avenir Next', 'Helvetica Neue', 'Segoe UI', 'Helvetica', 'Arial', 'sans-serif'],
+  bodyFontFamily: ['Georgia', 'serif'],
+  // See below for the full list of options.
+})
+              
+// Output CSS as string.
+typography.toString()
+              
+// Or insert styles directly into the head (works well for client-only
+// JS web apps.
+typography.injectStyles()
+            </code></pre>
+            <aside class="notes">
+              How it works is that you define some basics to your site’s
+              typography. It will help you sort out (or lets you customize) the
+              font sizing, line spacing, etc, using a mechanism called vertical
+              rhythm.
+            </aside>
+          </section>
+          <section>
+            demo typography in blog starter
+            <aside class="notes">
+              Now, this serves as our mini intro to typography which I’d like to
+              have a separate talk if folks are interested, today I’ll show you
+              how it works in the blog starter.
+            </aside>
+          </section>
+        </section>
       </div>
     </div>
 
