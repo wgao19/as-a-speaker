@@ -112,6 +112,13 @@ export function formatReadingTime(minutes) {
             </aside>
           </section>
           <section>
+            <img src="img/bento.png" />
+            <aside class="notes">
+              So instead of always showing reading time in coffee time, for
+              longer posts it also shows in bento time..
+            </aside>
+          </section>
+          <section>
             <div class="center spaced">
               <img src="img/gatsby.svg" width="200" />
               <span>+</span>
@@ -139,9 +146,10 @@ export function formatReadingTime(minutes) {
           <section>
             <a href="https://www.gatsbyjs.org/starters/">Starters Library</a>
             <aside class="notes">
-              It allows you to pick a starter and get to your content quickly. I
-              think it actually encourages you to start with a starter. Here is
-              the starter library that contains official and community starters.
+              One idea from Gatsby that facilitates this is that it allows you
+              to pick a starter and get to your content quickly. I think it
+              actually encourages you to start with a starter. Here is the
+              starter library that contains official and community starters.
             </aside>
           </section>
           <section>
@@ -162,15 +170,13 @@ export function formatReadingTime(minutes) {
             </aside>
           </section>
           <section>
-            <video src="img/up-and-running.mov" controls></video>
+            demo up and running
           </section>
           <section>
             <img src="img/code.png" />
           </section>
           <section>
             <img src="img/gatsby-starters.png" />
-          </section>
-          <section>
             <aside class="notes">
               While the behavior of picking a starter feels much like picking a
               Wordpress theme, Gatsby starters offers a flexible range of
@@ -178,7 +184,7 @@ export function formatReadingTime(minutes) {
             </aside>
           </section>
           <section>
-            <video src="img/portfolio-using-react-spring.mov" autoplay></video>
+            <video src="img/portfolio-using-react-spring.mov" controls></video>
             <aside class="notes">
               True that some of the starters are UI-heavy. And I have found this
               LekoArts who has created multiple themed gatsby starters that are
@@ -194,7 +200,12 @@ export function formatReadingTime(minutes) {
               <li>Business landing</li>
               <li>Community</li>
               <li>Presentation</li>
-              <li>... more</li>
+              <li>
+                ... more at the
+                <a href="https://www.gatsbyjs.org/starters/"
+                  >Starters Library</a
+                >
+              </li>
             </ul>
           </section>
           <section>
@@ -247,9 +258,9 @@ export function formatReadingTime(minutes) {
             <aside class="notes">
               There is one that I think can be particularly interesting to us.
               The gatsby-advanced-starter which is nearly barebone in terms of
-              feature, specifically does not join the fight for styling, and it
-              leaves nearly all customizability to us. But it does nicely come
-              with some essentials such as SEO, Google Analytics, tags and
+              features, it specifically does not join the fight for styling, and
+              it leaves nearly all customizability to us. But it does nicely
+              come with some essentials such as SEO, Google Analytics, tags and
               categories, twitter, etc.
             </aside>
           </section>
@@ -265,9 +276,9 @@ export function formatReadingTime(minutes) {
             <aside class="notes">
               I'm not sure if you will agree with me or not, but I feel our
               front end developer community is… really concerned about styling.
-              That’s one of Gatsby’s creators by the way. And I’d like to
-              mention that Typography was in the very first real commit of
-              Gatsby’s very first starter.
+              That’s Gatsby’s creator by the way. And I’d like to mention that
+              Typography was in the very first real commit of Gatsby’s very
+              first starter.
             </aside>
           </section>
           <section>
@@ -291,8 +302,8 @@ export function formatReadingTime(minutes) {
               src="https://2.bp.blogspot.com/-dZBNZuJ6oQg/UT7Z86ttoQI/AAAAAAAAACs/PXBoNGcOId4/s1600/baskerville.jpg"
             />
             <aside class="notes">
-              Something I learned earlier this year that’s amused me was that —
-              the computer fonts we use is in many parts an extension of book
+              Something I learned earlier this year that has amused me was that
+              — the computer fonts we use is in many parts an extension of book
               printing. And a lot of the fonts are a recreate of book printing
               fonts.
             </aside>
@@ -303,11 +314,27 @@ export function formatReadingTime(minutes) {
               the readability of the written word, one of design’s most humane
               functions is, in actuality, to help readers <i>avoid</i> reading.
             </blockquote>
+            <small
+              ><a href="http://www.atypeprimer.com/">A Type Primer</a> by John
+              Kane</small
+            >
             <aside class="notes">
-              There are similarities and differences between book printing and
-              web typography. But their motivations are rather aligned, and
-              beside the apparent styling purpose we may think of, I’d like to
-              quote this:
+              <p>
+                There are similarities and differences between book printing and
+                web typography. But their motivations are rather aligned, and
+                beside the apparent styling purpose we may think of, I’d like to
+                quote this:
+              </p>
+              <p>
+                So typography is this set of rules of font families, font sizes,
+                indents, line spacings, progression of headers, etc etc, that
+                defines how your website displays its content, mainly texts.
+              </p>
+              <p>
+                Now, this serves as our mini intro to typography which I’d like
+                to have a separate talk if folks are interested, today I’ll show
+                you how it works in the blog starter.
+              </p>
             </aside>
           </section>
           <section>
@@ -315,8 +342,9 @@ export function formatReadingTime(minutes) {
               >Typography.js</a
             >
             <aside class="notes">
-              It also allows you to choose from a repertoire of themes that you
-              may use directly. You may see those themes in this demo website.
+              Kyle also developed a library called Typography that allows you to
+              choose from a repertoire of themes that you may use directly. You
+              may see those themes in this demo website.
             </aside>
           </section>
           <section>
@@ -338,18 +366,17 @@ typography.toString()
 typography.injectStyles()
             </code></pre>
             <aside class="notes">
-              How it works is that you define some basics to your site’s
-              typography. It will help you sort out (or lets you customize) the
-              font sizing, line spacing, etc, using a mechanism called vertical
-              rhythm.
-            </aside>
-          </section>
-          <section>
-            demo typography in blog starter
-            <aside class="notes">
-              Now, this serves as our mini intro to typography which I’d like to
-              have a separate talk if folks are interested, today I’ll show you
-              how it works in the blog starter.
+              <p>
+                You may as well define your own typography. How it works is that
+                you define some basics to your site’s typography. It will help
+                you sort out (or lets you customize) the font sizing, line
+                spacing, etc, using a mechanism called vertical rhythm.
+              </p>
+              <p>
+                This once again aligns with how Gatsby provides us with both the
+                readiness and customizability of how we want to implement our
+                sites.
+              </p>
             </aside>
           </section>
         </section>
