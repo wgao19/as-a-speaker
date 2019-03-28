@@ -7,7 +7,7 @@
       content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
     />
 
-    <title>reveal.js</title>
+    <title>Gatsby Crash</title>
 
     <link rel="stylesheet" href="css/reveal.css" />
     <link rel="stylesheet" href="css/theme/gatsby.css" />
@@ -121,6 +121,235 @@ export function formatReadingTime(minutes) {
               In this talk, I’m going to share about how we as React developers,
               can make use of our professional skills to build fun blog sites,
               using Gatsby.
+            </aside>
+          </section>
+        </section>
+        <section>
+          <section>
+            <blockquote>
+              Fast in every way that matters
+            </blockquote>
+            <aside class="notes">
+              In Gatsby’s home page it says in biggest font
+              <blockquote>
+                Fast in every way that matters
+              </blockquote>
+            </aside>
+          </section>
+          <section>
+            <a href="https://www.gatsbyjs.org/starters/">Starters Library</a>
+            <aside class="notes">
+              It allows you to pick a starter and get to your content quickly. I
+              think it actually encourages you to start with a starter. Here is
+              the starter library that contains official and community starters.
+            </aside>
+          </section>
+          <section>
+            <div class="fits-screen">
+              <img src="img/starter-blog.png" />
+            </div>
+            <aside class="notes">
+              Here this first starter is gatsby-starter-blog.
+            </aside>
+          </section>
+          <section>
+            <div class="fits-screen">
+              <img src="img/starter-description.png" />
+            </div>
+            <aside class="notes">
+              If you look into it, it has this dependencies list that tells you
+              what plugins it comes with.
+            </aside>
+          </section>
+          <section>
+            <video src="img/up-and-running.mov" controls></video>
+          </section>
+          <section>
+            <img src="img/code.png" />
+          </section>
+          <section>
+            <img src="img/gatsby-starters.png" />
+          </section>
+          <section>
+            <aside class="notes">
+              While the behavior of picking a starter feels much like picking a
+              Wordpress theme, Gatsby starters offers a flexible range of
+              customizability.
+            </aside>
+          </section>
+          <section>
+            <video src="img/portfolio-using-react-spring.mov" autoplay></video>
+            <aside class="notes">
+              True that some of the starters are UI-heavy. And I have found this
+              LekoArts who has created multiple themed gatsby starters that are
+              popular on the starters list.
+            </aside>
+          </section>
+          <section>
+            <h2>target specific use scenarios</h2>
+            <ul>
+              <li>Blog</li>
+              <li>Portfolios</li>
+              <li>Ecommerce</li>
+              <li>Business landing</li>
+              <li>Community</li>
+              <li>Presentation</li>
+              <li>... more</li>
+            </ul>
+          </section>
+          <section>
+            <h2>🤔</h2>
+            What's the difference?
+          </section>
+          <section>
+            <a href="https://gatsby-netlify-cms-example.netlify.com/"
+              >JS Wakanda</a
+            >
+            <aside class="notes">
+              For example, I was particularly interested in this community site
+              starter when I was creating the site for our React Knowledgeable.
+              It has implemented a few utility fields in the frontmatter of each
+              post (markdown files) and it organizes the pages according to
+              community events. It also checks and computes days to display
+              information such as the event is upcoming or has already passed.
+            </aside>
+          </section>
+          <section>
+            <div class="center spaced">
+              <img
+                src="https://cdn.worldvectorlogo.com/logos/react-1.svg"
+                width="300"
+              />
+              <img
+                src="https://cdn.worldvectorlogo.com/logos/graphql.svg"
+                width="300"
+              />
+            </div>
+            <aside class="notes">
+              <p>
+                I’d like to mention again that for all those feature, you’re
+                gonna write React and GraphQL. This goes beyond the scope of
+                customizability of a themed blog because once you’re done
+                running the starter script, the code is completely handed over
+                to you.
+              </p>
+              <p>
+                This is perhaps one reason why us React engineers might both
+                gain the most satisfaction and be most expressive with building
+                a static sites with Gatsby.
+              </p>
+            </aside>
+          </section>
+          <section>
+            <a href="https://vagr9k.github.io/gatsby-advanced-starter/"
+              >gatsby-advanced-starter</a
+            >
+            <aside class="notes">
+              There is one that I think can be particularly interesting to us.
+              The gatsby-advanced-starter which is nearly barebone in terms of
+              feature, specifically does not join the fight for styling, and it
+              leaves nearly all customizability to us. But it does nicely come
+              with some essentials such as SEO, Google Analytics, tags and
+              categories, twitter, etc.
+            </aside>
+          </section>
+        </section>
+        <section>
+          <section>
+            <h2>Styling</h2>
+          </section>
+          <section>
+            <div class="fits-screen">
+              <img src="img/tweet-argue-about-css.png" />
+            </div>
+            <aside class="notes">
+              I'm not sure if you will agree with me or not, but I feel our
+              front end developer community is… really concerned about styling.
+              That’s one of Gatsby’s creators by the way. And I’d like to
+              mention that Typography was in the very first real commit of
+              Gatsby’s very first starter.
+            </aside>
+          </section>
+          <section>
+            <h2 style="text-decoration: line-through">Styling</h2>
+            <h2>Typography</h2>
+            <aside class="notes">
+              Now, styling is an integral part of sites we create, I’d like to
+              claim that typogaphy is particularly integral to Gatsby site.
+            </aside>
+          </section>
+          <section>
+            <img
+              src="https://changemediagroup.com/wp-content/uploads/2016/08/screen-shot-2016-08-10-at-1.27.06-pm.png"
+            />
+            <aside class="notes">
+              So what is typography anyway?
+            </aside>
+          </section>
+          <section>
+            <img
+              src="http://2.bp.blogspot.com/-dZBNZuJ6oQg/UT7Z86ttoQI/AAAAAAAAACs/PXBoNGcOId4/s1600/baskerville.jpg"
+            />
+            <aside class="notes">
+              Something I learned earlier this year that’s amused me was that —
+              the computer fonts we use is in many parts an extension of book
+              printing. And a lot of the fonts are a recreate of book printing
+              fonts.
+            </aside>
+          </section>
+          <section>
+            <blockquote>
+              Although many books define the purpose of typography as enhancing
+              the readability of the written word, one of design’s most humane
+              functions is, in actuality, to help readers <i>avoid</i> reading.
+            </blockquote>
+            <aside class="notes">
+              There are similarities and differences between book printing and
+              web typography. But their motivations are rather aligned, and
+              beside the apparent styling purpose we may think of, I’d like to
+              quote this:
+            </aside>
+          </section>
+          <section>
+            <a href="http://kyleamathews.github.io/typography.js/"
+              >Typography.js</a
+            >
+            <aside class="notes">
+              It also allows you to choose from a repertoire of themes that you
+              may use directly. You may see those themes in this demo website.
+            </aside>
+          </section>
+          <section>
+            <pre><code>
+import Typography from 'typography'
+  const typography = new Typography({
+  baseFontSize: '18px',
+  baseLineHeight: 1.666,
+  headerFontFamily: ['Avenir Next', 'Helvetica Neue', 'Segoe UI', 'Helvetica', 'Arial', 'sans-serif'],
+  bodyFontFamily: ['Georgia', 'serif'],
+  // See below for the full list of options.
+})
+              
+// Output CSS as string.
+typography.toString()
+              
+// Or insert styles directly into the head (works well for client-only
+// JS web apps.
+typography.injectStyles()
+            </code></pre>
+            <aside class="notes">
+              How it works is that you define some basics to your site’s
+              typography. It will help you sort out (or lets you customize) the
+              font sizing, line spacing, etc, using a mechanism called vertical
+              rhythm.
+            </aside>
+          </section>
+          <section>
+            demo typography in blog starter
+            <aside class="notes">
+              Now, this serves as our mini intro to typography which I’d like to
+              have a separate talk if folks are interested, today I’ll show you
+              how it works in the blog starter.
             </aside>
           </section>
         </section>
