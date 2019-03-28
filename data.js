@@ -27,13 +27,8 @@ var talks = [
       name: "Talk.CSS",
       link: "https://singaporecss.github.io"
     },
-<<<<<<< HEAD
-    slides: "slides/1903--whats-happening-30-days-of-css-girls",
-    intro: `A retro talk regarding the <a href="http://css.codinggirls.sg">#30DaysOfCSSGirls</a> event with <a href="http://codinggirls.sg">CodingGirls</a>.`
-=======
     slides: "slides/1903--whats-happening-30-days-css-girls",
     intro: `A retro talk regarding the <a href="https://css.codinggirls.sg">#30DaysOfCSSGirls</a> event with <a href="https://codinggirls.sg">CodingGirls</a>.`
->>>>>>> 1903-gatsby-crash
   },
 
   {
