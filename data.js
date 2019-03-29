@@ -24,7 +24,7 @@ var talks = [
     title: "What's Happening at 30 Days of CSS Girls",
     when: "hopefully soon",
     where: {
-      name: "Talk.CSS",
+      name: "Graduation Party",
       link: "https://singaporecss.github.io"
     },
     slides: "slides/1903--whats-happening-30-days-css-girls",
