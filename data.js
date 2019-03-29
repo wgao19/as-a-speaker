@@ -16,6 +16,7 @@ var talks = [
       name: "Talk.CSS",
       link: "https://singaporecss.github.io"
     },
+    slides: "slides/1904-mixed-and-blended",
     intro:
       "Introducing `mix-blend-mode` and showcase designs implemented with it."
   },
