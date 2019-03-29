@@ -7,7 +7,7 @@ var talks = [
       link: "https://www.facebook.com/reactknowledgeable/"
     },
     slides: "slides/1903--gatsby-crash",
-    intro: "class='display'>Draft</span> First talk crashing into Gatsby."
+    intro: "First talk crashing into Gatsby."
   },
   {
     title: "This World Mixed and Blended",
