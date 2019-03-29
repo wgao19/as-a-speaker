@@ -7,10 +7,11 @@
       content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
     />
 
-    <title>Gatsby Crash</title>
+    <title>Gatsby 👀 Up and Running</title>
 
     <link rel="stylesheet" href="css/reveal.css" />
     <link rel="stylesheet" href="css/theme/gatsby.css" />
+    <link rel="stylesheet" href="css/acknowledgement.css" />
 
     <!-- Theme used for syntax highlighting of code -->
     <link rel="stylesheet" href="lib/css/zenburn.css" />
@@ -31,6 +32,7 @@
       <div class="slides">
         <section>
           <h1>Gatsby</h1>
+          <h2>Up and Running</h2>
         </section>
         <section>
           <section>
@@ -60,8 +62,8 @@
               </blockquote>
             </div>
             <aside class="notes">
-              And as a senior developer, he also suggests that we keep a blog to
-              catalog our thoughts. I believe that even many of us here would
+              And as an expert developer, he also suggests that we keep a blog
+              to catalog our thoughts. I believe that even many of us here would
               agree, but hasn’t really kept one. Aside from the fact that
               keeping a blog takes persistence, have you ever thought that the
               idea of a web blog has been more seriously verbose than geeky and
@@ -106,9 +108,8 @@ export function formatReadingTime(minutes) {
             </pre>
             <aside class="notes">
               And if you’ve been checking in at his blog site every now and
-              then, you’d noticed that he has recently [added a bento
-              option](https://github.com/gaearon/overreacted.io/commit/538ac80e9ea3a49ec9e2177e37a95a93bcefad2d)
-              to the reading time feature!
+              then, you’d noticed that he has recently added a bento option to
+              the reading time feature!
             </aside>
           </section>
           <section>
@@ -119,10 +120,8 @@ export function formatReadingTime(minutes) {
             </aside>
           </section>
           <section>
-            <div class="center spaced">
+            <div class="center">
               <img src="img/gatsby.svg" width="200" />
-              <span>+</span>
-              <img src="img/netlify.svg" width="200" />
             </div>
             <aside class="notes">
               In this talk, I’m going to share about how we as React developers,
@@ -144,21 +143,19 @@ export function formatReadingTime(minutes) {
             </aside>
           </section>
           <section>
-            <a href="https://www.gatsbyjs.org/starters/">Starters Library</a>
-            <aside class="notes">
-              Apparently Gatsby believes one way that matters is developer
-              experience. It allows you to pick a starter and get to your
-              content quickly. I think it actually encourages you to start with
-              a starter. Here is the starter library that contains official and
-              community starters.
-            </aside>
-          </section>
-          <section>
             <div class="fits-screen">
               <img src="img/starter-blog.png" />
             </div>
             <aside class="notes">
-              Here this first starter is gatsby-starter-blog.
+              <p>
+                Gatsby believes one such way is developer experience. It allows
+                you to pick a starter and get to your content quickly. I think
+                it actually encourages you to start with a starter. Here is the
+                starter library that contains official and community starters.
+              </p>
+              <p>
+                Here this first starter is gatsby-starter-blog.
+              </p>
             </aside>
           </section>
           <section>
@@ -171,18 +168,15 @@ export function formatReadingTime(minutes) {
             </aside>
           </section>
           <section>
-            demo up and running
+            demo
           </section>
           <section>
-            go to starters page
+            <a href="https://www.gatsbyjs.org/starters/">Starters Library</a>
             <aside class="notes">
               While the behavior of picking a starter feels much like picking a
-              Wordpress theme, Gatsby starters offers a flexible range of
-              customizability.
+              Wordpress theme, and some are indeed UI heavy, Gatsby starters
+              offers a flexible range of customizability.
             </aside>
-          </section>
-          <section>
-            Some are UI heavy
           </section>
           <section>
             <h2>target specific use scenarios</h2>
@@ -202,8 +196,12 @@ export function formatReadingTime(minutes) {
             </ul>
           </section>
           <section>
-            <h2>🤔</h2>
-            What's the difference?
+            <img
+              src="https://media0.giphy.com/media/3ohhwr4hfOHIRvMki4/200w.webp?cid=790b76115c9dd9736d776b6e55833bba"
+            />
+            <aside class="notes">
+              Static sites this powerful now?
+            </aside>
           </section>
           <section>
             <a href="https://gatsby-netlify-cms-example.netlify.com/"
@@ -291,10 +289,15 @@ export function formatReadingTime(minutes) {
           <section>
             <img src="img/baskerville.jpg" />
             <aside class="notes">
-              Something I learned earlier this year that has amused me was that
-              — the computer fonts we use is in many parts an extension of book
-              printing. And a lot of the fonts are a recreate of book printing
-              fonts.
+              <p>
+                Something I learned earlier this year that has amused me was
+                that — the computer fonts we use is in many parts an extension
+                of book printing. And a lot of the fonts are a recreate of book
+                printing fonts.
+              </p>
+              <p>
+                Baskerville was designed by John Baskerville in 1757 in England.
+              </p>
             </aside>
           </section>
           <section>
@@ -370,46 +373,191 @@ typography.injectStyles()
           </section>
         </section>
         <section>
-          The Plugin System
-          <p>(Separate Talk)</p>
-        </section>
-        <section>
           <h2>Deploy with Netlify</h2>
           <p>demo</p>
         </section>
         <section>
-          <section>Fancy Terms</section>
-          <section>static? site</section>
           <section>
-            JAMStack
+            <a href="https://jamstack.org/">JAMStack</a>
             <aside class="notes">
-              <ul>
-                <li>JavaScript</li>
-                <li>API</li>
-                <li>Markup</li>
-              </ul>
-              further...
-              <ul>
-                <li>hooks+++</li>
-                <li>there's even conference for it</li>
-                <li>
-                  but i don't think i'll make a talk out of this question...
-                </li>
-              </ul>
+              <p>
+                I am not a fan of terminologies but this is a term we should not
+                miss when talking about Gatsby. If you haven’t noticed, JAMStack
+                is kind of big now. There is even JAMStack conferences all over
+                the world. So I guess I’m a bit curious, why is it so big?
+                What’s happening there?
+              </p>
+
+              <p>
+                JAMStack stands for JavaScript, API, Markup. Markup means we
+                write templates to markup data sources at build time.
+              </p>
             </aside>
           </section>
-        </section>
-        <section>
+
           <section>
-            Developers' Gym by JuniorDev.SG
-            <p>Pitching for help</p>
+            <img src="img/JAMStack.png" />
             <aside class="notes">
-              I'm preparing for a workshop on Gatsby that will happen end of
-              next month. I've taken the liberty to recruit Nut to help me with
-              topics about GraphQL. I've never done this before, nor do I think
-              I'm the best candidate to this. But I'm trying this -- I'll draft
-              all my talks in the public. So if you are interested, and may have
-              knowledge about the field, feel free to make contributions to it.
+              <p>
+                JAMStack stands for JavaScript, API, Markup. Markup means we
+                write templates to markup data sources at build time.
+              </p>
+            </aside>
+          </section>
+
+          <section>
+            <a
+              href="https://www.gatsbyjs.org/blog/2019-03-26-what-the-jamstack-means-for-marketing/"
+            >
+              What the JAMstack means for marketing
+            </a>
+          </section>
+          <section>
+            <p>How dynamic is your content?</p>
+          </section>
+          <section>
+            <img
+              src="https://36bvmt283fg61unuud3h7qua-wpengine.netdna-ssl.com/wp-content/uploads/2017/03/wp.png"
+            />
+            <aside class="notes">
+              With traditional website or blog site, you save everything in a
+              database. Pages are generated by a server, and the server requests
+              the data dynamically according to what the user requests.
+            </aside>
+          </section>
+          <section>
+            <img
+              src="https://36bvmt283fg61unuud3h7qua-wpengine.netdna-ssl.com/wp-content/uploads/2017/03/ssg.png"
+            />
+            <aside class="notes">
+              <p>
+                With static site generators, everything is static and they get
+                compiled into html pages at build time, and in case of Gatsby,
+                they’re React components.
+              </p>
+              <p>
+                Would like to mention that in real life Gatsby sites compile
+                contents not just from markdown files. There may be a mesh of
+                content coming in from different sources including CMS and
+                Gatsby handles them all.
+              </p>
+            </aside>
+          </section>
+          <section>
+            <p>
+              Are the changes from content or behavior?
+            </p>
+            <img
+              width="300"
+              src="https://cdn-images-1.medium.com/max/1600/1*HJHfcRwn33XU4omMogi6PQ.gif"
+            />
+            <aside class="notes">
+              I guess one way to think about whether the dynamic part of your
+              content comes from the changes of the content itself, or behavior
+              of your users. Inventory stock is definitely dynamic with respect
+              to user behavior, so it is with “likes” and comments.
+            </aside>
+          </section>
+          <section>
+            <div class="fits-screen">
+              <img src="img/blog.png" />
+            </div>
+            <aside class="notes">
+              <p>
+                Then what about blog posts, event or product descriptions. They
+                won’t change unless you create something new. So when this is
+                the case, maybe you don’t need a dynamic server after all. Is
+                database necessarily better than a file to save your post?
+              </p>
+              <p>
+                I thought these are some questions that JAMStack urges us to
+                think about.
+              </p>
+            </aside>
+          </section>
+          <section>
+            <div class="fits-screen">
+              <img
+                src="https://www.gatsbyjs.org/static/8542aad7cd99fe65dfb349c7dd11b06c/f6332/dbad7c63e921bab8dc52617c1b2da825.png"
+              />
+            </div>
+            <aside class="notes">
+              Now, what if your product is a service or climbing gym multi
+              passes that will never go out of stock as long as your are not out
+              of business? Then all you need is a payment service fed in by an
+              API and connected to your components, likely with hooks.
+            </aside>
+          </section>
+          <section>
+            Do you have a ”dynamic” team of content generators?
+            <aside class="notes">
+              If that’s the case, you probably need a CMS to manage content
+              generation. Treating this as a separate process, we can feed our
+              Gatsby sites with content from CMS. And if you look at the
+              starters library you can see many starters are already powered by
+              CMS.
+            </aside>
+          </section>
+          <section>
+            🤔
+            <aside class="notes">
+              I guess these are the questions that JAMStack urges ur to think
+              about.
+            </aside>
+          </section>
+          <section>
+            Building <i>web</i> again?
+
+            <aside class="notes">
+              <p>
+                I have an affection with static websites because that was how
+                websites were born with.
+              </p>
+              <p>
+                Not many of us were from the web pages where HTML + CSS built
+                the foundation of your website. Back then when you add new
+                content to your website, you may need to write new HTML and CSS,
+                to craft the webpage specifically for the new content. The code
+                was naturally split by pages and directories, everything was
+                server side rendered. Sometimes build dynamic servers for
+                content but in general, the web technologies were quite
+                straightforward.
+              </p>
+            </aside>
+          </section>
+          <section>
+            <img src="img/jamstack-conf.png" />
+            <aside class="notes">
+              Not all businesses act like or live in e-commerce platforms like
+              Amazon, and not all the content we browse on the internet requires
+              as complex features as to be called an application. There are
+              solutions in all kinds of format and JAMStack just happens to be
+              one of them that work, one that embraces edging technology in its
+              own way and is accessible to more businesses.
+            </aside>
+          </section>
+          <section>
+            <p>
+              <a
+                href="https://drive.google.com/file/d/1M_6YYruAKQUIFJ09VPcnEyUa0uTv-0WD/view"
+              >
+                (Ec)static commerce?
+              </a>
+            </p>
+            <p>
+              <small><a href="https://thor.news/">thor.news</a></small>
+            </p>
+            <small>
+              ReactJS Meetup Mar 2019
+            </small>
+            <aside class="notes">
+              React 16.8 was released just earlier last month. And in the
+              ReactJS meetup I went to in March, one developer from Stripe
+              presented to us how to use hooks to connect to their API in a
+              Gatsby site. And I believe hooks are already in production in may
+              of those business products already. The work we do as end
+              developers is no longer complex, it gets us direct access to
+              content, and therefore impact, if we shall create.
             </aside>
           </section>
         </section>
@@ -421,7 +569,6 @@ typography.injectStyles()
             <h3>
               cook at home?
             </h3>
-            <p>(work in progress)</p>
             <aside class="notes">
               I'd like to wrap up with this question.
             </aside>
@@ -531,6 +678,62 @@ typography.injectStyles()
               </p>
             </aside>
           </section>
+        </section>
+        <section>
+          <h2>Pitching for help</h2>
+          <p>
+            Developers' Gym by JuniorDev.SG
+          </p>
+          <aside class="notes">
+            <p>
+              I'm preparing for a workshop on Gatsby that will happen end of
+              next month. I do not think I'm the best candidate to this. So I'll
+              be drafting all my talks in the public and hope to learn together.
+            </p>
+            <p>
+              I'm welcoming contributions in forms of suggestions on topics,
+              edits, drafts, and code.
+            </p>
+            <p>
+              I actually don't know how this will work out. What if you write a
+              joke I cannot crack?
+            </p>
+            <p>
+              But I guess we'll see how it works out :]
+            </p>
+          </aside>
+        </section>
+        <section>
+          <style>
+            /*** Fonts ***/
+          </style>
+          <div class="acknowledgement" style="margin: 0 auto;">
+            <base target="_blank" />
+            <div class="thank-you">
+              <a href="https://twitter.com/hj_chen">Huijing</a>
+            </div>
+            <div class="thank-you"><a>Nut</a></div>
+            <div href="https://twitter.com/qiannyqianhere" class="thank-you">
+              <a>Huiqian</a>
+            </div>
+            <div class="thank-you">
+              <a href="https://twitter.com/kenleesm">Ken</a>
+            </div>
+            <div class="thank-you"><a>Jiangwei</a></div>
+            <div class="thank-you"><a>Jennie</a></div>
+            <script>
+              const thankYous = document.querySelectorAll(".thank-you");
+              thankYous.forEach(element => {
+                element.style["grid-column"] = `span ${Math.max(
+                  2,
+                  Math.ceil(Math.random() * Math.sqrt(60 / thankYous.length))
+                )}`;
+                element.style["grid-row"] = `span ${Math.ceil(
+                  Math.random() * Math.sqrt(60 / thankYous.length)
+                )}`;
+              });
+            </script>
+          </div>
         </section>
       </div>
     </div>
