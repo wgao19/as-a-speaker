@@ -6,7 +6,7 @@ var talks = [
       name: "React Knowledgeable",
       link: "https://www.facebook.com/reactknowledgeable/"
     },
-    slides: "slides/1903--gatsby-crash",
+    slides: "slides/1903-gatsby-crash",
     intro: "First talk crashing into Gatsby."
   },
   {
@@ -26,7 +26,7 @@ var talks = [
       name: "Graduation Party",
       link: "https://singaporecss.github.io"
     },
-    slides: "slides/1903--whats-happening-30-days-of-css-girls",
+    slides: "slides/1903-whats-happening-30-days-of-css-girls",
     intro: `A retro talk regarding the <a href="https://css.codinggirls.sg">#30DaysOfCSSGirls</a> event with <a href="https://codinggirls.sg">CodingGirls</a>.`
   },
 
