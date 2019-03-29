@@ -13,6 +13,11 @@
   src: url(../../../../../assets/font/gilbert-color/gilbert-color.otf)
     format("opentype");
 }
+@font-face {
+  font-family: "Gilbert";
+  src: url(../../../../../assets/font/gilbert-color/gilbert.otf)
+    format("opentype");
+}
 
 // Override theme settings (see ../template/settings.scss)
 $backgroundColor: #fff;
@@ -21,7 +26,7 @@ $mainColor: #222;
 $headingColor: #222;
 
 $mainFontSize: 42px;
-$mainFont: "Source Sans Pro", Helvetica, sans-serif;
+$mainFont: "Gilbert", Helvetica, sans-serif;
 $headingFont: "Gilbert Color", Helvetica, sans-serif;
 $headingTextShadow: none;
 $headingLetterSpacing: normal;

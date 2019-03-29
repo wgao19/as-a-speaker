@@ -3,7 +3,11 @@
  */
 @font-face {
   font-family: "Gilbert Color";
-  src: url(../../lib/font/gilbert-color/gilbert-color.otf) format("opentype"); }
+  src: url(../../../../../assets/font/gilbert-color/gilbert-color.otf) format("opentype"); }
+
+@font-face {
+  font-family: "Gilbert";
+  src: url(../../../../../assets/font/gilbert-color/gilbert.otf) format("opentype"); }
 
 section.has-dark-background,
 section.has-dark-background h1,
@@ -22,7 +26,7 @@ body {
   background-color: #fff; }
 
 .reveal {
-  font-family: "Source Sans Pro", Helvetica, sans-serif;
+  font-family: "Gilbert", Helvetica, sans-serif;
   font-size: 42px;
   font-weight: normal;
   color: #222; }
