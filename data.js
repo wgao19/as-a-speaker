@@ -7,8 +7,7 @@ var talks = [
       link: "https://www.facebook.com/reactknowledgeable/"
     },
     slides: "slides/1903--gatsby-crash",
-    // TODO: move draft to a feature
-    intro: "<span class='display'>Draft</span> First talk crashing into Gatsby."
+    intro: "class='display'>Draft</span> First talk crashing into Gatsby."
   },
   {
     title: "This World Mixed and Blended",
