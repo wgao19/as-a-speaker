@@ -1,6 +1,7 @@
 @font-face {
   font-family: "Gilbert Color";
-  src: url(../lib/font/gilbert-color/gilbert-color.otf) format("opentype");
+  src: url(../../../assets/font/gilbert-color/gilbert-color.otf)
+    format("opentype");
 }
 
 .acknowledgement {
