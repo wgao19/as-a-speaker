@@ -1,3 +1,8 @@
+@font-face {
+  font-family: "Gilbert Color";
+  src: url(../lib/font/gilbert-color/gilbert-color.otf) format("opentype");
+}
+
 .grateful {
   width: 100vw;
   height: 100vh;
