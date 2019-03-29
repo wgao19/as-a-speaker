@@ -10,7 +10,8 @@
 // Include theme-specific fonts
 @font-face {
   font-family: "Gilbert Color";
-  src: url(../../lib/font/gilbert-color/gilbert-color.otf) format("opentype");
+  src: url(../../../../../assets/font/gilbert-color/gilbert-color.otf)
+    format("opentype");
 }
 
 // Override theme settings (see ../template/settings.scss)
