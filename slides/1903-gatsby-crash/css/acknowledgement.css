@@ -1,5 +1,11 @@
+@font-face {
+  font-family: "Gilbert Color";
+  src: url(../lib/font/gilbert-color/gilbert-color.otf) format("opentype");
+}
+
 .acknowledgement {
-  width: 900px; height: 400px;
+  width: 900px;
+  height: 400px;
   top: 0;
   left: 0;
   display: grid;
@@ -12,17 +18,17 @@
 }
 
 .thank-you {
-  font-family: 'Gilbert Color' !important;
+  font-family: "Gilbert Color" !important;
   border-radius: 4px;
   padding: 1rem;
   display: flex;
   /* color: #639; */
 }
 .thank-you a::before {
-  content: 'thank you';
+  content: "thank you";
   font-size: 1rem;
   white-space: nowrap;
-  margin-right: .5rem;
+  margin-right: 0.5rem;
 }
 .thank-you a {
   margin: auto;
