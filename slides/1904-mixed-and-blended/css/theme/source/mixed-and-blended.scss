@@ -22,7 +22,19 @@
 // Override theme settings (see ../template/settings.scss)
 $backgroundColor: #fff;
 
-$mainColor: #222;
+$alpha: 0.6;
+$electric-red: rgba(231, 0, 0, $alpha);
+$dark-orange: rgba(255, 140, 0, $alpha);
+$canary-yellow: rgba(255, 239, 0, $alpha);
+$la-salle-green: rgba(0, 129, 31, $alpha);
+$blue: rgba(0, 68, 255, $alpha);
+$patriarch: rgba(118, 0, 137, $alpha);
+
+$red-purple: rgba(217, 0, 111, $alpha);
+$dark-lavender: rgba(116, 77, 152, $alpha);
+$ua-blue: rgba(0, 51, 171, $alpha);
+
+$mainColor: #444;
 $headingColor: #222;
 
 $mainFontSize: 42px;
@@ -30,9 +42,9 @@ $mainFont: "Gilbert", Helvetica, sans-serif;
 $headingFont: "Gilbert Color", Helvetica, sans-serif;
 $headingTextShadow: none;
 $headingLetterSpacing: normal;
-$headingTextTransform: uppercase;
+$headingTextTransform: none;
 $headingFontWeight: 600;
-$linkColor: #2a76dd;
+$linkColor: $ua-blue;
 $linkColorHover: lighten($linkColor, 15%);
 $selectionBackgroundColor: lighten($linkColor, 25%);
 
@@ -40,6 +52,35 @@ $heading1Size: 2.5em;
 $heading2Size: 1.6em;
 $heading3Size: 1.3em;
 $heading4Size: 1em;
+
+$rainbow-image: linear-gradient(
+  -1deg,
+  $electric-red calc(100% / 6),
+  $electric-red 0,
+  $dark-orange calc(100% / 6),
+  $dark-orange calc(200% / 6),
+  $dark-orange 0,
+  $canary-yellow calc(200% / 6),
+  $canary-yellow calc(300% / 6),
+  $canary-yellow 0,
+  $la-salle-green calc(300% / 6),
+  $la-salle-green calc(400% / 6),
+  $la-salle-green 0,
+  $blue calc(400% / 6),
+  $blue calc(500% / 6),
+  $blue 0,
+  $patriarch calc(500% / 6)
+);
+
+$bi-flag-image: linear-gradient(
+  -1deg,
+  $red-purple calc(100% / 3),
+  $red-purple 0,
+  $dark-lavender calc(100% / 3),
+  $dark-lavender calc(200% / 3),
+  $dark-lavender 0,
+  $ua-blue calc(200% / 3)
+);
 
 section.has-dark-background {
   &,
@@ -52,7 +93,29 @@ section.has-dark-background {
     color: #fff;
   }
 }
+.reveal blockquote {
+  border-image: $rainbow-image 1 100%;
+}
 
-// Theme template ------------------------------
+.reveal .controls .controls-arrow::before {
+  content: "<";
+  font-family: "Gilbert Color";
+  width: unset;
+  height: unset;
+  background: unset;
+  font-size: 48px;
+  transform: translateX(23px) translateY(-11px);
+}
+.reveal .controls .controls-arrow::after {
+  content: none;
+}
+.reveal .controls .controls-arrow:hover::before {
+  transform: translateX(23px) translateY(-11px) scale(1.1);
+}
+
+.colorful {
+  font-family: "Gilbert Color";
+  font-size: 1.1em;
+}
+
 @import "../template/theme";
-// ---------------------------------------------

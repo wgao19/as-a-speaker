@@ -18,6 +18,28 @@ section.has-dark-background h5,
 section.has-dark-background h6 {
   color: #fff; }
 
+.reveal blockquote {
+  border-image: linear-gradient(-1deg, rgba(231, 0, 0, 0.6) calc(100% / 6), rgba(231, 0, 0, 0.6) 0, rgba(255, 140, 0, 0.6) calc(100% / 6), rgba(255, 140, 0, 0.6) calc(200% / 6), rgba(255, 140, 0, 0.6) 0, rgba(255, 239, 0, 0.6) calc(200% / 6), rgba(255, 239, 0, 0.6) calc(300% / 6), rgba(255, 239, 0, 0.6) 0, rgba(0, 129, 31, 0.6) calc(300% / 6), rgba(0, 129, 31, 0.6) calc(400% / 6), rgba(0, 129, 31, 0.6) 0, rgba(0, 68, 255, 0.6) calc(400% / 6), rgba(0, 68, 255, 0.6) calc(500% / 6), rgba(0, 68, 255, 0.6) 0, rgba(118, 0, 137, 0.6) calc(500% / 6)) 1 100%; }
+
+.reveal .controls .controls-arrow::before {
+  content: "<";
+  font-family: "Gilbert Color";
+  width: unset;
+  height: unset;
+  background: unset;
+  font-size: 48px;
+  transform: translateX(23px) translateY(-11px); }
+
+.reveal .controls .controls-arrow::after {
+  content: none; }
+
+.reveal .controls .controls-arrow:hover::before {
+  transform: translateX(23px) translateY(-11px) scale(1.1); }
+
+.colorful {
+  font-family: "Gilbert Color";
+  font-size: 1.1em; }
+
 /*********************************************
  * GLOBAL STYLES
  *********************************************/
@@ -29,16 +51,16 @@ body {
   font-family: "Gilbert", Helvetica, sans-serif;
   font-size: 42px;
   font-weight: normal;
-  color: #222; }
+  color: #444; }
 
 ::selection {
   color: #fff;
-  background: #98bdef;
+  background: rgba(44, 107, 255, 0.6);
   text-shadow: none; }
 
 ::-moz-selection {
   color: #fff;
-  background: #98bdef;
+  background: rgba(44, 107, 255, 0.6);
   text-shadow: none; }
 
 .reveal .slides section,
@@ -61,7 +83,7 @@ body {
   font-weight: 600;
   line-height: 1.2;
   letter-spacing: normal;
-  text-transform: uppercase;
+  text-transform: none;
   text-shadow: none;
   word-wrap: break-word; }
 
@@ -220,20 +242,20 @@ body {
  * LINKS
  *********************************************/
 .reveal a {
-  color: #2a76dd;
+  color: rgba(0, 51, 171, 0.6);
   text-decoration: none;
-  -webkit-transition: color .15s ease;
-  -moz-transition: color .15s ease;
-  transition: color .15s ease; }
+  -webkit-transition: color 0.15s ease;
+  -moz-transition: color 0.15s ease;
+  transition: color 0.15s ease; }
 
 .reveal a:hover {
-  color: #6ca0e8;
+  color: rgba(0, 74, 248, 0.6);
   text-shadow: none;
   border: none; }
 
 .reveal .roll span:after {
   color: #fff;
-  background: #1a53a1; }
+  background: rgba(0, 28, 95, 0.6); }
 
 /*********************************************
  * IMAGES
@@ -241,7 +263,7 @@ body {
 .reveal section img {
   margin: 15px 0px;
   background: rgba(255, 255, 255, 0.12);
-  border: 4px solid #222;
+  border: 4px solid #444;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.15); }
 
 .reveal section img.plain {
@@ -249,27 +271,27 @@ body {
   box-shadow: none; }
 
 .reveal a img {
-  -webkit-transition: all .15s linear;
-  -moz-transition: all .15s linear;
-  transition: all .15s linear; }
+  -webkit-transition: all 0.15s linear;
+  -moz-transition: all 0.15s linear;
+  transition: all 0.15s linear; }
 
 .reveal a:hover img {
   background: rgba(255, 255, 255, 0.2);
-  border-color: #2a76dd;
+  border-color: rgba(0, 51, 171, 0.6);
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.55); }
 
 /*********************************************
  * NAVIGATION CONTROLS
  *********************************************/
 .reveal .controls {
-  color: #2a76dd; }
+  color: rgba(0, 51, 171, 0.6); }
 
 /*********************************************
  * PROGRESS BAR
  *********************************************/
 .reveal .progress {
   background: rgba(0, 0, 0, 0.2);
-  color: #2a76dd; }
+  color: rgba(0, 51, 171, 0.6); }
 
 .reveal .progress span {
   -webkit-transition: width 800ms cubic-bezier(0.26, 0.86, 0.44, 0.985);

@@ -1,5 +1,14 @@
 /* personal utilities */
 
+.fullscreen {
+  width: 100vw;
+  height: 100vh;
+}
+
+.increase-specificity .reveal .slides section {
+  padding-top: 0;
+}
+
 .increase-specificity .reveal section img {
   border: 0;
   margin: 0;
@@ -18,7 +27,7 @@
 
 .increase-specificity .reveal blockquote {
   text-align: left;
-  border-left: 8px solid #639;
+  border-left: 8px solid;
   padding-left: 2rem;
   background: unset;
   box-shadow: unset;

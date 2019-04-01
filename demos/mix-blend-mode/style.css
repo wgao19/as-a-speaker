@@ -1,0 +1,53 @@
+@import url("https://fonts.googleapis.com/css?family=Bevan");
+body {
+  margin: 0;
+  padding: 0;
+}
+.page {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  scroll-snap-align: start;
+  box-sizing: border-box;
+  position: relative;
+}
+.center-me {
+  margin: auto;
+}
+.backdrop,
+.source {
+  background-image: url(https://images.unsplash.com/photo-1501445293538-114af2dc0bed?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2100&q=80);
+  background-size: 100%;
+}
+.text,
+.knock-out {
+  font-family: "Gilbert Color", Bevan;
+  font-size: 200px;
+}
+.text {
+  color: black;
+  padding: 2rem;
+}
+.overlay {
+  mix-blend-mode: overlay;
+}
+.screen {
+  mix-blend-mode: screen;
+}
+.knock-out {
+  color: black;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+}
+.source {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  mix-blend-mode: screen;
+}
+.bg-white {
+  background: white;
+}

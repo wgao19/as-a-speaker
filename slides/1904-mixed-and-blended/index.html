@@ -7,7 +7,7 @@
       content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
     />
 
-    <title>reveal.js</title>
+    <title>This World Mixed and Blended</title>
 
     <link rel="stylesheet" href="css/reveal.css" />
     <link rel="stylesheet" href="css/style.css" />
@@ -28,11 +28,280 @@
       document.getElementsByTagName("head")[0].appendChild(link);
     </script>
   </head>
-  <body>
+  <body class="increase-specificity">
+    <base target="_blank" />
     <div class="reveal">
       <div class="slides">
         <section>
-          <h1>This World Mixed & Blended</h1>
+          <h1 style="text-transform: uppercase">This World Mixed & Blended</h1>
+        </section>
+        <section>
+          <section>
+            <iframe
+              height="700"
+              style="width: 100%;"
+              scrolling="no"
+              title="Nintendo Switch by Louie Mantia"
+              src="//codepen.io/wgao19/embed/vvZoQW/?height=535&theme-id=light&default-tab=css,result"
+              frameborder="no"
+              allowtransparency="true"
+              allowfullscreen="true"
+            >
+              See the Pen
+              <a href="https://codepen.io/wgao19/pen/vvZoQW/"
+                >Nintendo Switch by Louie Mantia</a
+              >
+              by Wei Gao (<a href="https://codepen.io/wgao19">@wgao19</a>) on
+              <a href="https://codepen.io">CodePen</a>.
+            </iframe>
+          </section>
+          <section>
+            <iframe
+              height="700"
+              style="width: 100%;"
+              scrolling="no"
+              title="drawing div intersection"
+              src="//codepen.io/wgao19/embed/OqELEY/?height=701&theme-id=light&default-tab=css,result"
+              frameborder="no"
+              allowtransparency="true"
+              allowfullscreen="true"
+            >
+              See the Pen
+              <a href="https://codepen.io/wgao19/pen/OqELEY/"
+                >drawing div intersection</a
+              >
+              by Wei Gao (<a href="https://codepen.io/wgao19">@wgao19</a>) on
+              <a href="https://codepen.io">CodePen</a>.
+            </iframe>
+          </section>
+          <section style="font-size: 4rem">
+            🗿
+          </section>
+        </section>
+        <section>
+          <section>
+            <h2>
+              <a href="https://www.w3.org/TR/compositing-1/"
+                >Compositing & Blending</a
+              >
+            </h2>
+            <ul>
+              <li class="fragment">
+                compositing (canvas 2d only)
+                <small class="fragment" style="vertical-align: baseline;">
+                  Adobe built a prototype chromium that supports compositing,
+                  see
+                  <a
+                    href="http://opensource.adobe.com/web-platform/demos/compositing/"
+                    >here</a
+                  >
+                </small>
+              </li>
+              <li class="fragment">
+                blending: control of how colors mix in the areas where shapes
+                overlap
+              </li>
+            </ul>
+          </section>
+          <section>
+            <div class="center fits-screen">
+              <img
+                src="https://cdn.dribbble.com/users/763/screenshots/3348456/switch.png"
+              />
+            </div>
+            <aside class="notes">
+              Back to our problem, blending defines what color goes here.
+            </aside>
+          </section>
+        </section>
+        <section>
+          <section>
+            <h2>backdrop</h2>
+            <blockquote class="fragment">
+              The <font class="colorful">backdrop</font> is the
+              <font class="colorful">content behind the element</font> and is
+              what the element is composited with.
+            </blockquote>
+            <aside class="notes">
+              I'll need to first introduce a few terminologies.
+            </aside>
+          </section>
+          <section>
+            <h2>source</h2>
+            <p class="fragment">
+              <font class="colorful">source</font> is the incoming element being
+              blended, composited and then rendered
+            </p>
+          </section>
+          <section>
+            <h2>isolation group</h2>
+          </section>
+          <section>
+            <h2>blending modes</h2>
+            <a
+              class="fragment"
+              href="https://www.w3.org/TR/compositing-1/#blending"
+              >section 10 of the specs
+            </a>
+          </section>
+          <section>
+            <h2>Cr = (1 - ab) x Cs + ab x B(Cb, Cs)</h2>
+            <ul>
+              <li class="fragment">
+                <font class="colorful">Cr, Cs, Cb</font> - resulting color,
+                source color, backdrop color
+              </li>
+              <li class="fragment">
+                <font class="colorful">ab</font> - alpha of backdrop
+              </li>
+              <li class="fragment">
+                blending modes specify <font class="colorful">B(Cb, Cs)</font>
+              </li>
+            </ul>
+            <aside class="notes">
+              <p>
+                The result of the mixing function is modulated by the backdrop
+                alpha. A fully opaque backdrop allows the mixing function to be
+                fully realized. A transparent backdrop will cause the final
+                result to be a weighted average between the source color and
+                mixed color with the weight controlled by the backdrop alpha.
+              </p>
+            </aside>
+          </section>
+          <section>
+            <p>Cr = (1 - ab) x Cs + ab x B(Cb, Cs)</p>
+            <p class="fragment">let ab = 1</p>
+            <p class="fragment">Cr = (1 - 1) x Cs + 1 x B(Cb, Cs)</p>
+            <h2 class="fragment">Cr = B(Cb, Cs)</h2>
+            <aside class="notes">
+              <p>
+                For today, let's assume that backdrop alpha is 1. Thereby
+                dropping the first term, and the coefficient of the second term
+                will be 1. So the whole function will simply be
+              </p>
+            </aside>
+          </section>
+        </section>
+        <section>
+          <section>
+            <h2>mix-blend-mode: normal</h2>
+            <p class="fragment">B(Cb, Cs) = Cs</p>
+          </section>
+          <section>
+            <h2>"no blending"</h2>
+            <img
+              src="https://www.w3.org/TR/compositing-1/examples/normal.png"
+            />
+          </section>
+        </section>
+        <section>
+          <section>
+            <h2>mix-blend-mode: multiply</h2>
+            <p class="fragment">B(Cb, Cs) = Cb x Cs</p>
+            <aside class="notes">
+              This is vector multiplication.
+            </aside>
+          </section>
+          <section>
+            <blockquote>
+              The result color is always at least as dark as either of the two
+              constituent colors. Multiplying any color with black produces
+              black; multiplying with white leaves the original color unchanged.
+            </blockquote>
+          </section>
+          <section>
+            <h3>multiply? darken?</h3>
+          </section>
+          <section>
+            <img
+              src="https://upload.wikimedia.org/wikipedia/commons/2/28/RGB_illumination.jpg"
+            />
+            <aside class="notes">
+              <p>
+                To understand the properties of “multiply”, we need to
+                understand the RGB color model.
+              </p>
+              <p>
+                The RGB color model is additive in the sense that the three
+                light beams are added together.
+              </p>
+              <p>
+                When all three beams are at the strongest intensity, we get
+                white. When the beams are less intense but are equal in their
+                intensity, we get a point on the greyscale. When they have
+                different intensity, we get a colorized hue.
+              </p>
+            </aside>
+          </section>
+          <section>
+            <img src="img/color-cube.png" />
+            <aside class="notes">
+              The RGB color model represents choices of colors in the color
+              cube. It’s a unit cube. This means that red, blue, and green sit
+              on the “1” ends of the axis. The “1” means that color beam at its
+              highest intensity, and “0” means no light at all. So RGB color
+              model is based on Cartesian coordinate system.
+            </aside>
+          </section>
+          <section>
+            <h3>"multiply"</h3>
+            <img
+              src="https://photoshoptrainingchannel.com/wp-content/uploads/2017/04/sample-04-multiply-blending-mode-800x235.jpg"
+            />
+            <aside class="notes">
+              <p>
+                The HEX color codes we use then divides each axis to 256
+                partitions. So each point represents a fraction of that 1. So
+                when you “multiply” two colors under the RGB model, you are
+                multiplying the fractions of 1. What it actually means is how
+                the two color beams weaken each other. And since each one of the
+                three color beams are either left unchanged (if multiplied with
+                1) or weakened, the result is at least as dark as either of the
+                two colors. It follows that multiplying any color with black
+                gives you black, like you turn off the lights. And multiplying
+                any color white white gives you the original color, like no
+                weakening at all.
+              </p>
+              <p>
+                That's like the most subtle definition of "multiply" I've ever
+                seen
+              </p>
+            </aside>
+          </section>
+          <section>
+            <h3>"multiply" is symmetric</h3>
+          </section>
+        </section>
+        <section>
+          <section>
+            <h2>mix-blend-mode: screen</h2>
+            <p class="fragment">B(Cb, Cs) = 1 - [(1 - Cb) x (1 - Cs)]</p>
+            <aside class="notes">
+              Multiplies the complements of the backdrop and source color
+              values, then complements the result
+            </aside>
+          </section>
+        </section>
+        <section>
+          <section>
+            <h2>Knock Out Text</h2>
+          </section>
+        </section>
+        <section>
+          <h2>References</h2>
+          <ul>
+            <li>
+              <a href="https://www.w3.org/TR/compositing-1/"
+                >Compositing and Blending Module Level 1</a
+              >
+            </li>
+            <li>
+              <a
+                href="https://www.mat.univie.ac.at/~kriegl/Skripten/CG/node12.html"
+                >The RGB Color Model</a
+              >
+            </li>
+          </ul>
         </section>
         <section>
           <div class="grateful">
