@@ -47,3 +47,8 @@
 .increase-specificity .reveal .spaced > :not(:last-child) {
   margin-right: 0.5rem;
 }
+
+.split {
+  display: flex !important;
+  justify-content: space-around;
+}

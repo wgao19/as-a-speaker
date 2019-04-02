@@ -36,9 +36,21 @@ section.has-dark-background h6 {
 .reveal .controls .controls-arrow:hover::before {
   transform: translateX(23px) translateY(-11px) scale(1.1); }
 
+.reveal section pre {
+  font-family: "Dank Mono"; }
+
 .colorful {
-  font-family: "Gilbert Color";
+  font-family: "Gilbert Color" !important;
   font-size: 1.1em; }
+
+.reveal section ul {
+  list-style: none; }
+
+.reveal section ul li::before {
+  content: "/";
+  font-family: "Gilbert Color";
+  transform: skewY(68deg) rotate(2deg);
+  display: inline-block; }
 
 /*********************************************
  * GLOBAL STYLES
