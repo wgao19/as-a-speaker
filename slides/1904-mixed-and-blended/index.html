@@ -101,6 +101,33 @@
                 blending: control of how colors mix in the areas where shapes
                 overlap
               </li>
+              <aside class="notes">
+                <p>
+                  Compositing and blending specifies how graphics combine into
+                  one when you stack them together.
+                </p>
+                <p>
+                  Compositing talks about how you combine shapes based on the
+                  alphas of each pixels.
+                </p>
+                <p>
+                  And which (of the twelve) compositing method you are using
+                  defines if and how much of the pixel from your initial graphic
+                  and the compositing graphic it will take.
+                </p>
+                <p>
+                  The method was initially defined by Porter Duff, who worked
+                  for Lucasfilm that later turned into Pixar.
+                </p>
+                <p>
+                  Compositing is another interesting topic, but we will not
+                  cover that today.
+                </p>
+                <p>
+                  CSS uses only simple alpha compositing (source over in Porter
+                  Duff).
+                </p>
+              </aside>
             </ul>
           </section>
           <section>
@@ -143,6 +170,23 @@
           </section>
           <section>
             <h3>isolation group</h3>
+            <aside class="notes">
+              <p>
+                isolated groups do not blend with their backdrops
+              </p>
+              <p>
+                setting isolation to isolate will turn the element into a
+                stacking context
+              </p>
+              <p>
+                operations that cause the creation of stacking context [CSS21]
+                must cause a group to be isolated
+              </p>
+              <p>
+                a background image or the content of an img must always be
+                rendered into an isolated group
+              </p>
+            </aside>
           </section>
           <section>
             <h3>blending function</h3>
@@ -205,22 +249,17 @@
             <h2>multiply</h2>
             <p class="fragment">B(Cb, Cs) = Cb x Cs</p>
             <aside class="notes">
-              This is vector multiplication.
+              Point to the question: how do you multiply "colors"?
             </aside>
           </section>
-          <section>
-            <blockquote>
-              The result color is always at least as dark as either of the two
-              constituent colors. Multiplying any color with black produces
-              black; multiplying with white leaves the original color unchanged.
-            </blockquote>
-          </section>
-          <section>
-            <h3>multiply? darken?</h3>
-          </section>
+
           <section>
             <h3>CSS Color Space</h3>
             <a href="https://www.w3.org/TR/css-color-4/">CSS Color Module 4</a>
+            <aside class="notes">
+              To understand what is done by the blending funciton "multiply", we
+              need to understand the CSS color space.
+            </aside>
           </section>
           <section>
             <img
@@ -228,8 +267,7 @@
             />
             <aside class="notes">
               <p>
-                To understand the properties of “multiply”, we need to
-                understand the RGB color model.
+                And in particular, we need to understand the RGB color model.
               </p>
               <p>
                 The RGB color model is additive in the sense that the three
@@ -246,22 +284,44 @@
           <section>
             <img src="img/color-cube.png" />
             <aside class="notes">
-              The RGB color model represents choices of colors in the color
-              cube. It’s a unit cube. This means that red, blue, and green sit
-              on the “1” ends of the axis. The “1” means that color beam at its
-              highest intensity, and “0” means no light at all. So RGB color
-              model is based on Cartesian coordinate system.
               <p>
-                The HEX color codes we use then divides each axis to 256
-                partitions. So each point represents a fraction of that 1. So
-                when you “multiply” two colors under the RGB model, you are
-                multiplying the fractions of 1.
+                We can represent RGB color model is based on Cartesian
+                coordinate system.
               </p>
               <p>
-                rgb can use percentage
+                Consider the unit cube, where red, blue, and green sit on the
+                “1” ends of the axis. The “1” means that color beam at its
+                highest intensity, and “0” means no light at all.
               </p>
             </aside>
           </section>
+          <section>
+            <p style="color: rgb(100%, 65%, 2%)">rgba(100%, 65%, 2%)</p>
+            <p class="fragment" style="color: rgb(66, 53, 94)">
+              rgba(66, 53, 94)
+            </p>
+            <aside class="notes">
+              <p>
+                The CSS color module specifies that with each channel, 0%
+                represents minimum value, and 100% represents the maximum value.
+              </p>
+              <p>
+                Alternatively, we can use a number, where 0 again represents the
+                minimum value for the color channel, but 255 represents the
+                maximum.
+              </p>
+            </aside>
+          </section>
+          <section>
+            <aside class="notes">
+              <p>
+                So each point represents a fraction of that 1. So when you
+                “multiply” two colors under the RGB model, you are multiplying
+                the fractions of 1.
+              </p>
+            </aside>
+          </section>
+
           <section>
             <h3>"multiply"</h3>
             <img
@@ -281,6 +341,16 @@
                 all.
               </p>
             </aside>
+          </section>
+          <section>
+            <blockquote>
+              The result color is always at least as dark as either of the two
+              constituent colors. Multiplying any color with black produces
+              black; multiplying with white leaves the original color unchanged.
+            </blockquote>
+          </section>
+          <section>
+            <h3>multiply? darken?</h3>
           </section>
           <section>
             <h3>in comparison with "darken"</h3>
