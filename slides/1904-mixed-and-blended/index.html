@@ -85,57 +85,66 @@
                 >Compositing & Blending</a
               >
             </h2>
-            <ul>
-              <li class="fragment">
-                compositing (canvas 2d only)
-                <small class="fragment" style="vertical-align: baseline;">
-                  Adobe built a prototype chromium that supports compositing,
-                  see
-                  <a
-                    href="http://opensource.adobe.com/web-platform/demos/compositing/"
-                    >here</a
-                  >
-                </small>
-              </li>
-              <li class="fragment">
-                blending: control of how colors mix in the areas where shapes
-                overlap
-              </li>
-              <aside class="notes">
-                <p>
-                  Compositing and blending specifies how graphics combine into
-                  one when you stack them together.
-                </p>
-                <p>
-                  Compositing talks about how you combine shapes based on the
-                  alphas of each pixels.
-                </p>
-                <p>
-                  And which (of the twelve) compositing method you are using
-                  defines if and how much of the pixel from your initial graphic
-                  and the compositing graphic it will take.
-                </p>
-                <p>
-                  The method was initially defined by Porter Duff, who worked
-                  for Lucasfilm that later turned into Pixar.
-                </p>
-                <p>
-                  Compositing is another interesting topic, but we will not
-                  cover that today.
-                </p>
-                <p>
-                  CSS uses only simple alpha compositing (source over in Porter
-                  Duff).
-                </p>
-              </aside>
-            </ul>
+            <div class="split-title-explain-img" style="height: 70%;">
+              <h3>compositing</h3>
+              <h3>blending</h3>
+              <p>
+                how shapes combine based on the alphas of each pixels
+              </p>
+              <p>
+                how colors mix in the areas where shapes overlap
+              </p>
+              <div class="center">
+                <img src="http://ssp.impulsetrain.com/porterduff/table.png" />
+              </div>
+              <div class="center">
+                <img src="img/switch.png" />
+              </div>
+            </div>
+
+            <aside class="notes">
+              <p>
+                Compositing and blending specifies how graphics combine into one
+                when you stack them together.
+              </p>
+              <p>
+                Compositing talks about how you combine shapes based on the
+                alphas of each pixels.
+              </p>
+              <p>
+                And which (of the twelve) compositing method you are using
+                defines if and how much of the pixel from your initial graphic
+                and the compositing graphic it will take.
+              </p>
+              <p>
+                The method was initially defined by Porter Duff, who worked for
+                Lucasfilm that later turned into Pixar.
+              </p>
+              <p>
+                Compositing is another interesting topic, but we will not cover
+                that today.
+              </p>
+              <p>
+                CSS uses only simple alpha compositing (source over in Porter
+                Duff).
+              </p>
+            </aside>
           </section>
           <section>
-            <div class="center fits-screen">
-              <img
-                src="https://cdn.dribbble.com/users/763/screenshots/3348456/switch.png"
-              />
-            </div>
+            <p style="text-align: left; padding: 1rem">
+              Note: Compositing can be used in canvas 2d only. CSS uses only the
+              simplel alpha compositing which is also the source over operator.
+              <small class="fragment" style="vertical-align: baseline;">
+                Adobe built a prototype chromium that supports compositing, see
+                <a
+                  href="http://opensource.adobe.com/web-platform/demos/compositing/"
+                  >here</a
+                >
+              </small>
+            </p>
+          </section>
+          <section>
+            <div class="center fits-screen"></div>
             <aside class="notes">
               Back to our problem, blending defines what color goes here.
             </aside>
@@ -199,10 +208,10 @@
                 source color, backdrop color
               </li>
               <li class="fragment">
-                <font class="colorful">ab</font> - alpha of backdrop
+                blending modes specify <font class="colorful">B(Cb, Cs)</font>
               </li>
               <li class="fragment">
-                blending modes specify <font class="colorful">B(Cb, Cs)</font>
+                <font class="colorful">ab</font> - alpha of backdrop
               </li>
             </ul>
             <aside class="notes">
@@ -214,6 +223,11 @@
                 mixed color with the weight controlled by the backdrop alpha.
               </p>
             </aside>
+          </section>
+          <section>
+            <img
+              src="https://www.w3.org/TR/compositing-1/examples/blend_background_opacity.svg"
+            />
           </section>
           <section>
             <p>Cr = (1 - ab) x Cs + ab x B(Cb, Cs)</p>
@@ -296,9 +310,9 @@
             </aside>
           </section>
           <section>
-            <p style="color: rgb(100%, 65%, 2%)">rgba(100%, 65%, 2%)</p>
+            <p style="color: rgb(100%, 65%, 2%)">rgb(100%, 65%, 2%)</p>
             <p class="fragment" style="color: rgb(66, 53, 94)">
-              rgba(66, 53, 94)
+              rgb(66, 53, 94)
             </p>
             <aside class="notes">
               <p>
@@ -392,6 +406,7 @@
               Screening any color with white produces white; screening with
               black leaves the original color unchanged.
             </blockquote>
+            <p class="fragment">B(Cb, Cs) = 1 - [(1 - Cb) x (1 - Cs)]</p>
           </section>
           <section>
             <h3>in comparison with "lighten"</h3>
@@ -467,6 +482,20 @@
             <p class="fragment">
               B(Cb, Cs) = 2 x Cb x Cs
             </p>
+            <ul class="fragment">
+              <li>
+                <small style="vertical-align: middle;"
+                  >When the source color is dark, it almost always darkens the
+                  backdrop.</small
+                >
+              </li>
+              <li>
+                <small style="vertical-align: middle;"
+                  >Whether it darkens the source or not, depends on
+                  backdrop.</small
+                >
+              </li>
+            </ul>
             <aside class="notes">
               <p>
                 When the source is dark, you double strength your source first
@@ -485,17 +514,28 @@
             <p class="fragment">
               B(Cb, Cs) = 2 x (Cb + Cs - Cb x Cs) - 1
             </p>
+            <ul class="fragment">
+              <li>
+                <small style="vertical-align: middle;">
+                  When the source color is bright, it brightens the backdrop,
+                  <a href="#/19" target="_self">justify</a>.
+                </small>
+              </li>
+              <li>
+                <small style="vertical-align: middle;">
+                  Whether it brightens the source or not, depends on backdrop,
+                  <a href="#/20" target="_self">justify</a>.
+                </small>
+              </li>
+            </ul>
             <aside class="notes">
               <p>
-                When the source is strong, you make it stronger by screening
-                backdrop with two times strength of the source and minus one.
+                So my claim is that hard light actually preserves the highlight
+                and lowlight in both the backdrop and the source.
               </p>
               <p>
-                Now if this is a bit hard to decode, I've done the math alr, it
-                seems to me that it comes down to doubling result of screening
-                backdrop and source, and remember source is already >0.5, and
-                screening lightens them so by right should be quite strong. The
-                result will be well exceeding 1 and you take that 1 away.
+                But since the operation is first conditioned on the source, it
+                prioritizes the brightness and texture of the source.
               </p>
             </aside>
           </section>
@@ -522,13 +562,10 @@
           </section>
           <section>
             <h3>Hard light is not symmetric</h3>
-            <pre>
-              HardLight(Cb, Cs) = 
-              if(Cs <= 0.5)
-                  B(Cb, Cs) = Multiply(Cb, 2 x Cs)
-              else
-                  B(Cb, Cs) = Screen(Cb, 2 x Cs - 1)
-            </pre>
+            <p>
+              And the <i>commuted</i> operation is
+              <font class="colorful">overlay</font>
+            </p>
             <aside class="notes">
               <p>
                 Now, hard light is clearly non-symmetrical.
@@ -537,7 +574,17 @@
           </section>
           <section>
             <h3>Overlay(Cb, Cs) = Hardlight(Cs, Cb)</h3>
-            <p class="fragment">So the condition now splits on backdrop.</p>
+            <p>
+              Now it preserves the texture of the backdrop first
+            </p>
+            <p>
+              <small>
+                because the condition now lands on backdrop
+              </small>
+            </p>
+            <img
+              src="https://photoshoptrainingchannel.com/wp-content/uploads/2017/04/sample-13-overlay-blending-mode-800x235.jpg"
+            />
             <aside class="notes">
               <p>
                 And overlay is the corresponding commuted blend mode with hard
@@ -578,7 +625,9 @@
             </aside>
           </section>
           <section>
-            <img src="img/overlay.png" />
+            <div class="fits-screen">
+              <img src="img/overlay.png" />
+            </div>
           </section>
         </section>
         <section>
@@ -649,6 +698,23 @@
           <section>
             <h2>difference & exclusion</h2>
             <em>work in progress</em>
+          </section>
+          <section>
+            <iframe
+              height="700"
+              style="width: 100%;"
+              scrolling="no"
+              title="tessellation"
+              src="//codepen.io/wgao19/embed/EJxvav/?height=265&theme-id=0&default-tab=css,result"
+              frameborder="no"
+              allowtransparency="true"
+              allowfullscreen="true"
+            >
+              See the Pen
+              <a href="https://codepen.io/wgao19/pen/EJxvav/">tessellation</a>
+              by Wei Gao (<a href="https://codepen.io/wgao19">@wgao19</a>) on
+              <a href="https://codepen.io">CodePen</a>.
+            </iframe>
           </section>
           <section>
             <iframe
@@ -772,7 +838,7 @@
             </aside>
           </section>
           <section>
-            <h3>I'm gonna mix and blend blend everything 🤓</h3>
+            <h3>I'm gonna mix and blend everything 🤓</h3>
           </section>
           <section>
             <p>
@@ -832,6 +898,62 @@
               <a href="https://reactknowledgeable.org/">React Knowledgeable</a>
             </div>
           </div>
+        </section>
+
+        <section>
+          <blockquote>
+            When the source color is bright, it brightens the backdrop.
+          </blockquote>
+          <pre>
+            Proof. 
+
+            Hard light case Cs > 0.5:
+
+            B(Cb, Cs) = Screen(Cb, 2 * Cs - 1)
+                      = 2 * (Cb + Cs - Cb * Cs) - 1 
+
+            Comparing with Cb, want to know if 2(Cb + Cs - Cb * Cs) - 1 - Cb > 0
+
+            LHS = Cb + 2 * Cs - 2 * Cb * Cs - 1
+                = Cb * (1 - 2 * Cs) - (1 - 2 * Cs)
+                = (Cb - 1) * (1 - 2 * Cs)
+
+            Since Cs > 0.5, 2 * Cs > 1, therefore 1 - 2 * Cs < 0;
+            Cb - 1 <= 0 because Cb <= 1
+
+            Hence LHS >= 0 and the conclusion is it will always brighten the backdrop.
+
+            QED.
+          </pre>
+          <a href="#/9/3" target="_self">Go back</a>
+        </section>
+        <section>
+          <blockquote>
+            Whether it brightens the source or not, depends on backdrop.
+          </blockquote>
+          <pre>
+            Proof.
+
+            Hard light case Cs > 0.5:
+
+            B(Cb, Cs) = Screen(Cb, 2 * Cs - 1)
+                      = 2 * (Cb + Cs - Cb * Cs) - 1 
+
+            Comparing with Cs, want to know if 2(Cb + Cs - Cb * Cs) - 1 - Cs > 0
+
+            Following similar factorization with the previous proof and we come to
+            LHS = (Cs - 1) * (1 - 2 * Cb)
+
+            Now we know that Cs - 1 <= 0 because Cs <= 1.
+            However, whether the other term is >0 or not is unknown.
+
+            If Cb > 0.5, then 2 * Cb > 1 and 1 - 2 * Cb < 0. 
+            In this case the final product is >= 0, which implies it brightens the source.
+            Otherwise, the result is reversed.
+
+            QED.
+          </pre>
+          <a href="#/9/3" target="_self">Go back</a>
         </section>
       </div>
     </div>
