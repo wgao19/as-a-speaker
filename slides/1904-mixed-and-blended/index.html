@@ -509,14 +509,6 @@
               else
                   B(Cb, Cs) = Screen(Cb, 2 x Cs - 1)
             </pre>
-            <aside class="notes">
-              <p>
-                What's this doing?
-              </p>
-              <p>
-                We already understand what multiply and screen do.
-              </p>
-            </aside>
           </section>
           <section>
             <h3>Case Cs <= 0.5</h3>
@@ -540,15 +532,6 @@
                 >
               </li>
             </ul>
-            <aside class="notes">
-              <p>
-                When the source is dark, you double strength your source first
-                and then kind of weaken it with a weighted strength from the
-                backdrop. The result will be at most as light as the backdrop,
-                but whether is lighter or darker than the source, is dependent
-                on the backdrop.
-              </p>
-            </aside>
           </section>
           <section>
             <h3>Case Cs > 0.5</h3>
@@ -601,17 +584,6 @@
                 prioritizes the texture of the source.
               </li>
             </ul>
-            <aside class="notes">
-              <p>
-                Now, this goes slightly beyond the scope of CSS and into
-                computer graphics or image processing industry. But here is a
-                rather intuitive description of what goes on there.
-              </p>
-              <p>
-                Like the name suggests, it's like shining a harsh spotlight on
-                the backdrop.
-              </p>
-            </aside>
           </section>
           <section>
             <h3>Hard light is not symmetric</h3>
@@ -638,12 +610,6 @@
             <img
               src="https://photoshoptrainingchannel.com/wp-content/uploads/2017/04/sample-13-overlay-blending-mode-800x235.jpg"
             />
-            <aside class="notes">
-              <p>
-                And overlay is the corresponding commuted blend mode with hard
-                light.
-              </p>
-            </aside>
           </section>
           <section>
             <img
@@ -676,15 +642,6 @@
               Gao (<a href="https://codepen.io/wgao19">@wgao19</a>) on
               <a href="https://codepen.io">CodePen</a>.
             </iframe>
-            <aside class="notes">
-              <p>
-                As we see here, overlay will preserve the texture.
-              </p>
-              <p>
-                The backdrop color is not replaced but is mixed with the source
-                color to reflect the lightness or darkness of the backdrop.
-              </p>
-            </aside>
           </section>
           <section>
             <iframe
