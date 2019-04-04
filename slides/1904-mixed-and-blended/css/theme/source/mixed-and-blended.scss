@@ -23,16 +23,17 @@
 $backgroundColor: #fff;
 
 $alpha: 0.6;
-$electric-red: rgba(231, 0, 0, $alpha);
-$dark-orange: rgba(255, 140, 0, $alpha);
-$canary-yellow: rgba(255, 239, 0, $alpha);
-$la-salle-green: rgba(0, 129, 31, $alpha);
-$blue: rgba(0, 68, 255, $alpha);
-$patriarch: rgba(118, 0, 137, $alpha);
 
-$red-purple: rgba(217, 0, 111, $alpha);
-$dark-lavender: rgba(116, 77, 152, $alpha);
 $ua-blue: rgba(0, 51, 171, $alpha);
+
+$orange: rgb(255, 107, 0);
+
+$red: rgb(255, 67, 56);
+$green: rgb(5, 206, 124);
+$blue: rgb(0, 179, 227);
+$magenta: rgb(218, 58, 179);
+$yellow: rgb(255, 200, 67);
+$number-of-colors: 5;
 
 $mainColor: #444;
 $headingColor: #222;
@@ -53,35 +54,6 @@ $heading2Size: 1.6em;
 $heading3Size: 1.3em;
 $heading4Size: 1em;
 
-$rainbow-image: linear-gradient(
-  -1deg,
-  $electric-red calc(100% / 6),
-  $electric-red 0,
-  $dark-orange calc(100% / 6),
-  $dark-orange calc(200% / 6),
-  $dark-orange 0,
-  $canary-yellow calc(200% / 6),
-  $canary-yellow calc(300% / 6),
-  $canary-yellow 0,
-  $la-salle-green calc(300% / 6),
-  $la-salle-green calc(400% / 6),
-  $la-salle-green 0,
-  $blue calc(400% / 6),
-  $blue calc(500% / 6),
-  $blue 0,
-  $patriarch calc(500% / 6)
-);
-
-$bi-flag-image: linear-gradient(
-  -1deg,
-  $red-purple calc(100% / 3),
-  $red-purple 0,
-  $dark-lavender calc(100% / 3),
-  $dark-lavender calc(200% / 3),
-  $dark-lavender 0,
-  $ua-blue calc(200% / 3)
-);
-
 section.has-dark-background {
   &,
   h1,
@@ -94,7 +66,20 @@ section.has-dark-background {
   }
 }
 .reveal blockquote {
-  border-image: $rainbow-image 1 100%;
+  border: 0 !important;
+  background-image: linear-gradient(to bottom, $magenta 0, $magenta 100%),
+    linear-gradient(to bottom, $blue 0, $blue 100%),
+    linear-gradient(to bottom, $yellow 0, $yellow 100%),
+    linear-gradient(to bottom, $orange 0, $orange 100%),
+    linear-gradient(to bottom, $green 0, $green 100%),
+    linear-gradient(15deg, $red 0, $red 100%) !important;
+
+  background-size: 8px calc(100% / #{$number-of-colors - 0.5}) !important;
+  background-repeat: no-repeat !important;
+  background-position-y: 0, calc(100% / #{$number-of-colors}),
+    calc(200% / #{$number-of-colors}), calc(300% / #{$number-of-colors}),
+    calc(400% / #{$number-of-colors}), calc(500% / #{$number-of-colors}) !important;
+  background-blend-mode: multiply;
 }
 
 .reveal .controls .controls-arrow::before {

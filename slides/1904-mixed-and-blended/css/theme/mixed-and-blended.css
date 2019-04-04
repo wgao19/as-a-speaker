@@ -19,7 +19,12 @@ section.has-dark-background h6 {
   color: #fff; }
 
 .reveal blockquote {
-  border-image: linear-gradient(-1deg, rgba(231, 0, 0, 0.6) calc(100% / 6), rgba(231, 0, 0, 0.6) 0, rgba(255, 140, 0, 0.6) calc(100% / 6), rgba(255, 140, 0, 0.6) calc(200% / 6), rgba(255, 140, 0, 0.6) 0, rgba(255, 239, 0, 0.6) calc(200% / 6), rgba(255, 239, 0, 0.6) calc(300% / 6), rgba(255, 239, 0, 0.6) 0, rgba(0, 129, 31, 0.6) calc(300% / 6), rgba(0, 129, 31, 0.6) calc(400% / 6), rgba(0, 129, 31, 0.6) 0, rgba(0, 68, 255, 0.6) calc(400% / 6), rgba(0, 68, 255, 0.6) calc(500% / 6), rgba(0, 68, 255, 0.6) 0, rgba(118, 0, 137, 0.6) calc(500% / 6)) 1 100%; }
+  border: 0 !important;
+  background-image: linear-gradient(to bottom, #da3ab3 0, #da3ab3 100%), linear-gradient(to bottom, #00b3e3 0, #00b3e3 100%), linear-gradient(to bottom, #ffc843 0, #ffc843 100%), linear-gradient(to bottom, #ff6b00 0, #ff6b00 100%), linear-gradient(to bottom, #05ce7c 0, #05ce7c 100%), linear-gradient(15deg, #ff4338 0, #ff4338 100%) !important;
+  background-size: 8px calc(100% / 4.5) !important;
+  background-repeat: no-repeat !important;
+  background-position-y: 0, calc(100% / 5), calc(200% / 5), calc(300% / 5), calc(400% / 5), calc(500% / 5) !important;
+  background-blend-mode: multiply; }
 
 .reveal .controls .controls-arrow::before {
   content: "<";
