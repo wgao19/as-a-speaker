@@ -67,14 +67,56 @@ section.has-dark-background {
 }
 .reveal blockquote {
   border: 0 !important;
-  background-image: linear-gradient(to bottom, $magenta 0, $magenta 100%),
-    linear-gradient(to bottom, $blue 0, $blue 100%),
-    linear-gradient(to bottom, $yellow 0, $yellow 100%),
-    linear-gradient(to bottom, $orange 0, $orange 100%),
-    linear-gradient(to bottom, $green 0, $green 100%),
-    linear-gradient(15deg, $red 0, $red 100%) !important;
+  background-image: linear-gradient(
+      -15deg,
+      transparent 0,
+      transparent 20%,
+      $magenta 0,
+      $magenta 80%,
+      transparent 0
+    ),
+    linear-gradient(
+      15deg,
+      transparent 0,
+      transparent 20%,
+      $blue 0,
+      $blue 80%,
+      transparent 0
+    ),
+    linear-gradient(
+      -15deg,
+      transparent 0,
+      transparent 20%,
+      $yellow 0,
+      $yellow 80%,
+      transparent 0
+    ),
+    linear-gradient(
+      15deg,
+      transparent 0,
+      transparent 20%,
+      $orange 0,
+      $orange 80%,
+      transparent 0
+    ),
+    linear-gradient(
+      -15deg,
+      transparent 0,
+      transparent 20%,
+      $green 0,
+      $green 80%,
+      transparent 0
+    ),
+    linear-gradient(
+      15deg,
+      transparent 0,
+      transparent 20%,
+      $red 0,
+      $red 80%,
+      transparent 0
+    ) !important;
 
-  background-size: 8px calc(100% / #{$number-of-colors - 0.5}) !important;
+  background-size: 8px calc(141.4% / #{$number-of-colors - 0.5}) !important;
   background-repeat: no-repeat !important;
   background-position-y: 0, calc(100% / #{$number-of-colors}),
     calc(200% / #{$number-of-colors}), calc(300% / #{$number-of-colors}),
