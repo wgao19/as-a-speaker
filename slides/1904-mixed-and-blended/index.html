@@ -80,24 +80,27 @@
         </section>
         <section>
           <section>
-            <h2>
+            <h2>Compositing & Blending</h2>
+            <p>
               <a href="https://www.w3.org/TR/compositing-1/"
-                >Compositing & Blending</a
+                >Compositing and Blending Module Level 1</a
               >
-            </h2>
+            </p>
             <div class="split-title-explain-img" style="height: 70%;">
-              <h3>compositing</h3>
-              <h3>blending</h3>
-              <p>
-                how shapes combine based on the alphas of each pixels
+              <h3 class="fragment" data-fragment-index="1">compositing</h3>
+              <h3 class="fragment" data-fragment-index="3">blending</h3>
+              <p class="fragment" data-fragment-index="2">
+                how shapes combine <br />
+                <small>based on the alphas of each pixel</small>
               </p>
-              <p>
-                how colors mix in the areas where shapes overlap
+              <p class="fragment" data-fragment-index="4">
+                how colors mix <br />
+                <small>in the areas where shapes overlap</small>
               </p>
-              <div class="center">
+              <div class="center fragment" data-fragment-index="2">
                 <img src="img/porter-duff.png" />
               </div>
-              <div class="center">
+              <div class="center fragment" data-fragment-index="4">
                 <img src="img/switch.png" />
               </div>
             </div>
@@ -133,7 +136,7 @@
           <section>
             <p style="text-align: left; padding: 1rem">
               Note: Compositing can be used in canvas 2d only. CSS uses only the
-              simplel alpha compositing which is also the source over operator.
+              simple alpha compositing which is also the source over operator.
               <small class="fragment" style="vertical-align: baseline;">
                 Adobe built a prototype chromium that supports compositing, see
                 <a
@@ -153,15 +156,13 @@
         <section>
           <section>
             <h2>Blending</h2>
-            <a
-              class="fragment"
-              href="https://www.w3.org/TR/compositing-1/#blending"
+            <a href="https://www.w3.org/TR/compositing-1/#blending"
               >section 10 of the specs
             </a>
           </section>
           <section>
             <h3>backdrop</h3>
-            <blockquote>
+            <blockquote class="fragment">
               The <font class="colorful">backdrop</font> is the
               <font class="colorful">content behind the element</font> and is
               what the element is composited with.
@@ -199,6 +200,7 @@
           </section>
           <section>
             <h3>blending function</h3>
+            <p class="fragment">warning: math inc</p>
           </section>
           <section>
             <h3>Cr = (1 - ab) x Cs + ab x B(Cb, Cs)</h3>
@@ -262,6 +264,7 @@
           <section>
             <h2>multiply</h2>
             <p class="fragment">B(Cb, Cs) = Cb x Cs</p>
+            <p class="fragment">"darkens" the graphics</p>
             <aside class="notes">
               Point to the question: how do you multiply "colors"?
             </aside>
@@ -274,6 +277,11 @@
               To understand what is done by the blending funciton "multiply", we
               need to understand the CSS color space.
             </aside>
+          </section>
+          <section>
+            <img
+              src="https://digitalgraphics.learningforlife.fsu.edu/w7/additive_subtractive_color_models.jpg"
+            />
           </section>
           <section>
             <img
@@ -358,8 +366,8 @@
           </section>
           <section>
             <blockquote>
-              The result color is always at least as dark as either of the two
-              constituent colors. Multiplying any color with black produces
+              The resultant color is always at least as dark as either of the
+              two constituent colors. Multiplying any color with black produces
               black; multiplying with white leaves the original color unchanged.
             </blockquote>
           </section>
@@ -433,22 +441,58 @@
               height="700"
               style="width: 100%;"
               scrolling="no"
-              title="knock out text with screen"
-              src="//codepen.io/wgao19/embed/dLoajE/?height=265&theme-id=light&default-tab=css,result"
+              title="Knockout Text with CSS Blend Modes"
+              src="//codepen.io/stacy/embed/gLmQPY/?height=265&theme-id=light&default-tab=css,result"
               frameborder="no"
               allowtransparency="true"
               allowfullscreen="true"
             >
               See the Pen
-              <a href="https://codepen.io/wgao19/pen/dLoajE/"
-                >knock out text with screen</a
+              <a href="https://codepen.io/stacy/pen/gLmQPY/"
+                >Knockout Text with CSS Blend Modes</a
               >
-              by Wei Gao (<a href="https://codepen.io/wgao19">@wgao19</a>) on
+              by Stacy (<a href="https://codepen.io/stacy">@stacy</a>) on
               <a href="https://codepen.io">CodePen</a>.
             </iframe>
           </section>
           <section>
-            <img src="img/color-font.png" />
+            <iframe
+              height="700"
+              style="width: 100%;"
+              scrolling="no"
+              title="Relax with mix blend mode #codevember_16"
+              src="//codepen.io/robinsavemark/embed/YpGYYj/?height=265&theme-id=light&default-tab=css,result"
+              frameborder="no"
+              allowtransparency="true"
+              allowfullscreen="true"
+            >
+              See the Pen
+              <a href="https://codepen.io/robinsavemark/pen/YpGYYj/"
+                >Relax with mix blend mode #codevember_16</a
+              >
+              by Robin Savemark (<a href="https://codepen.io/robinsavemark"
+                >@robinsavemark</a
+              >) on <a href="https://codepen.io">CodePen</a>.
+            </iframe>
+          </section>
+          <section>
+            <iframe
+              height="700"
+              style="width: 100%;"
+              scrolling="no"
+              title="Knockout text with animated background"
+              src="//codepen.io/kdurber/embed/pjEjZv/?height=265&theme-id=light&default-tab=css,result"
+              frameborder="no"
+              allowtransparency="true"
+              allowfullscreen="true"
+            >
+              See the Pen
+              <a href="https://codepen.io/kdurber/pen/pjEjZv/"
+                >Knockout text with animated background</a
+              >
+              by Kev Durber (<a href="https://codepen.io/kdurber">@kdurber</a>)
+              on <a href="https://codepen.io">CodePen</a>.
+            </iframe>
           </section>
         </section>
         <section>
@@ -476,20 +520,20 @@
           </section>
           <section>
             <h3>Case Cs <= 0.5</h3>
-            <p class="fragment">
+            <p>
               B(Cb, Cs) = Multiply(Cb, 2 x Cs)
             </p>
             <p class="fragment">
               B(Cb, Cs) = 2 x Cb x Cs
             </p>
-            <ul class="fragment">
-              <li>
+            <ul>
+              <li class="fragment">
                 <small style="vertical-align: middle;"
                   >When the source color is dark, it almost always darkens the
                   backdrop.</small
                 >
               </li>
-              <li>
+              <li class="fragment">
                 <small style="vertical-align: middle;"
                   >Whether it darkens the source or not, depends on
                   backdrop.</small
@@ -508,20 +552,20 @@
           </section>
           <section>
             <h3>Case Cs > 0.5</h3>
-            <p class="fragment">
+            <p>
               B(Cb, Cs) = Screen(Cb, 2 x Cs - 1)
             </p>
             <p class="fragment">
               B(Cb, Cs) = 2 x (Cb + Cs - Cb x Cs) - 1
             </p>
-            <ul class="fragment">
-              <li>
+            <ul>
+              <li class="fragment">
                 <small style="vertical-align: middle;">
                   When the source color is bright, it brightens the backdrop,
                   <a href="#/19" target="_self">justify</a>.
                 </small>
               </li>
-              <li>
+              <li class="fragment">
                 <small style="vertical-align: middle;">
                   Whether it brightens the source or not, depends on backdrop,
                   <a href="#/20" target="_self">justify</a>.
@@ -530,12 +574,12 @@
             </ul>
             <aside class="notes">
               <p>
-                So my claim is that hard light actually preserves the highlight
-                and lowlight in both the backdrop and the source.
+                So my claim is that hard light actually preserves the highlights
+                and shadows in both the backdrop and the source.
               </p>
               <p>
                 But since the operation is first conditioned on the source, it
-                prioritizes the brightness and texture of the source.
+                prioritizes the texture of the source.
               </p>
             </aside>
           </section>
@@ -546,8 +590,17 @@
             </blockquote>
             <img
               src="https://photoshoptrainingchannel.com/wp-content/uploads/2017/04/sample-15-hard-light-blend-mode-800x235.jpg"
-              class="fragment"
             />
+            <ul style="padding: 2rem;">
+              <li class="fragment">
+                Hard light tries to preserve the highlights and shadows in both
+                backdrop and source.
+              </li>
+              <li class="fragment">
+                But since the operation is first conditioned on the source, it
+                prioritizes the texture of the source.
+              </li>
+            </ul>
             <aside class="notes">
               <p>
                 Now, this goes slightly beyond the scope of CSS and into
@@ -592,6 +645,15 @@
               </p>
             </aside>
           </section>
+          <section>
+            <img
+              src="https://photoshoptrainingchannel.com/wp-content/uploads/2017/04/sample-15-hard-light-blend-mode-800x235.jpg"
+            />
+            <br />
+            <img
+              src="https://photoshoptrainingchannel.com/wp-content/uploads/2017/04/sample-13-overlay-blending-mode-800x235.jpg"
+            />
+          </section>
         </section>
         <section>
           <section>
@@ -625,79 +687,29 @@
             </aside>
           </section>
           <section>
-            <div class="fits-screen">
-              <img src="img/overlay.png" />
-            </div>
-          </section>
-        </section>
-        <section>
-          <section class="split">
-            <ul class="colorful">
-              <li>
-                normal
-              </li>
-              <li>
-                multiply
-              </li>
-              <li>
-                screen
-              </li>
-              <li>
-                darken
-              </li>
-              <li>
-                lighten
-              </li>
-              <li>
-                overlay
-              </li>
-              <li>
-                hard-light
-              </li>
-            </ul>
-            <ul>
-              <li>
-                color-dodge
-              </li>
-              <li>
-                color-burn
-              </li>
-              <li>
-                soft-light
-              </li>
-              <li>
-                difference
-              </li>
-              <li>
-                exclusion
-              </li>
-            </ul>
-          </section>
-          <section>
-            <h2>
-              <a href="https://www.w3.org/TR/compositing-1/#blendingseparable"
-                >"Separable Blend Modes"</a
+            <iframe
+              height="700"
+              style="width: 100%;"
+              scrolling="no"
+              title="Fullscreen Background Video with Mix-Blend-Mode Overlay Text"
+              src="//codepen.io/dudleystorey/embed/kkYawX/?height=265&theme-id=light&default-tab=css,result"
+              frameborder="no"
+              allowtransparency="true"
+              allowfullscreen="true"
+            >
+              See the Pen
+              <a href="https://codepen.io/dudleystorey/pen/kkYawX/"
+                >Fullscreen Background Video with Mix-Blend-Mode Overlay Text</a
               >
-            </h2>
-            <p class="fragment">
-              R, G, B channels are computed separately
-            </p>
-          </section>
-          <section>
-            <p>200px x 200px image && overlay</p>
-            <h3 class="fragment">
-              200 x 200 x 3 x (3 addition + 2 multiplications)
-            </h3>
-            <p class="fragment">
-              explains why the fan starts to blow if we run
-              <a href="https://codepen.io/wgao19/pen/XGjrBO">this pen</a>
-            </p>
+              by Dudley Storey (<a href="https://codepen.io/dudleystorey"
+                >@dudleystorey</a
+              >) on <a href="https://codepen.io">CodePen</a>.
+            </iframe>
           </section>
         </section>
         <section>
           <section>
-            <h2>difference & exclusion</h2>
-            <em>work in progress</em>
+            <h2>difference</h2>
           </section>
           <section>
             <iframe
@@ -738,6 +750,61 @@
           </section>
         </section>
         <section>
+          <section class="split">
+            <ul class="colorful">
+              <li>
+                normal
+              </li>
+              <li>
+                multiply
+              </li>
+              <li>
+                screen
+              </li>
+              <li>
+                darken
+              </li>
+              <li>
+                lighten
+              </li>
+              <li>
+                overlay
+              </li>
+              <li>
+                hard-light
+              </li>
+              <li>
+                difference
+              </li>
+            </ul>
+            <ul>
+              <li>
+                color-dodge
+              </li>
+              <li>
+                color-burn
+              </li>
+              <li>
+                soft-light
+              </li>
+
+              <li>
+                exclusion
+              </li>
+            </ul>
+          </section>
+          <section>
+            <h2>
+              <a href="https://www.w3.org/TR/compositing-1/#blendingseparable"
+                >"Separable Blend Modes"</a
+              >
+            </h2>
+            <p class="fragment">
+              R, G, B channels are computed separately
+            </p>
+          </section>
+        </section>
+        <section>
           <section>
             <h2>
               <a
@@ -745,7 +812,6 @@
                 >"Non-Separable Blend Modes"</a
               >
             </h2>
-            <p><em>work in progress</em></p>
             <ul>
               <li>
                 hue
@@ -769,10 +835,10 @@
             </aside>
           </section>
         </section>
+
         <section>
           <section>
             <h2>color</h2>
-            <em>work in progress</em>
           </section>
           <section>
             <iframe
@@ -799,6 +865,17 @@
           <section>
             <h2>Great,</h2>
             <h3>now I have a few questions.</h3>
+          </section>
+          <section>
+            <h3>Why is my fan blowing?</h3>
+            <p class="fragment">200px x 200px image && overlay</p>
+            <h3 class="fragment">
+              200 x 200 x 3 x (3 addition + 2 multiplications)
+            </h3>
+            <p class="fragment">
+              a lot of work for animations
+              <a href="https://codepen.io/wgao19/pen/XGjrBO">like this</a>
+            </p>
           </section>
           <section>
             <h3>Does it work on emojis?</h3>
@@ -838,13 +915,17 @@
             </aside>
           </section>
           <section>
-            <h3>I'm gonna mix and blend everything 🤓</h3>
+            <h3>What's this cool looking font? 👀</h3>
           </section>
           <section>
-            <p>
-              friendly warning: watch your fan on
+            <h3><a href="https://www.typewithpride.com/">Gilbert Color</a></h3>
+            <p class="fragment">
+              <span class="colorful">x</span>
+              <small>
+                (correct me if I'm wrong)
+              </small>
             </p>
-            <h3 class="colorful">blending x animations</h3>
+            <h3 class="fragment">multiply</h3>
           </section>
         </section>
         <section>

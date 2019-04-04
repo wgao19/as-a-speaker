@@ -59,7 +59,7 @@
 }
 .split-title-explain-img {
   display: grid;
-  grid-template-columns: auto auto;
+  grid-template-columns: 1fr 1fr;
   grid-template-rows: auto minmax(4rem, 1fr) 3fr;
   align-items: start;
 }
