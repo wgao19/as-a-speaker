@@ -54,6 +54,33 @@
               by Wei Gao (<a href="https://codepen.io/wgao19">@wgao19</a>) on
               <a href="https://codepen.io">CodePen</a>.
             </iframe>
+            <aside class="notes">
+              <p>
+                I came across this design earlier this year and I wanted to draw
+                it with CSS. Most of its features seemed quite straightforward.
+                Except maybe for one.
+              </p>
+              <p>
+                The intersections of the two panels of the handheld happen to
+                pass through the border radius. The relatively arbitrary points
+                of intersection make it less obvious how it can be drawn.
+              </p>
+              <p>
+                I eventually implemented it with div intersection. It took me a
+                good evening to figure out. I have a separate illustration on
+                the next slide, but I'll skip it for now to not spoil you the
+                pleasure of finding it out by yourself.
+              </p>
+              <p>
+                But what came to my mind was another question.
+              </p>
+              <p>
+                We now the browser constructs and renders the DOM tree in a
+                sequence. So whenever it renders the second node, which ever
+                that is, it should already have information about what is
+                already rendered on the screen.
+              </p>
+            </aside>
           </section>
           <section>
             <iframe
@@ -79,6 +106,13 @@
           </section>
         </section>
         <section>
+          <p>
+            There should be a <font class="colorful">CSS property</font> that
+            does that
+          </p>
+          🤔
+        </section>
+        <section>
           <section>
             <h2>Compositing & Blending</h2>
             <p>
@@ -86,6 +120,8 @@
                 >Compositing and Blending Module Level 1</a
               >
             </p>
+          </section>
+          <section>
             <div class="split-title-explain-img" style="height: 70%;">
               <h3 class="fragment" data-fragment-index="1">compositing</h3>
               <h3 class="fragment" data-fragment-index="3">blending</h3>
@@ -178,7 +214,7 @@
               blended, composited and then rendered
             </p>
           </section>
-          <section>
+          <!-- <section>
             <h3>isolation group</h3>
             <aside class="notes">
               <p>
@@ -197,10 +233,10 @@
                 rendered into an isolated group
               </p>
             </aside>
-          </section>
+          </section> -->
           <section>
             <h3>blending function</h3>
-            <p class="fragment">warning: math inc</p>
+            <p>warning: math inc</p>
           </section>
           <section>
             <h3>Cr = (1 - ab) x Cs + ab x B(Cb, Cs)</h3>
@@ -251,7 +287,7 @@
         <section>
           <section>
             <h2>normal</h2>
-            <p class="fragment">B(Cb, Cs) = Cs</p>
+            <p>B(Cb, Cs) = Cs</p>
           </section>
           <section>
             <h2>"no blending"</h2>
@@ -263,10 +299,13 @@
         <section>
           <section>
             <h2>multiply</h2>
-            <p class="fragment">B(Cb, Cs) = Cb x Cs</p>
+            <p>B(Cb, Cs) = Cb x Cs</p>
             <p class="fragment">"darkens" the graphics</p>
+            <p class="fragment">🤔</p>
             <aside class="notes">
-              Point to the question: how do you multiply "colors"?
+              Point to the questions:
+              <p>How do you multiply "colors"?</p>
+              <p>Why does it "darken" it?</p>
             </aside>
           </section>
 
@@ -281,7 +320,13 @@
           <section>
             <img
               src="https://digitalgraphics.learningforlife.fsu.edu/w7/additive_subtractive_color_models.jpg"
+              class="fits-screen"
             />
+            <p>
+              More on
+              <a href="https://ciechanow.ski/color-spaces/">Color Spaces</a> by
+              <a href="https://ciechanow.ski/">Bartosz Ciechanowski</a>
+            </p>
           </section>
           <section>
             <img
@@ -318,7 +363,16 @@
             </aside>
           </section>
           <section>
-            <p style="color: rgb(100%, 65%, 2%)">rgb(100%, 65%, 2%)</p>
+            <small>
+              CSS uses the
+            </small>
+            <h3>
+              <a href="https://en.wikipedia.org/wiki/SRGB">sRGB</a>
+              color space
+            </h3>
+            <p class="fragment" style="color: rgb(100%, 65%, 2%)">
+              rgb(100%, 65%, 2%)
+            </p>
             <p class="fragment" style="color: rgb(66, 53, 94)">
               rgb(66, 53, 94)
             </p>
@@ -334,16 +388,6 @@
               </p>
             </aside>
           </section>
-          <section>
-            <aside class="notes">
-              <p>
-                So each point represents a fraction of that 1. So when you
-                “multiply” two colors under the RGB model, you are multiplying
-                the fractions of 1.
-              </p>
-            </aside>
-          </section>
-
           <section>
             <h3>"multiply"</h3>
             <img
@@ -918,6 +962,15 @@
                 Blending Modes Explained – The Complete Guide to Photoshop Blend
                 Modes</a
               >
+            </li>
+            <li>
+              <a href="https://ciechanow.ski/color-spaces/">Color Spaces</a> by
+              <a href="https://ciechanow.ski/">Bartosz Ciechanowski</a>
+            </li>
+            <li>
+              <a href="https://github.com/stewdio/stereoscopic"
+                >Stereoscopic with mix-blend-mode</a
+              >(needs 3D glasses)
             </li>
           </ul>
         </section>
