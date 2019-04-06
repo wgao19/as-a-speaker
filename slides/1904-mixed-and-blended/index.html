@@ -235,8 +235,11 @@
             </aside>
           </section> -->
           <section>
-            <h3>blending function</h3>
-            <p>warning: math inc</p>
+            <h3>How CSS does blending</h3>
+            <img
+              class="fragment"
+              src="https://www.w3.org/TR/compositing-1/examples/blend_background_opacity.svg"
+            />
           </section>
           <section>
             <h3>Cr = (1 - ab) x Cs + ab x B(Cb, Cs)</h3>
@@ -259,24 +262,6 @@
                 fully realized. A transparent backdrop will cause the final
                 result to be a weighted average between the source color and
                 mixed color with the weight controlled by the backdrop alpha.
-              </p>
-            </aside>
-          </section>
-          <section>
-            <img
-              src="https://www.w3.org/TR/compositing-1/examples/blend_background_opacity.svg"
-            />
-          </section>
-          <section>
-            <p>Cr = (1 - ab) x Cs + ab x B(Cb, Cs)</p>
-            <p class="fragment">let ab = 1</p>
-            <p class="fragment">Cr = (1 - 1) x Cs + 1 x B(Cb, Cs)</p>
-            <h2 class="fragment">Cr = B(Cb, Cs)</h2>
-            <aside class="notes">
-              <p>
-                For today, let's assume that backdrop alpha is 1. Thereby
-                dropping the first term, and the coefficient of the second term
-                will be 1. So the whole function will simply be
               </p>
             </aside>
           </section>
@@ -1046,6 +1031,11 @@
             QED.
           </pre>
           <a href="#/9/3" target="_self">Go back</a>
+        </section>
+        <section>
+          <blockquote style="font-size: 6rem;" class="colorful">
+            The quick brown fox jumps over the lazy dog
+          </blockquote>
         </section>
       </div>
     </div>
