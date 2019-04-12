@@ -298,53 +298,8 @@
             <h3>CSS Color Space</h3>
             <a href="https://www.w3.org/TR/css-color-4/">CSS Color Module 4</a>
             <aside class="notes">
-              To understand what is done by the blending funciton "multiply", we
-              need to understand the CSS color space.
-            </aside>
-          </section>
-          <section>
-            <img
-              src="https://digitalgraphics.learningforlife.fsu.edu/w7/additive_subtractive_color_models.jpg"
-              class="fits-screen"
-            />
-            <p>
-              More on
-              <a href="https://ciechanow.ski/color-spaces/">Color Spaces</a> by
-              <a href="https://ciechanow.ski/">Bartosz Ciechanowski</a>
-            </p>
-          </section>
-          <section>
-            <img
-              src="https://upload.wikimedia.org/wikipedia/commons/2/28/RGB_illumination.jpg"
-            />
-            <aside class="notes">
-              <p>
-                And in particular, we need to understand the RGB color model.
-              </p>
-              <p>
-                The RGB color model is additive in the sense that the three
-                light beams are added together.
-              </p>
-              <p>
-                When all three beams are at the strongest intensity, we get
-                white. When the beams are less intense but are equal in their
-                intensity, we get a point on the greyscale. When they have
-                different intensity, we get a colorized hue.
-              </p>
-            </aside>
-          </section>
-          <section>
-            <img src="img/color-cube.png" />
-            <aside class="notes">
-              <p>
-                We can represent RGB color model is based on Cartesian
-                coordinate system.
-              </p>
-              <p>
-                Consider the unit cube, where red, blue, and green sit on the
-                “1” ends of the axis. The “1” means that color beam at its
-                highest intensity, and “0” means no light at all.
-              </p>
+              To understand multiply, we need some foundational understanding
+              about CSS's color space.
             </aside>
           </section>
           <section>
@@ -355,24 +310,54 @@
               <a href="https://en.wikipedia.org/wiki/SRGB">sRGB</a>
               color space
             </h3>
-            <p class="fragment" style="color: rgb(100%, 65%, 2%)">
-              rgb(100%, 65%, 2%)
+            <p class="fragment" style="color: rgb(66, 53, 94)">
+              #42355e
             </p>
             <p class="fragment" style="color: rgb(66, 53, 94)">
               rgb(66, 53, 94)
             </p>
             <aside class="notes">
-              <p>
-                The CSS color module specifies that with each channel, 0%
-                represents minimum value, and 100% represents the maximum value.
-              </p>
-              <p>
-                Alternatively, we can use a number, where 0 again represents the
-                minimum value for the color channel, but 255 represents the
-                maximum.
-              </p>
+              First, let's all agree that when we write CSS colors in RGB, we're
+              talking about three numbers, not one number. It doesn't matter
+              whether we write one single HEX string, or comma separated RGB
+              values, what we actually mean is how strong the light is from that
+              color channel.
             </aside>
           </section>
+          <section>
+            <img
+              src="https://upload.wikimedia.org/wikipedia/commons/2/28/RGB_illumination.jpg"
+            />
+            <aside class="notes">
+              In another words, the CSS's RGB color space is the so-called
+              "additive" color space, like in any monitors or TVs, instead of
+              the "subtractive" color space, link in printers or inks.
+            </aside>
+          </section>
+          <section>
+            <img src="img/color-cube.png" />
+            <aside class="notes">
+              And to be more precise, we're talking about three colors from 0 to
+              1, or 0% to 100% in percentage.
+            </aside>
+          </section>
+          <section>
+            <p style="color: rgb(66, 53, 94)">
+              #42355e
+            </p>
+            <p style="color: rgb(66, 53, 94)">
+              rgb(66, 53, 94)
+            </p>
+            <p class="fragment" style="color: rgb(26%, 21%, 37%)">
+              rgb(26%, 21%, 37%)
+            </p>
+            <aside class="notes">
+              CSS allows us to write in integers, where it ranges from 0 to 255.
+              But semantically we mean how strong the light beams are. And CSS
+              also allows us to write those numbers in percentage values.
+            </aside>
+          </section>
+
           <section>
             <h3>"multiply"</h3>
             <img
@@ -973,6 +958,16 @@
             </div>
             <div class="awesome-folk">
               <a href="https://reactknowledgeable.org/">React Knowledgeable</a>
+            </div>
+            <div class="awesome-folk">
+              <a>
+                Ken Huang
+              </a>
+            </div>
+            <div class="awesome-folk">
+              <a href="http://jennieji.github.io">
+                Jennie Ji
+              </a>
             </div>
           </div>
         </section>
