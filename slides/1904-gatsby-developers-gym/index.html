@@ -405,46 +405,306 @@ $ gatsby develop
             <a href="https://kyleamathews.github.io/typography.js/"
               >Typography.js</a
             >
-            <p class="fragment">
-              (demo)
-            </p>
+            <blockquote class="fragment">
+              A powerful toolkit for building websites with beautiful design.
+            </blockquote>
             <aside class="notes">
-              Kyle also developed a library called Typography that allows you to
-              choose from a repertoire of themes that you may use directly. You
-              may see those themes in this demo website.
-            </aside>
-          </section>
-          <section>
-            <pre><code>
-import Typography from 'typography'
-  const typography = new Typography({
-  baseFontSize: '18px',
-  baseLineHeight: 1.666,
-  headerFontFamily: ['Avenir Next', 'Helvetica Neue', 'Segoe UI', 'Helvetica', 'Arial', 'sans-serif'],
-  bodyFontFamily: ['Georgia', 'serif'],
-  // See below for the full list of options.
-})
-              
-// Output CSS as string.
-typography.toString()
-              
-// Or insert styles directly into the head (works well for client-only
-// JS web apps.
-typography.injectStyles()
-            </code></pre>
-            <aside class="notes">
+              <p>
+                Gatsby’s creator Kyle has created a TypographyJS library (and a
+                large number of util libraries around that). What TypographyJS
+                does is it provides a toolkit for us to define the typography
+                design of our site.
+              </p>
+
+              <p>
+                TypographyJS is a monorepo package and it publishes alongside of
+                it a repertoire of themes that you may use directly. You may see
+                those themes on their demo website.
+              </p>
+
               <p>
                 You may as well define your own typography. How it works is that
                 you define some basics to your site’s typography. It will help
                 you sort out (or lets you customize) the font sizing, line
                 spacing, etc, using a mechanism called vertical rhythm.
               </p>
+
               <p>
-                This once again aligns with how Gatsby provides us with both the
-                readiness and customizability of how we want to implement our
-                sites.
+                For today’s workshop, we are going to create our own
+                Typographyjs theme.
               </p>
             </aside>
+          </section>
+          <section>
+            <h3>Installation</h3>
+            <pre><code class="shell">
+$ yarn add gatsby-plugin-typography react-typography typography
+            </code></pre>
+            <aside class="notes">
+              To use TypographyJS for our Gatsby site, we need three
+              dependencies
+            </aside>
+          </section>
+          <section>
+            <h3>Configuration</h3>
+            <pre><code class="javascript">
+// gatsby-config.js
+
+plugins: [
+  // ... other plugins
+  {
+    resolve: `gatsby-plugin-typography`,
+    options: {
+      pathToConfigModule: `src/utils/typography`
+    }
+  },
+]
+            </code></pre>
+            <aside class="notes">
+              <p>
+                Then, we need to configure it with our gatsby-config.js
+              </p>
+              <p>
+                Create the file specified by pathToConfigModule and let’s work
+                on the typography file itself.
+              </p>
+            </aside>
+          </section>
+          <section>
+            <pre><code class="javascript">
+// src/utils/typography.js
+
+import Typography from "typography";
+const AnyhowlyRocksTheme = {
+  // ... my theme's options
+};
+export default new Typograph(AnyhowlyRocksTheme);
+            </code></pre>
+            <a href="http://kyleamathews.github.io/typography.js/"
+              >TypographJS API docs</a
+            >
+            <aside class="notes">
+              <p>
+                In the typography file, we need the Typography library. And we
+                export default our typography instance by calling new
+                Typography() with our options
+              </p>
+              <p>For what TypographyJS API, refer to the TypographyJS docs.</p>
+            </aside>
+          </section>
+          <section>
+            <h3>Setting Baselines</h3>
+            <ul>
+              <li>
+                baseFontSize
+              </li>
+              <li>
+                baseLineHeight
+              </li>
+              <li>
+                scaleRatio
+              </li>
+            </ul>
+            <aside class="notes">
+              <p>
+                We want to specify the baseline of our typography, i.e., the
+                font sizes and the line heights.
+              </p>
+              <p>
+                scaleRatio specifies the ratio between h1 and normal text
+              </p>
+            </aside>
+          </section>
+          <section>
+            <h3>Google Fonts</h3>
+            <pre><code class="javascript">
+googleFonts: [
+  {
+    name: "Raleway",
+    styles: ["200", "200i", "300", "300i", "400", "400i", "700", "700i"]
+  },
+  {
+    name: "Yanone Kaffeesatz",
+    styles: ["200", "300", "400", "700"]
+  }
+],
+headerFontFamily: ["Yanone Kaffeesatz", "Futura", "sans-serif"],
+bodyFontFamily: ["Raleway", "monospace"],
+            </code></pre>
+            <aside class="notes">
+              <p>
+                TypographyJS allows us to pass in a field for Google Fonts. It
+                will automatically load that font for us so that we can use them
+                in our theme.
+              </p>
+              <p>
+                Then, we need to declare the fonts to use. Here are the related
+                fields
+              </p>
+              <p>
+                These two are both arrays. It will be compiled to CSS font
+                families where if you specify a list of font families, it will
+                keep falling back until it finds a first font in the user’s
+                system that matches it.
+              </p>
+            </aside>
+          </section>
+          <section>
+            <ul>
+              <li>headerWeight</li>
+              <li>bodyWeight</li>
+              <li>headerGray</li>
+              <li>headerGrayHue</li>
+              <li>bodyGray</li>
+              <li>bodyGrayHue</li>
+            </ul>
+            <aside class="notes">
+              <p>
+                There are a few more related fields including the font weights
+                and the colors in hsl shades. Once again you may refer to the
+                doc site for their specifications.
+              </p>
+            </aside>
+          </section>
+          <section>
+            More Options
+            <p>
+              Style picker tool at
+              <a href="http://kyleamathews.github.io/typography.js/"
+                >demo site</a
+              >
+            </p>
+            <aside class="notes">
+              In TypographyJS’s doc site, it has a style picker util on the
+              upper right corder where you can customize those fields and get
+              instant visual feedback of how your site will look like.
+            </aside>
+          </section>
+          <section>
+            <p>`overrideStyles`</p>
+            <blockquote>
+              Imperative API for directly adding to or overriding auto-generated
+              styles. It’s called with a Vertical Rhythm object, the options
+              object, and the algorithmically generated styles.
+            </blockquote>
+          </section>
+          <section>
+            <pre><code class="javascript">
+overrideStyles: () => ({
+  "*": {
+    background: "#222",
+    color: "#eee"
+  },
+  "@media and (min-width: 35rem)": {
+    maxWidth: "35rem"
+  },
+  "blockquote > :last-child": {
+    marginBottom: 0,
+  },
+})
+            </code></pre>
+            <aside class="notes">
+              <p>
+                You should specify a function of three parameters for
+                TypographyJS to call. Your function should return your desired
+                stylesheet in an object, where the field names are the
+                selectors, and the field values are the CSS value object (kebab
+                converted to camelCase according to React convention).
+              </p>
+              <p>
+                This allows us to specify highly customized CSS styles. Since
+                the field names are simply CSS selectors, it supports:
+              </p>
+              <ul>
+                <li>media queries</li>
+                <li>pseudo element selectors</li>
+              </ul>
+              <p>
+                Furthermore, it provides us with a few util functions that we
+                may use to declaratively write our typography styles. Let’s talk
+                about Vertical Rhythm.
+              </p>
+            </aside>
+          </section>
+          <section>
+            <small>work in progress</small>
+            <h3>Vertical Rhythm</h3>
+            <small
+              ><a href="https://github.com/KyleAMathews/compass-vertical-rhythm"
+                >Compass Vertical Rhythm</a
+              ></small
+            >
+            <pre><code class="javascript">
+overrideThemeStyles: ({ rhythm, adjustFontSizeTo }, options, styles) => ({
+  'h2,h3': {
+    marginBottom: rhythm(1/2),
+    marginTop: rhythm(2),
+  },
+  blockquote: {
+    ...adjustFontSizeTo('19px'),
+    color: gray(41),
+    fontStyle: 'italic',
+    paddingLeft: rhythm(13/16),
+    marginLeft: rhythm(-1),
+    borderLeft: `${rhythm(3/16)} solid ${gray(10)}`,
+  },
+})
+            </code></pre>
+          </section>
+          <section>
+            <p>Customizing existing theme</p>
+            <pre><code class="javascript">
+import Typography from "typography";
+import funstonTheme from 'typography-theme-funston'
+const typography = new Typography(
+  {
+    baseFontSize: '18px',
+    baseLineHeight: 1.666,
+    headerFontFamily: ['Avenir Next', 'Helvetica Neue', 'Segoe UI', 'Helvetica', 'Arial', 'sans-serif'],
+    bodyFontFamily: ['Georgia', 'serif'],
+  }
+funstonTheme
+);
+  
+export default typography;
+            </code></pre>
+            <aside class="notes">
+              It is perhaps more convenient to utilize an existing theme and
+              customize for your own needs. You may do this by supplying the
+              theme to the second parameter when you instantiate with new
+              Typography()
+            </aside>
+          </section>
+          <section>
+            <h3>Wrap up</h3>
+            <ul>
+              <li>Typography</li>
+              <li>Using a TypographyJS theme</li>
+              <li>Customizing a TypographyJS theme</li>
+              <li>Vertical Rhythm</li>
+            </ul>
+          </section>
+          <section>
+            <h3>References</h3>
+            <ul>
+              <li>
+                <a
+                  href="https://www.gatsbyjs.org/docs/typography-js/#installing-the-typography-plugin"
+                  >Gatsby docs on using TypographyJS</a
+                >
+              </li>
+              <li>
+                <a href="http://kyleamathews.github.io/typography.js/"
+                  >TypographyJS Docs</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://github.com/KyleAMathews/compass-vertical-rhythm"
+                  >Compass Vertical Rhythm</a
+                >
+              </li>
+            </ul>
           </section>
         </section>
         <section>
@@ -456,6 +716,7 @@ typography.injectStyles()
           <h2>Deploy with Netlify</h2>
           <p>demo</p>
         </section>
+
         <!-- nonsense -->
         <section>
           <section>
