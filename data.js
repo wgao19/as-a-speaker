@@ -29,7 +29,7 @@ var talks = [
     },
     slides: "slides/1904-mixed-and-blended",
     intro:
-      "Introducing `mix-blend-mode` and showcase designs implemented with it."
+      "Understanding `mix-blend-mode`, some mathematical intuitions on the blending modes with CSS, as well as demos and showcases using CodePen since it's a CodePen edition."
   },
   {
     title: "What's Happening at 30 Days of CSS Girls",
