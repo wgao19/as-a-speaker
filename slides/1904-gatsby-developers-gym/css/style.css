@@ -1,0 +1,55 @@
+/* personal utilities */
+
+.increase-specificity .reveal section img {
+  border: 0;
+  margin: 0;
+  background: unset;
+  box-shadow: none;
+}
+
+.increase-specificity .reveal pre {
+  box-shadow: unset;
+}
+
+.increase-specificity .reveal code {
+  background: unset;
+  font-family: "Dank Mono", "Ubuntu Mono", monospace;
+}
+
+.increase-specificity .reveal blockquote {
+  text-align: left;
+  border-left: 8px solid #639;
+  padding-left: 2rem;
+  background: unset;
+  box-shadow: unset;
+  font-style: normal;
+}
+
+.increase-specificity .reveal .center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.increase-specificity .reveal .fits-screen {
+  height: 700px;
+}
+
+.increase-specificity .reveal .spaced > :not(:last-child) {
+  margin-right: 0.5rem;
+}
+
+.badge-to-draft {
+  position: absolute !important;
+  top: 1rem;
+  right: 1rem;
+  border-radius: .2rem;
+  background: currentColor;
+  pointer-events: all;
+  font-size: 1rem !important;
+  padding: .2rem .5rem !important;
+}
+.badge-to-draft span {
+  font-size: 1.5rem;
+  color: white;
+}

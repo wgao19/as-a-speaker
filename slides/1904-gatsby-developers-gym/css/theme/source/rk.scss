@@ -1,0 +1,91 @@
+/**
+ * Black theme for reveal.js. This is the opposite of the 'white' theme.
+ *
+ * By Hakim El Hattab, http://hakim.se
+ */
+
+// Default mixins and settings -----------------
+@import "../template/mixins";
+@import "../template/settings";
+
+// ---------------------------------------------
+
+// Include theme-specific fonts
+@import url("https://fonts.googleapis.com/css?family=Montserrat|Ubuntu+Mono|Roboto+Slab");
+
+// Override theme settings (see ../template/settings.scss)
+$backgroundColor: #222;
+
+$mainColor: #fff;
+$headingColor: #fff;
+
+$mainFontSize: 42px;
+$mainFont: Montserrat, Helvetica, sans-serif;
+$headingFont: Futura, sans-serif;
+$headingTextShadow: none;
+$headingLetterSpacing: normal;
+$headingTextTransform: uppercase;
+$headingFontWeight: 600;
+$linkColor: #639;
+$linkColorHover: lighten($linkColor, 15%);
+$selectionBackgroundColor: lighten($linkColor, 25%);
+
+$heading1Size: 2.5em;
+$heading2Size: 1.6em;
+$heading3Size: 1.3em;
+$heading4Size: 1em;
+
+section.has-light-background {
+  &,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: #222;
+  }
+}
+
+.gatsby-theme .reveal {
+  section img {
+    border: 0;
+    margin: 0;
+    background: unset;
+    box-shadow: none;
+  }
+  pre {
+    box-shadow: unset;
+    display: flex;
+  }
+  code {
+    background: unset;
+    font-family: "Dank Mono", "Ubuntu Mono", monospace;
+  }
+  blockquote {
+    font-family: "Roboto Slab";
+    text-align: left;
+    border-left: 8px solid #639;
+    padding-left: 2rem;
+    background: unset;
+    box-shadow: unset;
+    font-style: normal;
+  }
+  .hljs {
+    margin: auto;
+  }
+  .center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .fits-screen {
+    height: 700px;
+  }
+  .spaced > :not(:last-child) {
+    margin-right: 0.5rem;
+  }
+}
+
+// Theme template ------------------------------
+@import "../template/theme";

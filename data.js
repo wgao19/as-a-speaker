@@ -1,5 +1,16 @@
 var talks = [
   {
+    title: "Developer's Gym - Gatsby Workshop",
+    when: "04/27/2019",
+    where: {
+      name: "Junior Devs",
+      link:
+        "https://www.meetup.com/Junior-Developers-Singapore/events/260595440/"
+    },
+    slides: "slides/1904-gatsby-developers-gym",
+    intro: "Hands-on workshop on Gatsby."
+  },
+  {
     title: "Gatsby Crash",
     when: "03/29/2019",
     where: {

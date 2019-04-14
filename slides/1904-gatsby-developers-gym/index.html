@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+
+    <title>Gatsby Workshop @JuniorDev.SG</title>
+
+    <link rel="stylesheet" href="css/reveal.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/grateful.css" />
+    <link rel="stylesheet" href="css/theme/rk.css" />
+
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="lib/css/zenburn.css" />
+    <base target="_blank" />
+
+    <!-- Printing and PDF exports -->
+    <script>
+      var link = document.createElement("link");
+      link.rel = "stylesheet";
+      link.type = "text/css";
+      link.href = window.location.search.match(/print-pdf/gi)
+        ? "css/print/pdf.css"
+        : "css/print/paper.css";
+      document.getElementsByTagName("head")[0].appendChild(link);
+    </script>
+  </head>
+  <body class="gatsby-theme increase-specificity">
+    <div class="reveal">
+      <div class="slides">
+        <section>
+          <section>
+            <div
+              style="display: flex; max-width: 800px; justify-content: center; align-items: center; margin: auto;"
+            >
+              <img
+                src="http://juniordev.sg/images/JDGreyCircle_small.png"
+                width="300"
+              />
+              <svg
+                style="position: absolute;"
+                version="1.1"
+                xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+                x="0px"
+                y="0px"
+                width="300"
+                height="300"
+                viewBox="0 0 1200 1200"
+                enable-background="new 0 0 1200 1200"
+                xml:space="preserve"
+                fill="currentColor"
+              >
+                <path
+                  style="mix-blend-mode: overlay; color: #639"
+                  d="M600,28.644C284.449,28.644,28.644,284.448,28.644,600c0,315.553,255.806,571.356,571.356,571.356
+        c315.553,0,571.356-255.804,571.356-571.356C1171.356,284.448,915.553,28.644,600,28.644z M151.414,605.956l442.629,442.63
+        C350.989,1045.418,154.581,849.01,151.414,605.956z M700.417,1037.37L162.63,499.583C208.232,300.142,386.734,151.339,600,151.339
+        c149.077,0,281.147,72.727,362.734,184.616l-62.12,54.812C834.433,295.859,724.478,233.746,600,233.746
+        c-158.485,0-293.447,100.668-344.46,241.545l469.17,469.17c113.938-41.26,201.566-137.44,230.914-256.56H761.152v-87.9h205.102
+        v-0.002h82.407V600C1048.661,813.266,899.859,991.768,700.417,1037.37z"
+                />
+              </svg>
+            </div>
+
+            <h1>Gatsby</h1>
+            <small><a href="http://juniordev.sg/">JuniorDev.SG</a></small>
+          </section>
+        </section>
+        <section>
+          <section>
+            <div class="center fits-screen">
+              <img src="img/first-posts.png" />
+            </div>
+            <aside class="notes">
+              I am a React developer, and I am kind of a fan of Dan Abramov's.
+              December of last year, he created a new blog site called
+              overreacted.io 😲 He uses this lovely pinkish theme and has those
+              cute coffee indicators for how long it might take to read.
+            </aside>
+          </section>
+          <section>
+            <div class="center">
+              <blockquote class="twitter-tweet" data-lang="en">
+                <p lang="en" dir="ltr">
+                  If you feel like you’ve learned something in the past few
+                  years I deeply recommend starting a blog, if only to catalog
+                  your thoughts.
+                </p>
+                &mdash; Dan Abramov (@dan_abramov)
+                <a
+                  href="https://twitter.com/dan_abramov/status/1079214023881707520?ref_src=twsrc%5Etfw"
+                  >December 30, 2018</a
+                >
+              </blockquote>
+              <script
+                async
+                src="https://platform.twitter.com/widgets.js"
+                charset="utf-8"
+              ></script>
+            </div>
+            <aside class="notes">
+              And as an expert developer, he also suggests that we keep a blog
+              to catalog our thoughts. I believe that even many of us here would
+              agree, but hasn’t really kept one. Aside from the fact that
+              keeping a blog takes persistence, have you ever thought that the
+              idea of a web blog has been more seriously verbose than geeky and
+              fun?
+            </aside>
+          </section>
+          <section>
+            <blockquote>
+              I like to have full control over the experience.
+            </blockquote>
+            <aside class="notes">
+              When talking about why he switched from Medium to Gatsby, Dan
+              mentioned:
+              <blockquote>
+                I like to have full control over the experience.
+              </blockquote>
+            </aside>
+          </section>
+          <section>
+            <h3>Add bento</h3>
+            <a
+              href="https://github.com/gaearon/overreacted.io/commit/538ac80e9ea3a49ec9e2177e37a95a93bcefad2d"
+            >
+              538ac80</a
+            >
+            <pre>
+<code class="jsx">
+export function formatReadingTime(minutes) { 
+  let cups = Math.round(minutes / 5); 
+  let bowls = 0; 
+  if (cups > 5) { 
+    return `${new Array(Math.round(cups / Math.E)) 
+      .fill('🍱') 
+      .join('')} ${minutes} min read`; 
+  } else { 
+    return `${new Array(cups || 1)
+      .fill('☕️')
+      .join('')} ${minutes} min read`; 
+  } 
+}
+</code>
+            </pre>
+            <aside class="notes">
+              And if you’ve been checking in at his blog site every now and
+              then, you’d noticed that he has recently added a bento option to
+              the reading time feature!
+            </aside>
+          </section>
+          <section>
+            <img src="img/bento.png" />
+            <aside class="notes">
+              So instead of always showing reading time in coffee time, for
+              longer posts it also shows in bento time..
+            </aside>
+          </section>
+          <section>
+            <div class="center">
+              <img src="img/gatsby.svg" width="200" />
+            </div>
+            <aside class="notes">
+              In this talk, I’m going to share about how we as React developers,
+              can make use of our professional skills to build fun blog sites,
+              using Gatsby.
+            </aside>
+          </section>
+        </section>
+        <section>
+          <a
+            class="badge-to-draft"
+            href="https://paper.dropbox.com/doc/Up-and-Running--AbOBRhTkUBWJnXHIPNHwfir9Ag-oLi0QWOcOZWE4oFDfZaO3"
+          >
+            <span>draft</span>
+          </a>
+          <section>
+            <h2>Up and running</h2>
+            <small>work in progress</small>
+          </section>
+          <section>
+            <h3>Environment dependencies</h3>
+            <ul>
+              <li>git</li>
+              <li><a href="https://nodejs.org/">node.js</a> version >= 8</li>
+              <li>gatsby-cli</li>
+            </ul>
+          </section>
+          <section>
+            <pre>
+              <code class="shell">
+$ gatsby new name-of-your-site https://github.com/gatsbyjs/gatsby-starter-hello-world
+$ cd hello-world
+$ gatsby develop
+              </code>
+            </pre>
+          </section>
+          <section>
+            <img
+              src="https://www.gatsbyjs.org/static/057f454229859b1752c44dba1580984e/17a00/04-home-page.png"
+              class="fits-screen"
+            />
+          </section>
+          <section>
+            <h3>References</h3>
+            <ul>
+              <li>
+                <a href="https://www.gatsbyjs.org/tutorial/part-zero/"
+                  >Set Up Your Development Environment</a
+                >
+              </li>
+            </ul>
+          </section>
+        </section>
+        <section>
+          <a
+            class="badge-to-draft"
+            href="https://paper.dropbox.com/doc/Starters--AbOGpfrVY6VU~GryqQ5KcnheAg-lKrNqMpV6PTg3nkfxM54K"
+          >
+            <span>draft</span>
+          </a>
+          <section>
+            <h3>
+              <a href="https://www.gatsbyjs.org/starters/?v=2"
+                >Gatsby Starters</a
+              >
+            </h3>
+          </section>
+        </section>
+        <section>
+          <a
+            class="badge-to-draft"
+            href="https://paper.dropbox.com/doc/Typography-EsJA2ivqkXpQK1nAnIpbj"
+          >
+            <span>draft</span>
+          </a>
+          <section>
+            <h2>Styling</h2>
+            <small>work in progress</small>
+          </section>
+          <section>
+            <div class="fits-screen">
+              <img src="img/tweet-argue-about-css.png" />
+            </div>
+            <aside class="notes">
+              I'm not sure if you will agree with me or not, but I feel our
+              front end developer community is… really concerned about styling.
+              That’s Gatsby’s creator by the way. And I’d like to mention that
+              Typography was in the very first real commit of Gatsby’s very
+              first starter.
+            </aside>
+          </section>
+          <section>
+            <h2 style="text-decoration: line-through">Styling</h2>
+            <h2>Typography</h2>
+            <aside class="notes">
+              Now, styling is an integral part of sites we create, I’d like to
+              claim that typogaphy is particularly integral to Gatsby site.
+            </aside>
+          </section>
+          <section>
+            <img src="img/typography.png" />
+            <aside class="notes">
+              So what is typography anyway?
+            </aside>
+          </section>
+          <section>
+            <img src="img/baskerville.jpg" class="fits-screen" />
+            <aside class="notes">
+              <p>
+                Something I learned earlier this year that has amused me was
+                that — the computer fonts we use is in many parts an extension
+                of book printing. And a lot of the fonts are a recreate of book
+                printing fonts.
+              </p>
+              <p>
+                Baskerville was designed by John Baskerville in 1757 in England.
+              </p>
+            </aside>
+          </section>
+          <section>
+            <blockquote>
+              Although many books define the purpose of typography as enhancing
+              the readability of the written word, one of design’s most humane
+              functions is, in actuality, to help readers <i>avoid</i> reading.
+            </blockquote>
+            <small
+              ><a href="http://www.atypeprimer.com/">A Type Primer</a> by John
+              Kane</small
+            >
+            <aside class="notes">
+              <p>
+                There are similarities and differences between book printing and
+                web typography. But their motivations are rather aligned, and
+                beside the apparent styling purpose we may think of, I’d like to
+                quote this:
+              </p>
+              <p>
+                So typography is this set of rules of font families, font sizes,
+                indents, line spacings, progression of headers, etc etc, that
+                defines how your website displays its content, mainly texts.
+              </p>
+              <p>
+                Now, this serves as our mini intro to typography which I’d like
+                to have a separate talk if folks are interested, today I’ll show
+                you how it works in the blog starter.
+              </p>
+            </aside>
+          </section>
+          <section>
+            <a href="https://kyleamathews.github.io/typography.js/"
+              >Typography.js</a
+            >
+            <p class="fragment">
+              (demo)
+            </p>
+            <aside class="notes">
+              Kyle also developed a library called Typography that allows you to
+              choose from a repertoire of themes that you may use directly. You
+              may see those themes in this demo website.
+            </aside>
+          </section>
+          <section>
+            <pre><code>
+import Typography from 'typography'
+  const typography = new Typography({
+  baseFontSize: '18px',
+  baseLineHeight: 1.666,
+  headerFontFamily: ['Avenir Next', 'Helvetica Neue', 'Segoe UI', 'Helvetica', 'Arial', 'sans-serif'],
+  bodyFontFamily: ['Georgia', 'serif'],
+  // See below for the full list of options.
+})
+              
+// Output CSS as string.
+typography.toString()
+              
+// Or insert styles directly into the head (works well for client-only
+// JS web apps.
+typography.injectStyles()
+            </code></pre>
+            <aside class="notes">
+              <p>
+                You may as well define your own typography. How it works is that
+                you define some basics to your site’s typography. It will help
+                you sort out (or lets you customize) the font sizing, line
+                spacing, etc, using a mechanism called vertical rhythm.
+              </p>
+              <p>
+                This once again aligns with how Gatsby provides us with both the
+                readiness and customizability of how we want to implement our
+                sites.
+              </p>
+            </aside>
+          </section>
+        </section>
+        <section>
+          <h2>Blog Queries with GraphQL</h2>
+          <small>Welcome Nut</small>
+        </section>
+        <!-- deploy -->
+        <section>
+          <h2>Deploy with Netlify</h2>
+          <p>demo</p>
+        </section>
+        <!-- nonsense -->
+        <section>
+          <section>
+            <h2>
+              Do chefs
+            </h2>
+            <h3>
+              cook at home?
+            </h3>
+            <aside class="notes">
+              I'd like to wrap up with this question.
+            </aside>
+          </section>
+          <section>
+            <blockquote>
+              After cooking non-stop for 10/15 hours per day, the last thing you
+              want to do as home is cook your own meal.
+            </blockquote>
+            <a
+              href="https://www.quora.com/What-do-great-chefs-cook-for-themselves-when-eating-alone-at-home"
+              >A Quora Answer</a
+            >
+            <aside class="notes">
+              <p>
+                So this guy is a chef from a Michelin starred restaurant. And
+                apparently he doesn't cook.
+              </p>
+              <p>
+                This is like you work for Facebook and you never want to look at
+                React once you reach home.
+              </p>
+            </aside>
+          </section>
+
+          <section>
+            <div class="fits-screen">
+              <img src="img/the-silver-chef.jpg" />
+            </div>
+          </section>
+          <section>
+            <blockquote>
+              Waking up to a healthy breakfast of #puffedrice #chiaseeds #figs
+              #grapes and #yogurt :))))
+            </blockquote>
+            <aside class="notes">
+              <p>
+                This is from a local food critique. If I'm not wrong, he used to
+                own or chef a cafe as well. Regardless, he posts reviews and his
+                own or his wife's cooking on a daily basis.
+              </p>
+              <p>
+                I personally follow him on Instagram, and I've learned many of
+                the local places to eat from there.
+              </p>
+              <p>
+                So this is like you have a living around React, while also keep
+                telling people what you think is good about it.
+              </p>
+              <p>
+                Also creating a bunch of hashtags.
+              </p>
+            </aside>
+          </section>
+          <section>
+            <video src="img/nadine.mp4" controls></video>
+          </section>
+          <section>
+            <blockquote>
+              We eat well at home. But that's not because Rene cooks. I cook.
+            </blockquote>
+            <small
+              >(quote not exact, taken out from Rene's episode of Chef's
+              Table)</small
+            >
+            <small>
+              <a href="https://www.instagram.com/nadinelevyredzepi/?hl=en"
+                >Nadine Levy Redzepi</a
+              >, cookbook author, wife of Rene Redzepi, Danish chef and co-owner
+              of a Michelin 2-star restaurant
+            </small>
+            <aside class="notes">
+              <p>
+                This is the wife of a chef and co-owner of a Michelin 2-star
+                restaurant. She, the wife, has 185k followers on Instagram where
+                she posts her cooking, just so we are clear.
+              </p>
+              <p>
+                So this is like you are a star engineer, got no time to do React
+                at home at all, but your wife does it, writes book about it, and
+                teaches your kid to do it.
+              </p>
+            </aside>
+          </section>
+          <section>
+            <h2>🥘❓💩⁉️</h2>
+            <p class="fragment">
+              create some
+              <span class="fragment highlight-red">nonsense</span> this
+              weekend❣️
+            </p>
+            <aside class="notes">
+              <p>
+                Food becomes crap in no time. So food is literally nonsense. But
+                can we live without food?
+              </p>
+              <p>
+                So what’s this Gatsby nonsense here? We have professional tools
+                called React that we use in our day time jobs. And then there is
+                this Gatsby that says hey, here’s how you can create some
+                nonsense real quick if you want, since you know React already
+                then why not?
+              </p>
+              <p>
+                If you don’t have a blog where you can post nonsense just yet,
+                you should create one this weekend :D
+              </p>
+            </aside>
+          </section>
+        </section>
+        <section>
+          <div class="grateful">
+            <div class="awesome-folk">
+              <a href="http://juniordev.sg/">JuniorDev.sg</a>
+            </div>
+            <div class="awesome-folk">
+              <a>Michael Cheng</a>
+            </div>
+            <div class="awesome-folk">
+              <a href="https://twitter.com/hj_chen">Huijing</a>
+            </div>
+            <div class="awesome-folk"><a>Nut</a></div>
+            <div href="https://twitter.com/qiannyqianhere" class="awesome-folk">
+              <a>Huiqian</a>
+            </div>
+            <div class="awesome-folk">
+              <a href="https://twitter.com/kenleesm">Ken</a>
+            </div>
+            <div class="awesome-folk"><a>Jiangwei</a></div>
+          </div>
+        </section>
+      </div>
+    </div>
+
+    <script src="lib/js/head.min.js"></script>
+    <script src="js/reveal.js"></script>
+    <script src="js/grateful.js"></script>
+
+    <script>
+      // More info about config & dependencies:
+      // - https://github.com/hakimel/reveal.js#configuration
+      // - https://github.com/hakimel/reveal.js#dependencies
+      Reveal.initialize({
+        width: "100%",
+        height: "100%",
+        margin: 0,
+        minScale: 1,
+        maxScale: 1,
+        dependencies: [
+          { src: "plugin/markdown/marked.js" },
+          { src: "plugin/markdown/markdown.js" },
+          { src: "plugin/notes/notes.js", async: true },
+          {
+            src: "plugin/highlight/highlight.js",
+            async: true,
+            callback: function() {
+              hljs.initHighlightingOnLoad();
+            }
+          }
+        ]
+      });
+    </script>
+  </body>
+</html>
