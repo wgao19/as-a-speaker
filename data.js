@@ -22,10 +22,11 @@ var talks = [
   },
   {
     title: "What's Happening at 30 Days of CSS Girls",
-    when: "hopefully soon",
+    when: "04/16/2019",
     where: {
       name: "Graduation Party",
-      link: "https://singaporecss.github.io"
+      link:
+        "https://cgcsscchallenge.peatix.com/?fbclid=IwAR3Tj-Mc6TpBwqas6afVXWy8qLd-k2iSaHH3r_QCjx1GUrbrL3_L4ldbqKI"
     },
     slides: "slides/1903-whats-happening-30-days-of-css-girls",
     intro: `A retro talk regarding the <a href="https://css.codinggirls.sg">#30DaysOfCSSGirls</a> event with <a href="https://codinggirls.sg">CodingGirls</a>.`
