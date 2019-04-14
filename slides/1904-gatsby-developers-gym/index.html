@@ -181,7 +181,6 @@ export function formatReadingTime(minutes) {
           </a>
           <section>
             <h2>Up and running</h2>
-            <small>work in progress</small>
           </section>
           <section>
             <h3>Environment dependencies</h3>
@@ -192,26 +191,115 @@ export function formatReadingTime(minutes) {
             </ul>
           </section>
           <section>
+            <p>
+              Anyhowly-Dot-Rocks with
+              <a
+                href="https://www.gatsbyjs.org/starters/Vagr9K/gatsby-advanced-starter/"
+                >Gatsby Advanced Starter</a
+              >
+            </p>
             <pre>
               <code class="shell">
-$ gatsby new name-of-your-site https://github.com/gatsbyjs/gatsby-starter-hello-world
-$ cd hello-world
+$ gatsby new anyhowly-rocks https://github.com/Vagr9K/gatsby-advanced-starter
+$ cd anyhowly-rocks
 $ gatsby develop
               </code>
             </pre>
+            <aside class="notes">
+              <p>
+                For today’s workshop called Developers’ Gym, I’m taking the
+                liberty of creating a static site for my favorite sport, rock
+                climbing. And I’m gonna call it, ugh, anyhowly.rocks (domain is
+                cheap too).
+              </p>
+              <p>
+                And we’ll use Gatsby Advanced Starter (source, demo) today.
+              </p>
+
+              <p>
+                The feature about Gatsby Advanced Starter is that it (refer to
+                the starter site):
+              </p>
+
+              <ul>
+                <li>
+                  provides only a skeleton
+                </li>
+                <li>
+                  does not join the battle of UI frameworks, so you get to pick
+                  your side
+                </li>
+                <li>
+                  but it does nicely include a few essential blogging features
+                  including (but does not limit to): tags - categories - google
+                  analytics (so you learn about your audience) - disqus (for
+                  comments) - SEO
+                </li>
+              </ul>
+            </aside>
+          </section>
+
+          <section>
+            <h3>
+              <a href="https://www.gatsbyjs.org/docs/gatsby-cli/">Gatsby CLI</a>
+            </h3>
+            <ul>
+              <li><code class="shell">$ gatsby new name-of-your-site</code></li>
+              <li><code class="shell">$ gatsby develop</code></li>
+              <li><code class="shell">$ gatsby build</code></li>
+              <li><code class="shell">$ gatsby serve</code></li>
+              <li><code class="shell">$ gatsby info</code></li>
+              <li><code class="shell">$ gatsby clean</code></li>
+            </ul>
+            <aside class="notes">
+              <p>
+                The command gatsby new comes from the package Gatsby CLI. It is
+                intended to be installed globally. When you run gatsby new, what
+                it does is that it clones your starter, installs dependencies,
+                copies starter files, then remove the .git directory so you can
+                initialize your own.
+              </p>
+            </aside>
           </section>
           <section>
-            <img
-              src="https://www.gatsbyjs.org/static/057f454229859b1752c44dba1580984e/17a00/04-home-page.png"
-              class="fits-screen"
-            />
+            <img src="img/it-works.png" />
           </section>
+
+          <section>
+            <ul>
+              <li>
+                Create your site using Gatsby Advanced Starter
+              </li>
+              <li>
+                Get it up and running
+              </li>
+              <li>
+                Cleanup
+                <ul>
+                  <li>
+                    README.md
+                  </li>
+                  <li>
+                    package.json: name, description, author, keywords
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </section>
+
           <section>
             <h3>References</h3>
             <ul>
               <li>
                 <a href="https://www.gatsbyjs.org/tutorial/part-zero/"
                   >Set Up Your Development Environment</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://github.com/gatsbyjs/gatsby/blob/master/packages/gatsby-cli/README.md"
+                >
+                  Gatsby CLI README</a
                 >
               </li>
             </ul>
@@ -232,6 +320,7 @@ $ gatsby develop
             </h3>
           </section>
         </section>
+
         <section>
           <a
             class="badge-to-draft"
