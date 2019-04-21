@@ -39,6 +39,20 @@
   margin-right: 0.5rem;
 }
 
+.reveal .padded {
+  padding: 2rem;
+}
+
+.reveal .free-height {
+  max-height: none;
+  min-height: none;
+  height: none;
+}
+
+.reveal .flush-left {
+  text-align: left;
+}
+
 .badge-to-draft {
   position: absolute !important;
   top: 1rem;
@@ -52,4 +66,7 @@
 .badge-to-draft span {
   font-size: 1.5rem;
   color: white;
+}
+.increase-specificity .reveal small {
+  vertical-align: middle;
 }
