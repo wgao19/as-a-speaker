@@ -722,17 +722,21 @@ export default class MainLayout extends React.Component {
             </ul>
           </section>
         </section>
+<section>
+          <h2>Blog Queries</h2>
+          <p>Welcome Nuttapat</p>
+        </section>
         <section>
           <a
             class="badge-to-draft"
             href="https://paper.dropbox.com/doc/Typography-EsJA2ivqkXpQK1nAnIpbj"
           >
-            <span>draft: typography</span>
+            <span>draft: styling</span>
           </a>
           <section>
             <h2>Styling</h2>
-            <small>work in progress</small>
           </section>
+
           <section>
             <div class="fits-screen">
               <img src="img/tweet-argue-about-css.png" />
@@ -740,17 +744,133 @@ export default class MainLayout extends React.Component {
             <aside class="notes">
               I'm not sure if you will agree with me or not, but I feel our
               front end developer community is… really concerned about styling.
-              That’s Gatsby’s creator by the way. And I’d like to mention that
-              Typography was in the very first real commit of Gatsby’s very
-              first starter.
+              That’s Gatsby’s creator by the way.
             </aside>
           </section>
+          <section>
+            <ul>
+              <li>Plain CSS</li>
+              <li>Sass / Less</li>
+              <li>CSS Modules</li>
+              <li>CSS-in-JS</li>
+            </ul>
+          </section>
+
+          <section>
+            <h3>Using SASS with Gatsby</h3>
+            <p>
+              <a
+                href="https://www.gatsbyjs.org/packages/gatsby-plugin-sass/?=gatsby-plugin-sass"
+                >gatsby-plugin-sass</a
+              >
+            </p>
+            <pre><code class="shell">
+$ yarn add sass gatsby-plugin-sass
+            </code></pre>
+          </section>
+          <section>
+            <pre><code class="js">
+// in gatsby-config.js
+plugins: [
+  {
+    resolve: `gatsby-plugin-sass`,
+    options: {
+      implementation: require("sass"),
+    },
+  },
+]
+            </code></pre>
+          </section>
+          <section>
+            <h3>CSS Modules</h3>
+            <blockquote class="fragment">
+              CSS Modules is a build step (with the help of Webpack or
+              Browserify) that changes class names and selectors to be scoped.
+            </blockquote>
+            <aside class="notes">
+              <p>
+                Ask for familiarity of CSS modules.
+              </p>
+              <p>
+                One reason to use CSS modules with Gatsby is that the scoped
+                class names work very well with the component-based mindset,
+                which is a default with React.
+              </p>
+            </aside>
+          </section>
+
+          <section>
+            <p>
+              <a href="https://www.gatsbyjs.org/tutorial/part-two/#css-modules"
+                >Using CSS Modules with Gatsby</a
+              >
+            </p>
+            <aside class="notes">
+              You may learn more using CSS Modules with Gatsby by reading the
+              CSS Modules section in Gatsby’s official tutorial.
+            </aside>
+          </section>
+
+          <section>
+            <pre><code class="sass">
+// src/layout/s.module.scss
+
+// ...other styles
+
+:local {
+  .container {
+    max-width: 35rem;
+    margin: 0 auto;
+  }
+}
+            </code></pre>
+            <small>jsx broke my slides 🤷🏻‍♀️</small>
+          </section>
+
+          <section>
+            Pause to add some more styling
+          </section>
+
+          <section>
+            Basic Typesetting
+          </section>
+          <section>
+            <h3>References</h3>
+            <ul>
+              <li>
+                <a
+                  href="https://www.gatsbyjs.org/packages/gatsby-plugin-sass/?=gatsby-plugin-sass"
+                  >Gatsby Plugin Sass</a
+                >
+              </li>
+              <li>
+                <a href="https://css-tricks.com/css-modules-part-1-need/"
+                  >What Are CSS Modules</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://www.gatsbyjs.org/tutorial/part-two/#css-modules"
+                  >Using CSS Modules with Gatsby</a
+                >
+              </li>
+            </ul>
+          </section>
+        </section>
+        <section>
           <section>
             <h2 style="text-decoration: line-through">Styling</h2>
             <h2>Typography</h2>
             <aside class="notes">
-              Now, styling is an integral part of sites we create, I’d like to
-              claim that typogaphy is particularly integral to Gatsby site.
+              <p>
+                Now, styling is an integral part of sites we create.
+              </p>
+
+              <p>
+                However, sometimes the our main goal in styling is simply to
+                present text in a friendly way. In this case we may be concerned
+                about what's called "typography" instead.
+              </p>
             </aside>
           </section>
           <section>
@@ -763,10 +883,9 @@ export default class MainLayout extends React.Component {
             <img src="img/baskerville.jpg" class="fits-screen" />
             <aside class="notes">
               <p>
-                Something I learned earlier this year that has amused me was
-                that — the computer fonts we use is in many parts an extension
-                of book printing. And a lot of the fonts are a recreate of book
-                printing fonts.
+                Some of the computer fonts we use today are a remake of
+                book-printing font that dates back even to sixteenth,
+                seventeenth centuries.
               </p>
               <p>
                 Baskerville was designed by John Baskerville in 1757 in England.
@@ -806,34 +925,25 @@ export default class MainLayout extends React.Component {
             <a href="https://kyleamathews.github.io/typography.js/"
               >Typography.js</a
             >
-            <blockquote class="fragment">
-              A powerful toolkit for building websites with beautiful design.
-            </blockquote>
+            <ul>
+              <li>A selection of existing typography themes</li>
+              <li>Highly customizable</li>
+            </ul>
             <aside class="notes">
               <p>
-                Gatsby’s creator Kyle has created a TypographyJS library (and a
-                large number of util libraries around that). What TypographyJS
-                does is it provides a toolkit for us to define the typography
-                design of our site.
+                Typoegraphyjs is a library created by the creator of Gatsby. And
+                it has been playing an integral part of many Gatsby sites. What
+                it offers:
               </p>
 
-              <p>
-                TypographyJS is a monorepo package and it publishes alongside of
-                it a repertoire of themes that you may use directly. You may see
-                those themes on their demo website.
-              </p>
-
-              <p>
-                You may as well define your own typography. How it works is that
-                you define some basics to your site’s typography. It will help
-                you sort out (or lets you customize) the font sizing, line
-                spacing, etc, using a mechanism called vertical rhythm.
-              </p>
-
-              <p>
-                For today’s workshop, we are going to create our own
-                Typographyjs theme.
-              </p>
+              <ul>
+                <li>
+                  A selection of existing typography themes
+                </li>
+                <li>
+                  Highly customizable
+                </li>
+              </ul>
             </aside>
           </section>
           <section>
@@ -872,13 +982,35 @@ plugins: [
             </aside>
           </section>
           <section>
+            <h3>Using an existing theme</h3>
+            <p>
+              Browse at Typography.js's
+              <a href="http://kyleamathews.github.io/typography.js/"
+                >demo site</a
+              >
+            </p>
             <pre><code class="javascript">
 // src/utils/typography.js
 
 import Typography from "typography";
-const AnyhowlyRocksTheme = {
-  // ... my theme's options
-};
+import themeElkGlen from "typography-theme-elk-glen"; // need to add dependency
+export default new Typography(themeElkGlen);
+            </code></pre>
+            <small>Restart dev server if haven't.</small>
+          </section>
+          <section>
+            <h3>Customizing Typographyjs theme</h3>
+            <pre><code class="javascript">
+// src/utils/typography.js
+
+import Typography from "typography";
+
+themeElkGlen.overrideThemeStyles = ({ rhythm }, options) => ({
+  'h1': {
+    marginBottom: rhythm(1/2),
+    marginTop: rhythm(2),
+  }
+})
 export default new Typography(AnyhowlyRocksTheme);
             </code></pre>
             <a href="http://kyleamathews.github.io/typography.js/"
@@ -921,16 +1053,11 @@ export default new Typography(AnyhowlyRocksTheme);
             <pre><code class="javascript">
 googleFonts: [
   {
-    name: "Raleway",
-    styles: ["200", "200i", "300", "300i", "400", "400i", "700", "700i"]
-  },
-  {
-    name: "Yanone Kaffeesatz",
-    styles: ["200", "300", "400", "700"]
+    name: "Bevan",
+    styles: ["400"]
   }
 ],
-headerFontFamily: ["Yanone Kaffeesatz", "Futura", "sans-serif"],
-bodyFontFamily: ["Raleway", "monospace"],
+headerFontFamily: ["Bevan", "Futura", "sans-serif"],
             </code></pre>
             <aside class="notes">
               <p>
@@ -1028,7 +1155,6 @@ overrideStyles: () => ({
             </aside>
           </section>
           <section>
-            <small>work in progress</small>
             <h3>Vertical Rhythm</h3>
             <small
               ><a href="https://github.com/KyleAMathews/compass-vertical-rhythm"
@@ -1053,39 +1179,6 @@ overrideThemeStyles: ({ rhythm, adjustFontSizeTo }, options, styles) => ({
             </code></pre>
           </section>
           <section>
-            <p>Customizing existing theme</p>
-            <pre><code class="javascript">
-import Typography from "typography";
-import funstonTheme from 'typography-theme-funston'
-const typography = new Typography(
-  {
-    baseFontSize: '18px',
-    baseLineHeight: 1.666,
-    headerFontFamily: ['Avenir Next', 'Helvetica Neue', 'Segoe UI', 'Helvetica', 'Arial', 'sans-serif'],
-    bodyFontFamily: ['Georgia', 'serif'],
-  },
-  funstonTheme
-);
-  
-export default typography;
-            </code></pre>
-            <aside class="notes">
-              It is perhaps more convenient to utilize an existing theme and
-              customize for your own needs. You may do this by supplying the
-              theme to the second parameter when you instantiate with new
-              Typography()
-            </aside>
-          </section>
-          <section>
-            <h3>Wrap up</h3>
-            <ul>
-              <li>Typography</li>
-              <li>Using a TypographyJS theme</li>
-              <li>Customizing a TypographyJS theme</li>
-              <li>Vertical Rhythm</li>
-            </ul>
-          </section>
-          <section>
             <h3>References</h3>
             <ul>
               <li>
@@ -1108,10 +1201,7 @@ export default typography;
             </ul>
           </section>
         </section>
-        <section>
-          <h2>Blog Queries</h2>
-          <p>Welcome Nuttapat</p>
-        </section>
+        
         <!-- reaches -->
         <section>
           <a
