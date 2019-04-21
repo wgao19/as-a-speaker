@@ -722,7 +722,7 @@ export default class MainLayout extends React.Component {
             </ul>
           </section>
         </section>
-<section>
+        <section>
           <h2>Blog Queries</h2>
           <p>Welcome Nuttapat</p>
         </section>
@@ -766,6 +766,8 @@ export default class MainLayout extends React.Component {
             </p>
             <pre><code class="shell">
 $ yarn add sass gatsby-plugin-sass
+$ # or
+$ npm install --save sass gatsby-plugin-sass
             </code></pre>
           </section>
           <section>
@@ -950,6 +952,8 @@ plugins: [
             <h3>Installation</h3>
             <pre><code class="shell">
 $ yarn add gatsby-plugin-typography react-typography typography
+$ # or
+$ npm install --save gatsby-plugin-typography react-typography typography
             </code></pre>
             <aside class="notes">
               To use TypographyJS for our Gatsby site, we need three
@@ -1201,7 +1205,132 @@ overrideThemeStyles: ({ rhythm, adjustFontSizeTo }, options, styles) => ({
             </ul>
           </section>
         </section>
-        
+
+        <section>
+          <section>
+            <h2>Plugging in Third Party Services</h2>
+          </section>
+          <section>
+            <h3>Embedding Instagram Post 🙈</h3>
+            <p>
+              We need
+              <a
+                href="https://www.gatsbyjs.org/packages/@raae/gatsby-remark-oembed/?=oembed"
+                ><code>gatsby-remark-oembed</code></a
+              >
+            </p>
+          </section>
+          <section>
+            <h3>The plugins system</h3>
+            <ul>
+              <li class="fragment">
+                Source: <code>gatsby-source-*</code>,
+                <small>
+                  i.e.
+                  <code>gatsby-source-filesystem</code>
+                </small>
+              </li>
+              <li class="fragment">
+                Transformer: <code>gatsby-transformer-*</code>,
+                <small>
+                  i.e.
+                  <code>gatsby-transformer-remark</code>
+                </small>
+              </li>
+              <li class="fragment">
+                Helpers: <code>gatsby-[plugin-name]-*</code>,
+                <small>
+                  i.e.
+                  <code>gatsby-remark-oembed</code>
+                </small>
+              </li>
+              <li class="fragment">
+                Others: <code>gatsby-plugin-*</code>,
+                <small>
+                  i.e.
+                  <code>gatsby-plugin-sass</code>
+                </small>
+              </li>
+            </ul>
+          </section>
+          <section>
+            <h3>Installation</h3>
+            <a
+              href="https://www.gatsbyjs.org/packages/@raae/gatsby-remark-oembed/?=oembed"
+              ><code>gatsby-remark-oembed</code></a
+            >
+            <pre><code class="shell">
+$ yarn add @raae/gatsby-remark-oembed 
+$ # or
+$ npm install @raae/gatsby-remark-oembed
+            </code></pre>
+          </section>
+          <section>
+            <aside class="notes">
+              <p>
+                A helper plugin for
+                <a
+                  href="https://www.gatsbyjs.org/packages/gatsby-transformer-remark/?=remark"
+                  ><code>gatsby-transformer-remark</code></a
+                >
+              </p>
+              <p>
+                This also means that the configuration goes into
+                <code>gatsby-transformer-ramark</code>'s configurations
+              </p>
+            </aside>
+            <pre><code class="js free-height">
+// gatsby-config.js
+plugins: [
+  {
+    resolve: `gatsby-transformer-remark`,
+    options: {
+      plugins: [
+        {
+          resolve: `@raae/gatsby-remark-oembed`,
+          options: {
+            // ... next slide
+          }
+        }
+      ]
+    }
+  }
+];
+            </code></pre>
+          </section>
+          <section>
+            <pre><code class="js free-height">
+{
+  resolve: `@raae/gatsby-remark-oembed`,
+  options: {
+    // defaults to false
+    usePrefix: true,
+    providers: {
+      include: [
+        'Twitter',
+        'Instagram',
+      ],
+      settings: {
+        // Ex. Show all Twitter embeds with the dark theme
+        Twitter: { theme: 'dark' },
+        // Ex. Hide all Instagram comments by default
+        Instagram: { hidecaption: true },
+      },
+    }
+  }
+}
+            </code></pre>
+          </section>
+          <section>
+            <pre><code class="markdown">
+# in your post markdown file
+
+`oembed: https://www.instagram.com/p/Bqr_-MuBdbK/`
+
+            </code></pre>
+          </section>
+        </section>
+
         <!-- reaches -->
         <section>
           <a
