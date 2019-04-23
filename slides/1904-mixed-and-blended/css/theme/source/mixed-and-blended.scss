@@ -22,8 +22,7 @@
 // Override theme settings (see ../template/settings.scss)
 $backgroundColor: #fff;
 
-$alpha: 0.6;
-$ua-blue: rgba(0, 51, 171, $alpha);
+$ua-blue: rgb(0, 51, 171);
 
 $orange: rgb(255, 107, 0);
 $red: rgb(255, 67, 56);
@@ -44,7 +43,7 @@ $headingLetterSpacing: normal;
 $headingTextTransform: none;
 $headingFontWeight: 600;
 $linkColor: $ua-blue;
-$linkColorHover: lighten($linkColor, 15%);
+$linkColorHover: darken($linkColor, 5%);
 $selectionBackgroundColor: lighten($linkColor, 25%);
 
 $heading1Size: 2.5em;
