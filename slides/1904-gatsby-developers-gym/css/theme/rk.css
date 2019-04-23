@@ -17,7 +17,8 @@ section.has-light-background h6 {
   border: 0;
   margin: 0;
   background: unset;
-  box-shadow: none; }
+  box-shadow: none;
+  max-height: 75vh; }
 
 .gatsby-theme .reveal pre {
   box-shadow: unset;
