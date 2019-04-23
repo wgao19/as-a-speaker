@@ -85,6 +85,13 @@ section.has-light-background {
   .spaced > :not(:last-child) {
     margin-right: 0.5rem;
   }
+  .revert {
+    color: white;
+    background: #639;
+  }
+  .revert * {
+    color: white;
+  }
 }
 
 // Theme template ------------------------------

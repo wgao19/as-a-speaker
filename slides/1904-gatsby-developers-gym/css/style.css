@@ -70,3 +70,19 @@
 .increase-specificity .reveal small {
   vertical-align: middle;
 }
+.split {
+  display: flex !important;
+  justify-content: space-around;
+}
+.split > * {
+  width: 50%;
+  flex-grow: 0;
+  padding: 1rem;
+}
+.social-links {
+  display: flex;
+}
+.social-links svg {
+  width: 48px;
+  height: 48px;
+}

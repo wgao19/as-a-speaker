@@ -50,6 +50,13 @@ section.has-light-background h6 {
 .gatsby-theme .reveal .spaced > :not(:last-child) {
   margin-right: 0.5rem; }
 
+.gatsby-theme .reveal .revert {
+  color: white;
+  background: #639; }
+
+.gatsby-theme .reveal .revert * {
+  color: white; }
+
 /*********************************************
  * GLOBAL STYLES
  *********************************************/
