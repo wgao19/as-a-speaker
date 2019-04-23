@@ -14,6 +14,7 @@
 .increase-specificity .reveal code {
   background: unset;
   font-family: "Dank Mono", "Ubuntu Mono", monospace;
+  max-height: none;
 }
 
 .increase-specificity .reveal blockquote {
