@@ -479,29 +479,17 @@
           </section>
 
           <section>
-            <img
-              src="https://photoshoptrainingchannel.com/wp-content/uploads/2017/04/sample-00-base-blend-layers.jpg"
-            />
-          </section>
-          <section>
-            <h3>multiply</h3>
-            <img
-              src="https://photoshoptrainingchannel.com/wp-content/uploads/2017/04/sample-04-multiply-blending-mode-800x235.jpg"
-            />
-            <aside class="notes">
-              <p>
-                What it actually means is how the two color beams weaken each
-                other. And since each one of the three color beams are either
-                left unchanged (if multiplied with 1) or weakened, the result is
-                at least as dark as either of the two colors.
-              </p>
-              <p>
-                It follows that multiplying any color with black gives you
-                black, like you turn off the lights. And multiplying any color
-                white white gives you the original color, like no weakening at
-                all.
-              </p>
-            </aside>
+            <font class="colorful">multiply</font>
+            <p style="color: rgb(65%, 70%, 90%)">
+              rgb(65%, 70%, 90%)
+            </p>
+            <p style="color: rgb(100%, 70%, 20%)">
+              rgb(100%, 70%, 20%)
+            </p>
+            <font class="colorful">_</font>
+            <p style="color: rgb(65%, 49%, 18%)">
+              rgb(65%, 49%, 18%)
+            </p>
           </section>
           <section>
             <h3>intuitions ✌️</h3>
@@ -519,7 +507,8 @@
         </section>
         <section>
           <section>
-            <h2>screen</h2>
+            <h3>screen</h3>
+            <h4>complement of multiply</h4>
             <aside class="notes">
               <p>
                 Screen is the complement of multiply. How to understand this?
@@ -533,9 +522,6 @@
             </aside>
           </section>
           <section>
-            <h4>complement of multiply</h4>
-          </section>
-          <section>
             <h3>⚫️ screen 🔮 = 🔮</h3>
             <h3>⚪️ screen 🔮 = ⚪️</h3>
           </section>
@@ -545,48 +531,12 @@
         </section>
         <section>
           <section>
-            <h2>Knock Out Text</h2>
-            <h3>using screen</h3>
-          </section>
-
-          <section>
-            <iframe
-              height="700"
-              style="width: 100%;"
-              scrolling="no"
-              title="Relax with mix blend mode #codevember_16"
-              src="//codepen.io/robinsavemark/embed/YpGYYj/?height=265&theme-id=light&default-tab=css,result"
-              frameborder="no"
-              allowtransparency="true"
-              allowfullscreen="true"
-            >
-              See the Pen
-              <a href="https://codepen.io/robinsavemark/pen/YpGYYj/"
-                >Relax with mix blend mode #codevember_16</a
+            <h2>Play with multiply and screen</h2>
+            <p>
+              <a href="https://codepen.io/pen?template=vMGGoP"
+                >CodePen Template</a
               >
-              by Robin Savemark (<a href="https://codepen.io/robinsavemark"
-                >@robinsavemark</a
-              >) on <a href="https://codepen.io">CodePen</a>.
-            </iframe>
-          </section>
-          <section>
-            <iframe
-              height="700"
-              style="width: 100%;"
-              scrolling="no"
-              title="Knockout text with animated background"
-              src="//codepen.io/kdurber/embed/pjEjZv/?height=265&theme-id=light&default-tab=css,result"
-              frameborder="no"
-              allowtransparency="true"
-              allowfullscreen="true"
-            >
-              See the Pen
-              <a href="https://codepen.io/kdurber/pen/pjEjZv/"
-                >Knockout text with animated background</a
-              >
-              by Kev Durber (<a href="https://codepen.io/kdurber">@kdurber</a>)
-              on <a href="https://codepen.io">CodePen</a>.
-            </iframe>
+            </p>
           </section>
         </section>
         <section>
@@ -600,7 +550,11 @@
           </section>
           <section>
             <h3>overlay</h3>
-            <p>commuting operation with hard-light</p>
+            <p>backdrop is dark -> darkens source</p>
+            <p>backdrop is bright -> brightens source</p>
+            <p class="fragment">
+              <font class="colorful">commuting operation</font> with hard-light
+            </p>
           </section>
           <section>
             <iframe
@@ -626,6 +580,30 @@
                 >Louis Hoebregts</a
               >,
               <a href="https://codepen.io/yuanchuan/pen/NwNdPj">Yuan Chuan</a>
+            </small>
+          </section>
+          <section>
+            <iframe
+              height="700"
+              style="width: 100%;"
+              scrolling="no"
+              title="Fullscreen Background Video with Mix-Blend-Mode Overlay Text"
+              src="//codepen.io/dudleystorey/embed/kkYawX/?height=265&theme-id=light&default-tab=css,result"
+              frameborder="no"
+              allowtransparency="true"
+              allowfullscreen="true"
+            >
+              See the Pen
+              <a href="https://codepen.io/dudleystorey/pen/kkYawX/"
+                >Fullscreen Background Video with Mix-Blend-Mode Overlay Text</a
+              >
+              by Dudley Storey (<a href="https://codepen.io/dudleystorey"
+                >@dudleystorey</a
+              >) on <a href="https://codepen.io">CodePen</a>.
+            </iframe>
+            <small>
+              Pen by
+              <a href="https://codepen.io/dudleystorey/#">Dudley Storey</a>
             </small>
           </section>
           <section>
@@ -796,29 +774,8 @@
         </section>
         <section>
           <section>
-            <iframe
-              height="700"
-              style="width: 100%;"
-              scrolling="no"
-              title="Fullscreen Background Video with Mix-Blend-Mode Overlay Text"
-              src="//codepen.io/dudleystorey/embed/kkYawX/?height=265&theme-id=light&default-tab=css,result"
-              frameborder="no"
-              allowtransparency="true"
-              allowfullscreen="true"
-            >
-              See the Pen
-              <a href="https://codepen.io/dudleystorey/pen/kkYawX/"
-                >Fullscreen Background Video with Mix-Blend-Mode Overlay Text</a
-              >
-              by Dudley Storey (<a href="https://codepen.io/dudleystorey"
-                >@dudleystorey</a
-              >) on <a href="https://codepen.io">CodePen</a>.
-            </iframe>
-          </section>
-        </section>
-        <section>
-          <section>
             <h2>difference</h2>
+            <p>B(Cb, Cs) = | Cb - Cs |</p>
             <h3 class="fragment">👀</h3>
           </section>
           <section>
@@ -1116,8 +1073,7 @@
           </section>
         </section>
         <section>
-          <h2>Thank you</h2>
-          <h3 class="fragment">I hope you had fun too</h3>
+          <h3 class="fragment">I hope you had fun</h3>
         </section>
         <section>
           <h2>References</h2>
@@ -1172,7 +1128,7 @@
               <a href="https://singaporecss.github.io/">SingaporeCSS</a>
             </div>
             <div class="awesome-folk">
-              <a href="https://reactknowledgeable.org/">React Knowledgeable</a>
+              <a href="https://www.youtube.com/channel/UCswxnKjnWhnSR00wC1J8LZA">React Knowledgeable</a>
             </div>
             <div class="awesome-folk">
               <a>
