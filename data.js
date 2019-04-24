@@ -11,16 +11,6 @@ var talks = [
     intro: "Hands-on workshop on Gatsby."
   },
   {
-    title: "Gatsby Crash",
-    when: "03/29/2019",
-    where: {
-      name: "React Knowledgeable",
-      link: "https://www.facebook.com/reactknowledgeable/"
-    },
-    slides: "slides/1903-gatsby-crash",
-    intro: "First talk crashing into Gatsby."
-  },
-  {
     title: "This World Mixed and Blended",
     when: "04/24/2019",
     where: {
@@ -42,7 +32,16 @@ var talks = [
     slides: "slides/1903-whats-happening-30-days-of-css-girls",
     intro: `A retro talk regarding the <a href="https://css.codinggirls.sg">#30DaysOfCSSGirls</a> event with <a href="https://codinggirls.sg">CodingGirls</a>.`
   },
-
+  {
+    title: "Gatsby Crash",
+    when: "03/29/2019",
+    where: {
+      name: "React Knowledgeable",
+      link: "https://www.facebook.com/reactknowledgeable/"
+    },
+    slides: "slides/1903-gatsby-crash",
+    intro: "First talk crashing into Gatsby."
+  },
   {
     title: "Makes of a Good Talk",
     when: "03/08/2019",
