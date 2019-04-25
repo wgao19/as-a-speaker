@@ -179,12 +179,28 @@
                 Co-Instructor
               </p>
               <h3>Nut 🇹🇭</h3>
+              <aside class="notes">
+                <ul>
+                  <li>
+                    He loves GraphQL and he'll be hosting the sections on
+                    querying
+                  </li>
+                  <li>Thai style softness that y'all will love</li>
+                  <li>
+                    When one of us is doing the slides / demo, feel free to grab
+                    the other one of us for questions
+                  </li>
+                </ul>
+              </aside>
             </div>
           </section>
           <section>
             <a href="http://bit.ly/gatsby-developers-gym"
               >http://bit.ly/gatsby-developers-gym</a
             >
+            <aside class="notes">
+              go to the slides to copy and paste commands and code later on
+            </aside>
           </section>
         </section>
         <section>
@@ -397,9 +413,25 @@ export function formatReadingTime(minutes) {
           </section>
           <section>
             <blockquote>Flexible with the content mesh.</blockquote>
+            <aside class="notes">
+              Gatsby accepts content from
+              <ul>
+                <li>pre built static files</li>
+                <li>react components</li>
+                <li>cms</li>
+                <li>data from 3rd party api</li>
+              </ul>
+              It allows dynamically generated pages. Official docs mentions this
+              as a special feature for Gatsby, but not so sure about other
+              static site generators.
+            </aside>
           </section>
           <section>
             <blockquote>Simple</blockquote>
+            <aside class="notes">
+              simple mean more joy to build, focus on delivering meaningful
+              sites
+            </aside>
           </section>
 
           <section>
@@ -424,6 +456,29 @@ export function formatReadingTime(minutes) {
                 <small>experimental</small>
               </li>
             </ul>
+            <aside class="notes">
+              <p>
+                Starters gets you to your content fast. It's also a good place
+                to learn how write Gatsby sites.
+              </p>
+              <p>
+                It offers full range of customisability. You may implement all
+                your features by yourself. But if you don’t want to do it,
+                especially if your need is a rather common need, i.e., embedding
+                third party content, Google Analytics, etc., there should be a
+                plugin that does that already.
+              </p>
+              <p>
+                Gatsby Themes is in experimental phase. With Gatsby Themes, you
+                may use or abstract partials of Gatsby sites directly. This
+                includes logic, styling, configurations, etc. And they are
+                designed to be easily overridden for customisability as well.
+              </p>
+              <p>
+                Can? be the next big thing about Gatsby. Still work in progress,
+                but people are excited about it.
+              </p>
+            </aside>
           </section>
           <section>
             <h3>References</h3>
@@ -849,29 +904,29 @@ export default class MainLayout extends React.Component {
                 layout component that wraps around the returns of their render
                 functions.
               </p>
-
               <p>
-                Once again, layout with Gatsby is simply another React
-                component. Let’s take a look at what our layout does.
+                Layout don't have to live under src/layouts. Gatsby also do not
+                automatically wrap pages under layout.
               </p>
             </aside>
           </section>
           <section>
             <h3>Add a header to layout</h3>
-            <ul>
-              <li>Add the header line inside an H1 tag inside layout</li>
-              <li>
-                Put site meta info together inside config and use value from
-                there
-              </li>
-              <li>Turn it into a link that goes to the home page</li>
-            </ul>
+            <aside class="notes">
+              ask if people are familiar with React and JSX, help if they're not
+            </aside>
           </section>
           <section>
             <h3>Use layout at custom page</h3>
           </section>
           <section>
             <h3>Add an intro to layout</h3>
+            <aside class="notes">
+              should do a fun one here
+            </aside>
+          </section>
+          <section>
+            <h3>Go to post listing component</h3>
           </section>
           <section>
             <h3>References</h3>
@@ -1101,17 +1156,6 @@ query IndexQuery {
           <section>
             <h2>Styling</h2>
           </section>
-
-          <section>
-            <div class="fits-screen">
-              <img src="img/tweet-argue-about-css.png" />
-            </div>
-            <aside class="notes">
-              I'm not sure if you will agree with me or not, but I feel our
-              front end developer community is… really concerned about styling.
-              That’s Gatsby’s creator by the way.
-            </aside>
-          </section>
           <section>
             <ul>
               <li>Plain CSS</li>
@@ -1172,10 +1216,6 @@ plugins: [
                 >Using CSS Modules with Gatsby</a
               >
             </p>
-            <aside class="notes">
-              You may learn more using CSS Modules with Gatsby by reading the
-              CSS Modules section in Gatsby’s official tutorial.
-            </aside>
           </section>
 
           <section>
@@ -1188,16 +1228,10 @@ plugins: [
               <small>Pause to add more styling</small>
             </p>
           </section>
-
           <section>
-            <h3>
-              Basic Typesetting
-            </h3>
-            <ul>
-              <li>Create consistent typesetting styles with CSS variables</li>
-              <li>"Dark theme" with CSS variables</li>
-            </ul>
+            <h3>"Dark Mode" 🌚🌝</h3>
           </section>
+
           <section>
             <h3>References</h3>
             <ul>
@@ -1327,7 +1361,7 @@ $ # or
 $ npm install --save gatsby-plugin-typography react-typography typography
             </code></pre>
             <aside class="notes">
-              To use TypographyJS for our Gatsby site, we need three
+              To use TypographyJS for our Gatsby site, we need these
               dependencies
             </aside>
           </section>
@@ -1346,15 +1380,6 @@ plugins: [
   },
 ]
             </code></pre>
-            <aside class="notes">
-              <p>
-                Then, we need to configure it with our gatsby-config.js
-              </p>
-              <p>
-                Create the file specified by pathToConfigModule and let’s work
-                on the typography file itself.
-              </p>
-            </aside>
           </section>
           <section>
             <h3>Using an existing theme</h3>
@@ -1391,14 +1416,6 @@ export default new Typography(AnyhowlyRocksTheme);
             <a href="http://kyleamathews.github.io/typography.js/"
               >TypographJS API docs</a
             >
-            <aside class="notes">
-              <p>
-                In the typography file, we need the Typography library. And we
-                export default our typography instance by calling new
-                Typography() with our options
-              </p>
-              <p>For what TypographyJS API, refer to the TypographyJS docs.</p>
-            </aside>
           </section>
           <section>
             <h3>Setting Baselines</h3>
@@ -1415,8 +1432,8 @@ export default new Typography(AnyhowlyRocksTheme);
             </ul>
             <aside class="notes">
               <p>
-                We want to specify the baseline of our typography, i.e., the
-                font sizes and the line heights.
+                Specify the baseline of our typography, i.e., the font sizes and
+                the line heights.
               </p>
               <p>
                 scaleRatio specifies the ratio between h1 and normal text
@@ -1434,40 +1451,6 @@ googleFonts: [
 ],
 headerFontFamily: ["Bevan", "Futura", "sans-serif"],
             </code></pre>
-            <aside class="notes">
-              <p>
-                TypographyJS allows us to pass in a field for Google Fonts. It
-                will automatically load that font for us so that we can use them
-                in our theme.
-              </p>
-              <p>
-                Then, we need to declare the fonts to use. Here are the related
-                fields
-              </p>
-              <p>
-                These two are both arrays. It will be compiled to CSS font
-                families where if you specify a list of font families, it will
-                keep falling back until it finds a first font in the user’s
-                system that matches it.
-              </p>
-            </aside>
-          </section>
-          <section>
-            <ul>
-              <li>headerWeight</li>
-              <li>bodyWeight</li>
-              <li>headerGray</li>
-              <li>headerGrayHue</li>
-              <li>bodyGray</li>
-              <li>bodyGrayHue</li>
-            </ul>
-            <aside class="notes">
-              <p>
-                There are a few more related fields including the font weights
-                and the colors in hsl shades. Once again you may refer to the
-                doc site for their specifications.
-              </p>
-            </aside>
           </section>
           <section>
             More Options
@@ -1477,11 +1460,6 @@ headerFontFamily: ["Bevan", "Futura", "sans-serif"],
                 >demo site</a
               >
             </p>
-            <aside class="notes">
-              In TypographyJS’s doc site, it has a style picker util on the
-              upper right corder where you can customize those fields and get
-              instant visual feedback of how your site will look like.
-            </aside>
           </section>
           <section>
             <p>`overrideStyles`</p>
@@ -1525,7 +1503,8 @@ overrideStyles: () => ({
               <p>
                 Furthermore, it provides us with a few util functions that we
                 may use to declaratively write our typography styles. Let’s talk
-                about Vertical Rhythm.
+                about Vertical Rhythm. (actually, dun think will have this time
+                and not sure about people's interest in it neither)
               </p>
             </aside>
           </section>
@@ -1579,7 +1558,44 @@ overrideThemeStyles: ({ rhythm, adjustFontSizeTo }, options, styles) => ({
 
         <section>
           <section>
-            <h2>Plugging in Third Party Services</h2>
+            <h2>Plugins</h2>
+            <aside class="notes">
+              share about Gatsby's pitch "many features are only an npm install
+              away"
+            </aside>
+          </section>
+          <section>
+            <aside class="notes">
+              <p>we're already using plugins</p>
+              <p>intro to types of plugins</p>
+            </aside>
+            <ul>
+              <li class="fragment">Source: <code>gatsby-source-*</code>,</li>
+              <li class="fragment">
+                Transformer: <code>gatsby-transformer-*</code>,
+              </li>
+              <li class="fragment">
+                Helpers: <code>gatsby-[plugin-name]-*</code>,
+              </li>
+              <li class="fragment">Others: <code>gatsby-plugin-*</code>,</li>
+            </ul>
+          </section>
+          <section>
+            <p>what type are the following plugins</p>
+            <ul>
+              <li>gatsby-source-filesystem</li>
+              <li>gatsby-transformer-remark</li>
+              <li>gatsby-plugin-web-font-loader</li>
+              <li>gatsby-remark-oembed</li>
+            </ul>
+          </section>
+          <section>
+            <h3>RSS Feed</h3>
+            <aside class="notes">
+              <p>
+                included in the starter, show & tell
+              </p>
+            </aside>
           </section>
           <section>
             <h3>Embedding Instagram Post 🙈</h3>
@@ -1591,39 +1607,7 @@ overrideThemeStyles: ({ rhythm, adjustFontSizeTo }, options, styles) => ({
               >
             </p>
           </section>
-          <section>
-            <h3>The plugins system</h3>
-            <ul>
-              <li class="fragment">
-                Source: <code>gatsby-source-*</code>,
-                <small>
-                  i.e.
-                  <code>gatsby-source-filesystem</code>
-                </small>
-              </li>
-              <li class="fragment">
-                Transformer: <code>gatsby-transformer-*</code>,
-                <small>
-                  i.e.
-                  <code>gatsby-transformer-remark</code>
-                </small>
-              </li>
-              <li class="fragment">
-                Helpers: <code>gatsby-[plugin-name]-*</code>,
-                <small>
-                  i.e.
-                  <code>gatsby-remark-oembed</code>
-                </small>
-              </li>
-              <li class="fragment">
-                Others: <code>gatsby-plugin-*</code>,
-                <small>
-                  i.e.
-                  <code>gatsby-plugin-sass</code>
-                </small>
-              </li>
-            </ul>
-          </section>
+
           <section>
             <h3>Installation</h3>
             <a
@@ -1715,6 +1699,10 @@ plugins: [
           </section>
           <section>
             <h3>Google Analytics</h3>
+            <aside class="notes">
+              <p>ask if people has GA account</p>
+              <p>do not demo, can do show & tell with CodingGirls sites</p>
+            </aside>
           </section>
           <section>
             <h3>SEO</h3>
@@ -1724,9 +1712,29 @@ plugins: [
                 >Putting SEO First with Gatsby</a
               >
             </p>
+            <aside class="notes">
+              topic also goes beyond..
+            </aside>
           </section>
           <section>
             <h3>Deploy with Netlify</h3>
+            <aside class="notes">
+              <p>
+                ask for GitHub / GitLab / GitBucket?? account
+              </p>
+              <p>
+                demo this
+              </p>
+            </aside>
+          </section>
+          <section>
+            <h3>Site demo</h3>
+            <aside class="notes">
+              <p>features demo</p>
+              <p>page data in json</p>
+              <p>code splitting</p>
+              <p>prefetch route</p>
+            </aside>
           </section>
         </section>
         <section>
@@ -1746,6 +1754,11 @@ plugins: [
           <section>
             <h3>In our community</h3>
             <ul class="compact">
+              <li>
+                <a href="https://github.com/wgao19/anyhowly-rocks"
+                  >Anyhowly Rocks GitHub repo</a
+                >
+              </li>
               <li>
                 <a
                   href="https://engineers.sg/video/gatsby-back-to-the-future-reactjs-singapore--3255"
@@ -1954,6 +1967,9 @@ plugins: [
               <a href="https://twitter.com/kenleesm">Ken</a>
             </div>
             <div class="awesome-folk"><a>Jiangwei</a></div>
+            <div class="awesome-folk">
+              <a href="https://twitter.com/gatsbyjs">GatsbyJS</a>
+            </div>
           </div>
         </section>
       </div>
