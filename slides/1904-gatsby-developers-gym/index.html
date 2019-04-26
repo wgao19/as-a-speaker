@@ -615,25 +615,12 @@ $ gatsby serve  # serves production build
             <p>
               Setting up the site
             </p>
+            <p><a href="https://www.gatsbyjs.org/starters/Vagr9K/gatsby-advanced-starter/">gatsby-advanced-starter</a></p>
             <pre>
               <code class="shell">
 $ gatsby new anyhowly-rocks https://github.com/Vagr9K/gatsby-advanced-starter
               </code>
             </pre>
-            <small class="fragment">
-              <p>
-                <a
-                  href="https://github.com/gatsbyjs/gatsby/blob/master/packages/gatsby-cli/src/init-starter.js"
-                  >gatsby-cli/src/init-starter.js</a
-                >
-              </p>
-              <ul>
-                <li>clones the git repo of your starter</li>
-                <li>installs dependencies</li>
-                <li>copies the starter files</li>
-                <li>removes .git directory</li>
-              </ul>
-            </small>
             <aside class="notes">
               <p>
                 Create our repo
@@ -683,54 +670,6 @@ $ tree -L 1 # trimmed
                 >Gatsby Config</a
               >
             </p>
-            <ul>
-              <li>
-                <a
-                  href="https://www.gatsbyjs.org/docs/gatsby-config/#sitemetadata"
-                  >siteMetadata</a
-                >
-                (object)
-              </li>
-              <li>
-                <a href="https://www.gatsbyjs.org/docs/gatsby-config/#plugins"
-                  >plugins</a
-                >
-                (array)
-              </li>
-              <li>
-                <a
-                  href="https://www.gatsbyjs.org/docs/gatsby-config/#pathprefix"
-                  >pathPrefix</a
-                >
-                (string)
-              </li>
-              <li class="flush-left">
-                <a href="https://www.gatsbyjs.org/docs/gatsby-config/#polyfill"
-                  >polyfill</a
-                >
-                (boolean)
-              </li>
-              <li>
-                <a
-                  href="https://www.gatsbyjs.org/docs/gatsby-config/#mapping-node-types"
-                  >mapping</a
-                >
-                (object)
-              </li>
-              <li>
-                <a href="https://www.gatsbyjs.org/docs/gatsby-config/#proxy"
-                  >proxy</a
-                >
-                (object)
-              </li>
-              <li>
-                <a
-                  href="https://www.gatsbyjs.org/docs/gatsby-config/#advanced-proxying-with-developmiddleware"
-                  >developMiddleware</a
-                >
-                (function)
-              </li>
-            </ul>
             <aside class="notes">
               <p>
                 Would like to bring to your attention to this file:
@@ -1076,6 +1015,7 @@ user(id: $userId) {
           </section>
           <section>
             <div class="fits-screen spaced">
+              <img src="img/load-jank.gif" />
               <img src="img/query-img-2.gif" />
             </div>
           </section>
