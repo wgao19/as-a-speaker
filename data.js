@@ -1,5 +1,16 @@
 var talks = [
   {
+    title: "Typography, An Intro from a Historic Perspective",
+    when: "05/02/2019",
+    where: {
+      name: "React Knowledgeable",
+      link: "https://www.facebook.com/reactknowledgeable/"
+    },
+    slides: "slides/1905-intro-typography",
+    intro:
+      "Introduce types following a historic perspective, learn about a few types that were actually born centuries ago."
+  },
+  {
     title: "Developer's Gym - Gatsby Workshop",
     when: "04/27/2019",
     where: {
