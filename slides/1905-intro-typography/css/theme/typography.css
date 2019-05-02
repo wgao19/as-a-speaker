@@ -9,8 +9,14 @@ section.has-dark-background, section.has-dark-background h1, section.has-dark-ba
   color: #fff;
   letter-spacing: 4px; }
 
+.reveal h1 {
+  font-size: 8rem; }
+
+.reveal em {
+  font-size: 4rem !important; }
+
 .reveal h3.big {
-  font-size: 6rem !important; }
+  font-size: 8rem !important; }
 
 /*********************************************
  * GLOBAL STYLES
@@ -60,13 +66,13 @@ body {
   word-wrap: break-word; }
 
 .reveal h1 {
-  font-size: 2.5em; }
+  font-size: 4em; }
 
 .reveal h2 {
-  font-size: 1.6em; }
+  font-size: 4em; }
 
 .reveal h3 {
-  font-size: 1.3em; }
+  font-size: 4em; }
 
 .reveal h4 {
   font-size: 1em; }

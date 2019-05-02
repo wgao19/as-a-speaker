@@ -32,9 +32,9 @@ $headingFontWeight: 600;
 $linkColorHover: lighten( $linkColor, 15% );
 $selectionBackgroundColor: lighten( $linkColor, 25% );
 
-$heading1Size: 2.5em;
-$heading2Size: 1.6em;
-$heading3Size: 1.3em;
+$heading1Size: 4em;
+$heading2Size: 4em;
+$heading3Size: 4em;
 $heading4Size: 1.0em;
 
 section.has-dark-background {
@@ -44,8 +44,14 @@ section.has-dark-background {
 	}
 }
 
+.reveal h1 {
+	font-size: 8rem;
+}
+.reveal em {
+	font-size: 4rem !important;
+}
 .reveal h3.big {
-	font-size: 6rem !important;
+	font-size: 8rem !important;
 }
 
 
