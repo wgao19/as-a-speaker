@@ -77,3 +77,6 @@
   top: 0;
   left: 0;
 }
+.increase-specificity .reveal small {
+  vertical-align: baseline;
+}
