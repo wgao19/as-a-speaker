@@ -1,5 +1,15 @@
 var talks = [
   {
+    title: "Sun Moon Hooks",
+    when: "05/24/2019",
+    where: {
+      name: "React Knowledgeable",
+      link: "https://www.facebook.com/reactknowledgeable/"
+    },
+    slides: "slides/1905-sun-moon-hooks",
+    intro: "Building dark mode with hooks and blending mode."
+  },
+  {
     title: "Typography, An Intro from a Historic Perspective",
     when: "05/02/2019",
     where: {
