@@ -12,7 +12,7 @@
   font-family: 'Bellota';
   src: url('Bellota-Italic.eot');
   src: url('Bellota-Italic.eot?#iefix') format('embedded-opentype'),
-       url('Bellota-Italic.woff2) format('woff2),
+       url('Bellota-Italic.woff2') format('woff2'),
        url('Bellota-Italic.ttf') format('truetype');
   font-weight: normal;
   font-style: italic;
@@ -22,7 +22,7 @@
   font-family: 'Bellota';
   src: url('Bellota-Bold.eot');
   src: url('Bellota-Bold.eot?#iefix') format('embedded-opentype'),
-       url('Bellota-Bold.woff2) format('woff2),
+       url('Bellota-Bold.woff2') format('woff2'),
        url('Bellota-Bold.ttf') format('truetype');
   font-weight: 600;
   font-style: normal;
@@ -32,7 +32,7 @@
   font-family: 'Bellota';
   src: url('Bellota-BoldItalic.eot');
   src: url('Bellota-BoldItalic.eot?#iefix') format('embedded-opentype'),
-       url('Bellota-BoldItalic.woff2) format('woff2),
+       url('Bellota-BoldItalic.woff2') format('woff2'),
        url('Bellota-BoldItalic.ttf') format('truetype');
   font-weight: 600;
   font-style: italic;

@@ -134,11 +134,344 @@
           </section>
         </section>
         <section>
-          <div class="grateful">
-            <div class="awesome-folk">
-              <a>man</a>
+          <img src="img/hipster.gif" />
+          <aside class="notes">
+            <p>
+              To implement a dark mode to a site, you need two things. First,
+              you need a toggle to control dark mode and light mode. And second,
+              you need to implement the actual styles for the dark mode.
+            </p>
+            <p>
+              The toggle here is the hooks part. And in regards of styling, for
+              those of you who missed my talk on mix blend mode, here is your
+              second chance to learn how to do this hipster dark mode to your
+              site without writing any extra color in your CSS.
+            </p>
+          </aside>
+        </section>
+        <section>
+          <section>
+            <h2>Before refactor</h2>
+            <aside class="notes">
+              <p>
+                I lied to you a little bit by saying I implemented this thing
+                with hooks + and the UI. Because, before this talk, I already
+                implemented the dark mode in my site using internal state.
+              </p>
+              <p>
+                Let me first show you what the code looked like before hooks.
+              </p>
+            </aside>
+          </section>
+          <section class="split spaced">
+            <img src="img/class-component-state.png" />
+            <img src="img/class-component-render.png" />
+            <aside class="notes">
+              <p>
+                My site has a Layout component that wraps around everything.
+                When we want to add a toggle that supposingly is changing the
+                style of all the site, where does it go? This Layout.
+              </p>
+              <p>
+                It used to be a functional component, not anymore when I had to
+                add an internal state for toggle.
+              </p>
+              <p>
+                The UI for the toggle also lives inside Layout. It implements a
+                onClick handler which will setState for the toggle. It will also
+                set the theme variable in local storage so that you can leave
+                the site and come back with your preferred theme.
+              </p>
+            </aside>
+          </section>
+          <section>
+            <h3>
+              Use hooks for the theme toggle
+            </h3>
+            <p>
+              <a href="https://github.com/wgao19/wgao19-cc/commit/c1154dc"
+                >c1154dc</a
+              >
+            </p>
+            <aside class="notes">
+              The first refactor was to rewrite the thing in hooks and move them
+              to its own component.
+            </aside>
+          </section>
+          <section>
+            <img src="img/ui-and-hook.png" class="full-screen" />
+            <aside class="notes">
+              <p>
+                This top part is the hook.
+              </p>
+              <p>
+                I call useState with an initial state, which computes to whether
+                I see a local storage or not, if not, I use the default light
+                theme.
+              </p>
+              <p>
+                The useState call returns an array which destructs to, one, a
+                state variable, and two, a set state handler which I use to
+                write my own toggleTheme handler.
+              </p>
+              <p>
+                Previously I write to local storage within the setState
+                function. Since writing local storage is a "side effect" if you
+                tend to be functional, we can use the useEffect hook to write to
+                local storage whenever theme changes. This is controlled by
+                passing in the array with variable theme in to the second
+                parameter to useEffect.
+              </p>
+            </aside>
+          </section>
+          <section>
+            <h3>Refactor to custom hook</h3>
+            <p>
+              <a
+                href="https://github.com/wgao19/wgao19-cc/commit/dfa93308c034afb9cd502137f19f0c7833dc3a7f"
+                >dfa9330</a
+              >
+            </p>
+            <aside class="notes">
+              <p>
+                This is one feature of hooks that people are excited about.
+              </p>
+              <p>
+                With this refactor, we take away the logic part of the toggle
+                into a separate file, commonly referred to as a "custom hook". I
+                can let my custom hook return only the pieces of information it
+                needs to share with the UI components that use it.
+              </p>
+              <p>
+                In this case, we return the theme variable, and the custom
+                toggleTheme handler that we pass to divs as onClick event.
+              </p>
+            </aside>
+          </section>
+          <section>
+            <img src="img/sun-moon-ui.png" />
+            <p>
+              <a
+                href="https://github.com/wgao19/wgao19-cc/commit/c57b894fa7fe1e4cd085d86ce64c00ffaeb6d811"
+              >
+                c57b894</a
+              >
+            </p>
+            <aside class="notes">
+              <p>
+                Now that the toggle file is pretty clean. It no longer has the
+                cryptic blocks for the hooks. And so we're left with this little
+                block of code. I'm not sure about you but I then immediately
+                noticed that this file is still coupled with the logic of the
+                theme. As you may see here the class names have ternary logic
+                that is based on whether the theme matches certain theme or not.
+              </p>
+              <p>
+                This wasn't so obvious earlier on when everybody lived under
+                Layout. Now since we moved the logic out thanks to hooks, we
+                realize that this part of the UI is still aware of the logic. Is
+                this optimal? Not so sure. But it seems to me now that it is not
+                too hard to optimize a little bit? I realize that the first line
+                adds a class for the dark mode, and the second one adds a theme
+                for the light mode. So I refactored these again (use github
+                compare).
+              </p>
+              <p>
+                Now the UI is left with only two class names describing what
+                they are, plus two more class names that are simply the themes.
+              </p>
+              <p>
+                I need to change the class names in the css as well. Previously
+                the class names were semantic to what it does in terms of
+                styling. And it's a bit hard to remember what's expanding? In
+                what case got z index? Now the CSS says, here is your blender
+                (we'll talk about what it is later), and here's what it looks
+                like under the moon. And here's the toggle, and here's what it
+                looks like under the sun.
+              </p>
+            </aside>
+          </section>
+          <section>
+            <h3>Recap</h3>
+            <ul>
+              <li class="fragment">
+                🏢 Toggle coupled with Layout with internal state
+              </li>
+              <li class="fragment">
+                🏘 Move UI to separate component with hook
+              </li>
+              <li class="fragment">
+                🏡 Move (again) logic to a <i>custom hook</i>
+              </li>
+              <li class="fragment">🏠🌳 More declarative UI, hooks, and CSS</li>
+            </ul>
+            <aside class="notes">
+              <p>
+                Let's take a look at what we've gone through.
+              </p>
+              <p>
+                First we had a Layout that had a toggle with its logic in it,
+                and we thought it was a great idea cuz why not? Where else
+                should the toggle live in?
+              </p>
+              <p>
+                Then we moved the toggle into its own file alongside with its
+                hook. Our Layout returns to a "dummy", functional component
+                again, with a little toggle with a hook attached to it.
+              </p>
+              <p>
+                Then, we extracted the hooks logic out again and we realize
+                there is a more declarative way of writing our UI as well as our
+                CSS.
+              </p>
+            </aside>
+          </section>
+        </section>
+        <section>
+          <section>
+            The 🌚🌝
+            <aside class="notes">
+              I'd like to pause here on hooks a little bit and look at the
+              business feature we're implementing, the dark mode.
+            </aside>
+          </section>
+          <section>
+            <div class="center">
+              <blockquote class="twitter-tweet" data-lang="en">
+                <p lang="en" dir="ltr">
+                  Best explained with emoji equations<a
+                    href="https://twitter.com/hashtag/talkcss?src=hash&amp;ref_src=twsrc%5Etfw"
+                    >#talkcss</a
+                  >
+                  <a
+                    href="https://twitter.com/hashtag/css?src=hash&amp;ref_src=twsrc%5Etfw"
+                    >#css</a
+                  >
+                  <a href="https://t.co/5KVGEcpKAF"
+                    >pic.twitter.com/5KVGEcpKAF</a
+                  >
+                </p>
+                &mdash; HJ Chen (@hj_chen)
+                <a
+                  href="https://twitter.com/hj_chen/status/1121016994914955266?ref_src=twsrc%5Etfw"
+                  >April 24, 2019</a
+                >
+              </blockquote>
+              <script
+                async
+                src="https://platform.twitter.com/widgets.js"
+                charset="utf-8"
+              ></script>
             </div>
-          </div>
+          </section>
+          <section>
+            <ul>
+              <li>
+                <a
+                  href="https://dev.wgao19.cc/2019-05-04__sun-moon-blending-mode/"
+                  >Night Mode with Mix Blend Mode: Difference</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://www.chenhuijing.com/blog/friends-dont-let-friends-implement-dark-mode-alone/#%F0%9F%8F%80"
+                >
+                  Friends don't let friends implement dark mode alone</a
+                >
+                by <a href="https://twitter.com/hj_chen">Hui Jing</a>
+              </li>
+            </ul>
+          </section>
+          <section>
+            <div>mix-blend-mode: difference</div>
+            <aside class="notes">
+              The idea is that there is a CSS property called mix-blend-mode
+              that will ask you for a way to blend colors when graphics stack on
+              each other. And then there is one such blending mode called
+              difference that will blend the colors by taking their difference.
+            </aside>
+          </section>
+          <section>
+            <ul>
+              <li>diff(white, white) = ⚪️ - ⚪️ = ⚫️</li>
+              <li class="fragment">diff(white, black) = ⚪️ - ⚫️ = ⚪️</li>
+            </ul>
+            <aside class="notes">
+              <p>
+                In CSS's standard RGB color space, white is all the light, black
+                is no light which also means zero.
+              </p>
+              <p>
+                diff(white, white) = white - white = 0 = black
+              </p>
+
+              <p>
+                diff(white, black) = white - black = white - 0 = white
+              </p>
+
+              <p>
+                By taking the difference of my whole site against a full-screen
+                white-colored div, the background that used to be white becomes
+                black, and the foreground that used to be black becomes white.
+              </p>
+            </aside>
+          </section>
+          <section>
+            cannot 👀 unsee
+            <aside class="notes">
+              <p>
+                Clearly this is a cannot unsee situation because ever since that
+                blending mode talk I've basically been catching all the blended
+                thing like a maniac detective.
+              </p>
+              <p>
+                And you know that you don't have to do that against the color
+                white. Because if you just use the background color of any
+                arbitrary website, you'll get a inversed color while preserving
+                the original contrast between the foreground and the background.
+              </p>
+              <p>Let me show you a couple of examples</p>
+            </aside>
+          </section>
+          <section>
+            <img
+              src="https://www.chenhuijing.com/assets/images/posts/blend-dark-mode/light-dark-1280.png"
+            />
+            <p>
+              <a
+                href="https://www.chenhuijing.com/blog/friends-dont-let-friends-implement-dark-mode-alone/#%F0%9F%8F%80"
+              >
+                Friends don't let friends implement dark mode alone</a
+              >
+              by <a href="https://twitter.com/hj_chen">Hui Jing</a>
+            </p>
+          </section>
+
+          <section>
+            <img src="img/hipster.png" />
+            <aside class="notes">
+              So now we potentially have a magic component that can
+              theoretically turn every website into dark mode under the moon.
+              Basically, all we need is its background color. You can do some
+              kind of AST traversing and get the site's background color, but
+              how sneaky is that! We can just ask :D We're dealing with a React
+              component and we can use props :)
+            </aside>
+          </section>
+          <section>
+            <h3>🌚 Toggle 🌝</h3>
+            <aside class="notes">
+              So, I moved the component to a package by itself and published it.
+              Honestly, the building step doesn't quite work at the moment,
+              which I'll fix over this weekend lol. But that is the inspiration
+              brought in by hooks that I'd like to share with everyone.
+            </aside>
+          </section>
+        </section>
+        <section>
+          <h2>
+            Thank 🌚🌝 you
+          </h2>
         </section>
       </div>
     </div>
