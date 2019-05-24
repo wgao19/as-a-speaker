@@ -34,6 +34,9 @@
 .increase-specificity .reveal .fits-screen {
   height: 700px;
 }
+.increase-specificity .reveal .full-screen {
+  height: calc(100vh - 40px);
+}
 
 .reveal .spaced > :not(:last-child) {
   margin-right: 0.5rem;
