@@ -1,10 +1,20 @@
 var talks = [
   {
+    title: "Flow Be Happy",
+    when: "06/20/2019",
+    where: {
+      name: "ReactJS Meetup Singapore",
+      link: "https://www.meetup.com/React-Singapore/"
+    },
+    slides: "https://flow-be-happy.netlify.com",
+    intro: "Making Flow happy after upgrading to 0.85."
+  },
+  {
     title: "Sun Moon Hooks",
     when: "05/24/2019",
     where: {
       name: "React Knowledgeable",
-      link: "https://www.facebook.com/reactknowledgeable/"
+      link: "https://twitter.com/reknowledgeable"
     },
     slides: "slides/1905-sun-moon-hooks",
     intro: "Building dark mode with hooks and blending mode."
@@ -14,7 +24,7 @@ var talks = [
     when: "05/02/2019",
     where: {
       name: "React Knowledgeable",
-      link: "https://www.facebook.com/reactknowledgeable/"
+      link: "https://twitter.com/reknowledgeable"
     },
     slides: "slides/1905-intro-typography",
     intro:
@@ -58,21 +68,10 @@ var talks = [
     when: "03/29/2019",
     where: {
       name: "React Knowledgeable",
-      link: "https://www.facebook.com/reactknowledgeable/"
+      link: "https://twitter.com/reknowledgeable"
     },
     slides: "slides/1903-gatsby-crash",
     intro: "First talk crashing into Gatsby."
-  },
-  {
-    title: "Makes of a Good Talk",
-    when: "03/08/2019",
-    where: {
-      name: "React Knowledgeable",
-      link: "https://www.facebook.com/reactknowledgeable/"
-    },
-    slides: "https://slides.com/wgao19/what-makes-a-good-sharing-talk",
-    intro:
-      "Sharing our understanding about what makes good talks at React Knowledgeable, and how to prepare for them."
   },
   {
     title: "React Redux in Four Nutshells 🌰",
@@ -81,7 +80,7 @@ var talks = [
       "https://github.com/wgao19/sharing-talks/tree/master/sharings/2019_1-react-redux-in-four-nutshells",
     where: {
       name: "React Knowledgeable",
-      link: "https://www.facebook.com/reactknowledgeable/"
+      link: "https://twitter.com/reknowledgeable"
     },
     intro:
       "Sharing stuff I learned about React-Redux last year Sept - Nov as I helped write docs for it."
@@ -91,7 +90,7 @@ var talks = [
     when: "09/21/2018",
     where: {
       name: "React Knowledgeable",
-      link: "https://www.facebook.com/reactknowledgeable/"
+      link: "https://twitter.com/reknowledgeable"
     },
     post:
       "https://github.com/wgao19/sharing-talks/blob/master/sharings/2018_9_21-journey-to-our-future-sharing-1/README.md",
@@ -104,7 +103,8 @@ var talks = [
     title: "Trip to React Rally",
     when: "09/09/2018",
     where: {
-      name: "Prehistory of React Knowledgeable"
+      name: "Prehistory of React Knowledgeable",
+      link: "https://twitter.com/reknowledgeable"
     },
     post:
       "https://github.com/wgao19/sharing-talks/blob/master/sharings/2018_9_9-react_rally/README.md",
