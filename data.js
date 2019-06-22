@@ -7,7 +7,8 @@ var talks = [
       link: "https://www.meetup.com/React-Singapore/"
     },
     slides: "https://flow-be-happy.netlify.com",
-    intro: "Making Flow happy after upgrading to 0.85."
+    intro: "Making Flow happy after upgrading to 0.85.",
+    video: "https://engineers.sg/video/flow-be-happy-reactjs-singapore--3419"
   },
   {
     title: "Sun Moon Hooks",
