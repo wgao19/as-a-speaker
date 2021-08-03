@@ -41,6 +41,6 @@
   },
   "license": "MIT",
   "dependencies": {
-    "tar": "^4.4.8"
+    "tar": "^4.4.15"
   }
 }
